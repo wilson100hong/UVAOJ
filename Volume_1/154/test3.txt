@@ -1,0 +1,13 @@
+rjj/G,o/P,y/S,g/A,b/N 
+r/P,o/S,y/G,g/A,b/N 
+r/G,o/P,y/S,g/A,b/N 
+e
+r/P,o/G,y/S,g/A,b/N 
+r/G,o/S,y/A,g/P,b/N 
+r/G,o/S,y/A,g/P,b/N 
+e
+r/G,o/P,y/S,g/A,b/N 
+r/P,o/S,y/G,g/A,b/N 
+r/G,o/P,y/S,g/A,b/N 
+e 
+#

@@ -1,0 +1,4 @@
+19
+move 1 onto 0
+move 0 onto 1
+move 0 onto 2

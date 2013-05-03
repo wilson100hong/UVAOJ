@@ -1,0 +1,6 @@
+10 
+move 7 onto 8 
+move 9 onto 7
+move 7 over 9
+move 9 over 7
+quit

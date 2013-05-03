@@ -1,0 +1,88 @@
+ C
+ H
+ E
+ E
+ S
+ E          E
+ C          X
+MATCHES   PICNIC
+ K          U
+ E          S
+            E
+            S
+
+M
+A              P
+T              I
+CHEESECAKE   EXCUSES
+H              N
+E              I
+S              C
+
+Unable to make two crosses
+
+          C
+          H
+          E
+          E
+          S
+  E       E
+  X       C
+PICNIC   MATCHES
+  U       K
+  S       E
+  E
+  S
+
+A   B
+
+STRINGA   STRINGC
+T         T
+R         R
+I         I
+N         N
+G         G
+B         D
+
+     G        G
+     H        H
+     I        I
+     J        J
+     K        K
+ABCDEF   ABCDEF
+
+         D
+  D      F
+  D      H
+  F      G
+  F      D
+AABBCC   KHGKHD
+  B      J
+  S      G
+  S      H
+
+ D
+ E
+ F         P
+ E         R
+PREFECT   DEFER
+           F
+           E
+           C
+           T
+
+         D
+         E
+ P       F
+ R       E
+DEFER   PREFECT
+ F
+ E
+ C
+ T
+
+ C
+BALL   BALL
+ T     A
+ A
+ M

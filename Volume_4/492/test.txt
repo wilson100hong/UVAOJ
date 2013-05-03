@@ -1,0 +1,4 @@
+This is the input.
+.
+a
+This is the input

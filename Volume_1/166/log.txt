@@ -1,0 +1,904 @@
+J:1 $:0
+J:1 NUM:1
+J:2 $:1
+J:2 $:0
+J:2 NUM:2
+J:3 $:2
+J:3 $:1
+J:3 $:0
+J:3 NUM:3
+J:4 $:3
+J:4 $:2
+J:4 $:1
+J:4 $:0
+J:4 NUM:4
+J:5 $:4
+J:5 $:3
+J:5 $:2
+J:5 $:1
+J:5 $:0
+J:5 NUM:5
+J:6 $:5
+J:6 $:4
+J:6 $:3
+J:6 $:2
+J:6 $:1
+J:6 $:0
+J:6 NUM:6
+J:7 $:6
+J:7 $:5
+J:7 $:4
+J:7 $:3
+J:7 $:2
+J:7 $:1
+J:7 $:0
+J:7 NUM:7
+J:8 $:7
+J:8 $:6
+J:8 $:5
+J:8 $:4
+J:8 $:3
+J:8 $:2
+J:8 $:1
+J:8 $:0
+J:8 NUM:8
+I = 0
+paid: 0, cnt: 0
+paid: 1, cnt: 1
+paid: 2, cnt: 2
+paid: 3, cnt: 3
+paid: 4, cnt: 4
+paid: 5, cnt: 5
+paid: 6, cnt: 6
+paid: 7, cnt: 7
+paid: 8, cnt: 8
+paid: 9, cnt: -1
+paid: 10, cnt: -1
+paid: 11, cnt: -1
+paid: 12, cnt: -1
+paid: 13, cnt: -1
+paid: 14, cnt: -1
+paid: 15, cnt: -1
+paid: 16, cnt: -1
+paid: 17, cnt: -1
+paid: 18, cnt: -1
+paid: 19, cnt: -1
+paid: 20, cnt: -1
+paid: 21, cnt: -1
+paid: 22, cnt: -1
+paid: 23, cnt: -1
+paid: 24, cnt: -1
+paid: 25, cnt: -1
+paid: 26, cnt: -1
+paid: 27, cnt: -1
+paid: 28, cnt: -1
+paid: 29, cnt: -1
+paid: 30, cnt: -1
+paid: 31, cnt: -1
+paid: 32, cnt: -1
+paid: 33, cnt: -1
+paid: 34, cnt: -1
+paid: 35, cnt: -1
+paid: 36, cnt: -1
+paid: 37, cnt: -1
+paid: 38, cnt: -1
+paid: 39, cnt: -1
+paid: 40, cnt: -1
+paid: 41, cnt: -1
+paid: 42, cnt: -1
+paid: 43, cnt: -1
+paid: 44, cnt: -1
+paid: 45, cnt: -1
+paid: 46, cnt: -1
+paid: 47, cnt: -1
+paid: 48, cnt: -1
+paid: 49, cnt: -1
+paid: 50, cnt: -1
+paid: 51, cnt: -1
+paid: 52, cnt: -1
+paid: 53, cnt: -1
+paid: 54, cnt: -1
+paid: 55, cnt: -1
+paid: 56, cnt: -1
+paid: 57, cnt: -1
+paid: 58, cnt: -1
+paid: 59, cnt: -1
+paid: 60, cnt: -1
+paid: 61, cnt: -1
+paid: 62, cnt: -1
+paid: 63, cnt: -1
+paid: 64, cnt: -1
+paid: 65, cnt: -1
+paid: 66, cnt: -1
+paid: 67, cnt: -1
+paid: 68, cnt: -1
+paid: 69, cnt: -1
+paid: 70, cnt: -1
+paid: 71, cnt: -1
+paid: 72, cnt: -1
+J:2 NUM:1024
+J:3 NUM:1024
+J:4 NUM:1024
+J:5 NUM:1024
+J:6 NUM:1024
+J:7 NUM:1024
+J:8 NUM:1024
+I = 1
+paid: 0, cnt: 0
+paid: 1, cnt: 1
+paid: 2, cnt: 2
+paid: 3, cnt: 3
+paid: 4, cnt: 4
+paid: 5, cnt: 5
+paid: 6, cnt: 6
+paid: 7, cnt: 7
+paid: 8, cnt: 8
+paid: 9, cnt: -1
+paid: 10, cnt: -1
+paid: 11, cnt: -1
+paid: 12, cnt: -1
+paid: 13, cnt: -1
+paid: 14, cnt: -1
+paid: 15, cnt: -1
+paid: 16, cnt: -1
+paid: 17, cnt: -1
+paid: 18, cnt: -1
+paid: 19, cnt: -1
+paid: 20, cnt: -1
+paid: 21, cnt: -1
+paid: 22, cnt: -1
+paid: 23, cnt: -1
+paid: 24, cnt: -1
+paid: 25, cnt: -1
+paid: 26, cnt: -1
+paid: 27, cnt: -1
+paid: 28, cnt: -1
+paid: 29, cnt: -1
+paid: 30, cnt: -1
+paid: 31, cnt: -1
+paid: 32, cnt: -1
+paid: 33, cnt: -1
+paid: 34, cnt: -1
+paid: 35, cnt: -1
+paid: 36, cnt: -1
+paid: 37, cnt: -1
+paid: 38, cnt: -1
+paid: 39, cnt: -1
+paid: 40, cnt: -1
+paid: 41, cnt: -1
+paid: 42, cnt: -1
+paid: 43, cnt: -1
+paid: 44, cnt: -1
+paid: 45, cnt: -1
+paid: 46, cnt: -1
+paid: 47, cnt: -1
+paid: 48, cnt: -1
+paid: 49, cnt: -1
+paid: 50, cnt: -1
+paid: 51, cnt: -1
+paid: 52, cnt: -1
+paid: 53, cnt: -1
+paid: 54, cnt: -1
+paid: 55, cnt: -1
+paid: 56, cnt: -1
+paid: 57, cnt: -1
+paid: 58, cnt: -1
+paid: 59, cnt: -1
+paid: 60, cnt: -1
+paid: 61, cnt: -1
+paid: 62, cnt: -1
+paid: 63, cnt: -1
+paid: 64, cnt: -1
+paid: 65, cnt: -1
+paid: 66, cnt: -1
+paid: 67, cnt: -1
+paid: 68, cnt: -1
+paid: 69, cnt: -1
+paid: 70, cnt: -1
+paid: 71, cnt: -1
+paid: 72, cnt: -1
+J:4 $:0
+J:4 NUM:1
+J:5 $:1
+J:5 NUM:2
+J:6 $:2
+J:6 NUM:3
+J:7 $:3
+J:7 NUM:4
+J:8 $:4
+J:8 $:0
+J:8 NUM:2
+J:9 $:5
+J:9 $:1
+J:9 NUM:3
+J:10 $:6
+J:10 $:2
+J:10 NUM:4
+J:11 $:7
+J:11 $:3
+J:11 NUM:5
+J:12 $:8
+J:12 $:4
+J:12 $:0
+J:12 NUM:3
+J:13 $:9
+J:13 $:5
+J:13 $:1
+J:13 NUM:4
+J:14 $:10
+J:14 $:6
+J:14 $:2
+J:14 NUM:5
+J:15 $:11
+J:15 $:7
+J:15 $:3
+J:15 NUM:6
+J:16 $:12
+J:16 $:8
+J:16 $:4
+J:16 NUM:7
+J:17 $:13
+J:17 $:9
+J:17 $:5
+J:17 NUM:8
+J:18 $:14
+J:18 $:10
+J:18 $:6
+J:18 NUM:9
+J:19 $:15
+J:19 $:11
+J:19 $:7
+J:19 NUM:10
+J:20 $:16
+J:20 $:12
+J:20 $:8
+J:20 NUM:11
+I = 2
+paid: 0, cnt: 0
+paid: 1, cnt: 1
+paid: 2, cnt: 2
+paid: 3, cnt: 3
+paid: 4, cnt: 1
+paid: 5, cnt: 2
+paid: 6, cnt: 3
+paid: 7, cnt: 4
+paid: 8, cnt: 2
+paid: 9, cnt: 3
+paid: 10, cnt: 4
+paid: 11, cnt: 5
+paid: 12, cnt: 3
+paid: 13, cnt: 4
+paid: 14, cnt: 5
+paid: 15, cnt: 6
+paid: 16, cnt: 7
+paid: 17, cnt: 8
+paid: 18, cnt: 9
+paid: 19, cnt: 10
+paid: 20, cnt: 11
+paid: 21, cnt: -1
+paid: 22, cnt: -1
+paid: 23, cnt: -1
+paid: 24, cnt: -1
+paid: 25, cnt: -1
+paid: 26, cnt: -1
+paid: 27, cnt: -1
+paid: 28, cnt: -1
+paid: 29, cnt: -1
+paid: 30, cnt: -1
+paid: 31, cnt: -1
+paid: 32, cnt: -1
+paid: 33, cnt: -1
+paid: 34, cnt: -1
+paid: 35, cnt: -1
+paid: 36, cnt: -1
+paid: 37, cnt: -1
+paid: 38, cnt: -1
+paid: 39, cnt: -1
+paid: 40, cnt: -1
+paid: 41, cnt: -1
+paid: 42, cnt: -1
+paid: 43, cnt: -1
+paid: 44, cnt: -1
+paid: 45, cnt: -1
+paid: 46, cnt: -1
+paid: 47, cnt: -1
+paid: 48, cnt: -1
+paid: 49, cnt: -1
+paid: 50, cnt: -1
+paid: 51, cnt: -1
+paid: 52, cnt: -1
+paid: 53, cnt: -1
+paid: 54, cnt: -1
+paid: 55, cnt: -1
+paid: 56, cnt: -1
+paid: 57, cnt: -1
+paid: 58, cnt: -1
+paid: 59, cnt: -1
+paid: 60, cnt: -1
+paid: 61, cnt: -1
+paid: 62, cnt: -1
+paid: 63, cnt: -1
+paid: 64, cnt: -1
+paid: 65, cnt: -1
+paid: 66, cnt: -1
+paid: 67, cnt: -1
+paid: 68, cnt: -1
+paid: 69, cnt: -1
+paid: 70, cnt: -1
+paid: 71, cnt: -1
+paid: 72, cnt: -1
+J:10 $:0
+J:10 NUM:1
+J:11 $:1
+J:11 NUM:2
+J:12 $:2
+J:12 NUM:3
+J:13 $:3
+J:13 NUM:4
+J:14 $:4
+J:14 NUM:2
+J:15 $:5
+J:15 NUM:3
+J:16 $:6
+J:16 NUM:4
+J:17 $:7
+J:17 NUM:5
+J:18 $:8
+J:18 NUM:3
+J:19 $:9
+J:19 NUM:4
+J:20 $:10
+J:20 $:0
+J:20 NUM:2
+J:21 $:11
+J:21 $:1
+J:21 NUM:3
+J:22 $:12
+J:22 $:2
+J:22 NUM:4
+J:23 $:13
+J:23 $:3
+J:23 NUM:5
+J:24 $:14
+J:24 $:4
+J:24 NUM:3
+J:25 $:15
+J:25 $:5
+J:25 NUM:4
+J:26 $:16
+J:26 $:6
+J:26 NUM:5
+J:27 $:17
+J:27 $:7
+J:27 NUM:6
+J:28 $:18
+J:28 $:8
+J:28 NUM:4
+J:29 $:19
+J:29 $:9
+J:29 NUM:5
+J:30 $:20
+J:30 $:10
+J:30 $:0
+J:30 NUM:3
+J:31 $:21
+J:31 $:11
+J:31 $:1
+J:31 NUM:4
+J:32 $:22
+J:32 $:12
+J:32 $:2
+J:32 NUM:5
+J:33 $:23
+J:33 $:13
+J:33 $:3
+J:33 NUM:6
+J:34 $:24
+J:34 $:14
+J:34 $:4
+J:34 NUM:4
+J:35 $:25
+J:35 $:15
+J:35 $:5
+J:35 NUM:5
+J:36 $:26
+J:36 $:16
+J:36 $:6
+J:36 NUM:6
+J:37 $:27
+J:37 $:17
+J:37 $:7
+J:37 NUM:7
+J:38 $:28
+J:38 $:18
+J:38 $:8
+J:38 NUM:5
+J:39 $:29
+J:39 $:19
+J:39 $:9
+J:39 NUM:6
+J:40 $:30
+J:40 $:20
+J:40 $:10
+J:40 NUM:7
+J:41 $:31
+J:41 $:21
+J:41 $:11
+J:41 NUM:8
+J:42 $:32
+J:42 $:22
+J:42 $:12
+J:42 NUM:6
+J:43 $:33
+J:43 $:23
+J:43 $:13
+J:43 NUM:7
+J:44 $:34
+J:44 $:24
+J:44 $:14
+J:44 NUM:8
+J:45 $:35
+J:45 $:25
+J:45 $:15
+J:45 NUM:9
+J:46 $:36
+J:46 $:26
+J:46 $:16
+J:46 NUM:10
+J:47 $:37
+J:47 $:27
+J:47 $:17
+J:47 NUM:11
+J:48 $:38
+J:48 $:28
+J:48 $:18
+J:48 NUM:12
+J:49 $:39
+J:49 $:29
+J:49 $:19
+J:49 NUM:13
+J:50 $:40
+J:50 $:30
+J:50 $:20
+J:50 NUM:14
+I = 3
+paid: 0, cnt: 0
+paid: 1, cnt: 1
+paid: 2, cnt: 2
+paid: 3, cnt: 3
+paid: 4, cnt: 1
+paid: 5, cnt: 2
+paid: 6, cnt: 3
+paid: 7, cnt: 4
+paid: 8, cnt: 2
+paid: 9, cnt: 3
+paid: 10, cnt: 1
+paid: 11, cnt: 2
+paid: 12, cnt: 3
+paid: 13, cnt: 4
+paid: 14, cnt: 2
+paid: 15, cnt: 3
+paid: 16, cnt: 4
+paid: 17, cnt: 5
+paid: 18, cnt: 3
+paid: 19, cnt: 4
+paid: 20, cnt: 2
+paid: 21, cnt: 3
+paid: 22, cnt: 4
+paid: 23, cnt: 5
+paid: 24, cnt: 3
+paid: 25, cnt: 4
+paid: 26, cnt: 5
+paid: 27, cnt: 6
+paid: 28, cnt: 4
+paid: 29, cnt: 5
+paid: 30, cnt: 3
+paid: 31, cnt: 4
+paid: 32, cnt: 5
+paid: 33, cnt: 6
+paid: 34, cnt: 4
+paid: 35, cnt: 5
+paid: 36, cnt: 6
+paid: 37, cnt: 7
+paid: 38, cnt: 5
+paid: 39, cnt: 6
+paid: 40, cnt: 7
+paid: 41, cnt: 8
+paid: 42, cnt: 6
+paid: 43, cnt: 7
+paid: 44, cnt: 8
+paid: 45, cnt: 9
+paid: 46, cnt: 10
+paid: 47, cnt: 11
+paid: 48, cnt: 12
+paid: 49, cnt: 13
+paid: 50, cnt: 14
+paid: 51, cnt: -1
+paid: 52, cnt: -1
+paid: 53, cnt: -1
+paid: 54, cnt: -1
+paid: 55, cnt: -1
+paid: 56, cnt: -1
+paid: 57, cnt: -1
+paid: 58, cnt: -1
+paid: 59, cnt: -1
+paid: 60, cnt: -1
+paid: 61, cnt: -1
+paid: 62, cnt: -1
+paid: 63, cnt: -1
+paid: 64, cnt: -1
+paid: 65, cnt: -1
+paid: 66, cnt: -1
+paid: 67, cnt: -1
+paid: 68, cnt: -1
+paid: 69, cnt: -1
+paid: 70, cnt: -1
+paid: 71, cnt: -1
+paid: 72, cnt: -1
+J:20 $:0
+J:20 NUM:1
+J:21 $:1
+J:21 NUM:2
+J:22 $:2
+J:22 NUM:3
+J:23 $:3
+J:23 NUM:4
+J:24 $:4
+J:24 NUM:2
+J:25 $:5
+J:25 NUM:3
+J:26 $:6
+J:26 NUM:4
+J:27 $:7
+J:27 NUM:5
+J:28 $:8
+J:28 NUM:3
+J:29 $:9
+J:29 NUM:4
+J:30 $:10
+J:30 NUM:2
+J:31 $:11
+J:31 NUM:3
+J:32 $:12
+J:32 NUM:4
+J:33 $:13
+J:33 NUM:5
+J:34 $:14
+J:34 NUM:3
+J:35 $:15
+J:35 NUM:4
+J:36 $:16
+J:36 NUM:5
+J:37 $:17
+J:37 NUM:6
+J:38 $:18
+J:38 NUM:4
+J:39 $:19
+J:39 NUM:5
+J:40 $:20
+J:40 $:0
+J:40 NUM:2
+J:41 $:21
+J:41 $:1
+J:41 NUM:3
+J:42 $:22
+J:42 $:2
+J:42 NUM:4
+J:43 $:23
+J:43 $:3
+J:43 NUM:5
+J:44 $:24
+J:44 $:4
+J:44 NUM:3
+J:45 $:25
+J:45 $:5
+J:45 NUM:4
+J:46 $:26
+J:46 $:6
+J:46 NUM:5
+J:47 $:27
+J:47 $:7
+J:47 NUM:6
+J:48 $:28
+J:48 $:8
+J:48 NUM:4
+J:49 $:29
+J:49 $:9
+J:49 NUM:5
+J:50 $:30
+J:50 $:10
+J:50 NUM:3
+J:51 $:31
+J:51 $:11
+J:51 NUM:4
+J:52 $:32
+J:52 $:12
+J:52 NUM:5
+J:53 $:33
+J:53 $:13
+J:53 NUM:6
+J:54 $:34
+J:54 $:14
+J:54 NUM:4
+J:55 $:35
+J:55 $:15
+J:55 NUM:5
+J:56 $:36
+J:56 $:16
+J:56 NUM:6
+J:57 $:37
+J:57 $:17
+J:57 NUM:7
+J:58 $:38
+J:58 $:18
+J:58 NUM:5
+J:59 $:39
+J:59 $:19
+J:59 NUM:6
+J:60 $:40
+J:60 $:20
+J:60 $:0
+J:60 NUM:3
+J:61 $:41
+J:61 $:21
+J:61 $:1
+J:61 NUM:4
+J:62 $:42
+J:62 $:22
+J:62 $:2
+J:62 NUM:5
+J:63 $:43
+J:63 $:23
+J:63 $:3
+J:63 NUM:6
+J:64 $:44
+J:64 $:24
+J:64 $:4
+J:64 NUM:4
+J:65 $:45
+J:65 $:25
+J:65 $:5
+J:65 NUM:5
+J:66 $:46
+J:66 $:26
+J:66 $:6
+J:66 NUM:6
+J:67 $:47
+J:67 $:27
+J:67 $:7
+J:67 NUM:7
+J:68 $:48
+J:68 $:28
+J:68 $:8
+J:68 NUM:5
+J:69 $:49
+J:69 $:29
+J:69 $:9
+J:69 NUM:6
+J:70 $:50
+J:70 $:30
+J:70 $:10
+J:70 NUM:4
+J:71 $:51
+J:71 $:31
+J:71 $:11
+J:71 NUM:5
+J:72 $:52
+J:72 $:32
+J:72 $:12
+J:72 NUM:6
+I = 4
+paid: 0, cnt: 0
+paid: 1, cnt: 1
+paid: 2, cnt: 2
+paid: 3, cnt: 3
+paid: 4, cnt: 1
+paid: 5, cnt: 2
+paid: 6, cnt: 3
+paid: 7, cnt: 4
+paid: 8, cnt: 2
+paid: 9, cnt: 3
+paid: 10, cnt: 1
+paid: 11, cnt: 2
+paid: 12, cnt: 3
+paid: 13, cnt: 4
+paid: 14, cnt: 2
+paid: 15, cnt: 3
+paid: 16, cnt: 4
+paid: 17, cnt: 5
+paid: 18, cnt: 3
+paid: 19, cnt: 4
+paid: 20, cnt: 1
+paid: 21, cnt: 2
+paid: 22, cnt: 3
+paid: 23, cnt: 4
+paid: 24, cnt: 2
+paid: 25, cnt: 3
+paid: 26, cnt: 4
+paid: 27, cnt: 5
+paid: 28, cnt: 3
+paid: 29, cnt: 4
+paid: 30, cnt: 2
+paid: 31, cnt: 3
+paid: 32, cnt: 4
+paid: 33, cnt: 5
+paid: 34, cnt: 3
+paid: 35, cnt: 4
+paid: 36, cnt: 5
+paid: 37, cnt: 6
+paid: 38, cnt: 4
+paid: 39, cnt: 5
+paid: 40, cnt: 2
+paid: 41, cnt: 3
+paid: 42, cnt: 4
+paid: 43, cnt: 5
+paid: 44, cnt: 3
+paid: 45, cnt: 4
+paid: 46, cnt: 5
+paid: 47, cnt: 6
+paid: 48, cnt: 4
+paid: 49, cnt: 5
+paid: 50, cnt: 3
+paid: 51, cnt: 4
+paid: 52, cnt: 5
+paid: 53, cnt: 6
+paid: 54, cnt: 4
+paid: 55, cnt: 5
+paid: 56, cnt: 6
+paid: 57, cnt: 7
+paid: 58, cnt: 5
+paid: 59, cnt: 6
+paid: 60, cnt: 3
+paid: 61, cnt: 4
+paid: 62, cnt: 5
+paid: 63, cnt: 6
+paid: 64, cnt: 4
+paid: 65, cnt: 5
+paid: 66, cnt: 6
+paid: 67, cnt: 7
+paid: 68, cnt: 5
+paid: 69, cnt: 6
+paid: 70, cnt: 4
+paid: 71, cnt: 5
+paid: 72, cnt: 6
+J:40 $:0
+J:40 NUM:1
+J:41 $:1
+J:41 NUM:2
+J:42 $:2
+J:42 NUM:3
+J:43 $:3
+J:43 NUM:4
+J:44 $:4
+J:44 NUM:2
+J:45 $:5
+J:45 NUM:3
+J:46 $:6
+J:46 NUM:4
+J:47 $:7
+J:47 NUM:5
+J:48 $:8
+J:48 NUM:3
+J:49 $:9
+J:49 NUM:4
+J:50 $:10
+J:50 NUM:2
+J:51 $:11
+J:51 NUM:3
+J:52 $:12
+J:52 NUM:4
+J:53 $:13
+J:53 NUM:5
+J:54 $:14
+J:54 NUM:3
+J:55 $:15
+J:55 NUM:4
+J:56 $:16
+J:56 NUM:5
+J:57 $:17
+J:57 NUM:6
+J:58 $:18
+J:58 NUM:4
+J:59 $:19
+J:59 NUM:5
+J:60 $:20
+J:60 NUM:2
+J:61 $:21
+J:61 NUM:3
+J:62 $:22
+J:62 NUM:4
+J:63 $:23
+J:63 NUM:5
+J:64 $:24
+J:64 NUM:3
+J:65 $:25
+J:65 NUM:4
+J:66 $:26
+J:66 NUM:5
+J:67 $:27
+J:67 NUM:6
+J:68 $:28
+J:68 NUM:4
+J:69 $:29
+J:69 NUM:5
+J:70 $:30
+J:70 NUM:3
+J:71 $:31
+J:71 NUM:4
+J:72 $:32
+J:72 NUM:5
+I = 5
+paid: 0, cnt: 0
+paid: 1, cnt: 1
+paid: 2, cnt: 2
+paid: 3, cnt: 3
+paid: 4, cnt: 1
+paid: 5, cnt: 2
+paid: 6, cnt: 3
+paid: 7, cnt: 4
+paid: 8, cnt: 2
+paid: 9, cnt: 3
+paid: 10, cnt: 1
+paid: 11, cnt: 2
+paid: 12, cnt: 3
+paid: 13, cnt: 4
+paid: 14, cnt: 2
+paid: 15, cnt: 3
+paid: 16, cnt: 4
+paid: 17, cnt: 5
+paid: 18, cnt: 3
+paid: 19, cnt: 4
+paid: 20, cnt: 1
+paid: 21, cnt: 2
+paid: 22, cnt: 3
+paid: 23, cnt: 4
+paid: 24, cnt: 2
+paid: 25, cnt: 3
+paid: 26, cnt: 4
+paid: 27, cnt: 5
+paid: 28, cnt: 3
+paid: 29, cnt: 4
+paid: 30, cnt: 2
+paid: 31, cnt: 3
+paid: 32, cnt: 4
+paid: 33, cnt: 5
+paid: 34, cnt: 3
+paid: 35, cnt: 4
+paid: 36, cnt: 5
+paid: 37, cnt: 6
+paid: 38, cnt: 4
+paid: 39, cnt: 5
+paid: 40, cnt: 1
+paid: 41, cnt: 2
+paid: 42, cnt: 3
+paid: 43, cnt: 4
+paid: 44, cnt: 2
+paid: 45, cnt: 3
+paid: 46, cnt: 4
+paid: 47, cnt: 5
+paid: 48, cnt: 3
+paid: 49, cnt: 4
+paid: 50, cnt: 2
+paid: 51, cnt: 3
+paid: 52, cnt: 4
+paid: 53, cnt: 5
+paid: 54, cnt: 3
+paid: 55, cnt: 4
+paid: 56, cnt: 5
+paid: 57, cnt: 6
+paid: 58, cnt: 4
+paid: 59, cnt: 5
+paid: 60, cnt: 2
+paid: 61, cnt: 3
+paid: 62, cnt: 4
+paid: 63, cnt: 5
+paid: 64, cnt: 3
+paid: 65, cnt: 4
+paid: 66, cnt: 5
+paid: 67, cnt: 6
+paid: 68, cnt: 4
+paid: 69, cnt: 5
+paid: 70, cnt: 3
+paid: 71, cnt: 4
+paid: 72, cnt: 5
+  4
