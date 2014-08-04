@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <map>
-#include <set>
 #include <vector>
 #include <queue>
 
@@ -21,16 +20,20 @@ using namespace std;
 #define RED 1
 #define BLUE 2
 
-
 class EdmondMatcher{
 public:
-  EdmondMatcher(const vector<set<int> >& edges_)
+  EdmondMatcher(const vector<vector<int> >& edges_)
     : edges(edges_) {
     size = edges.size();
     matches.clear();
     for (int i = 0; i < size; ++i)
       matches.push_back(NO_MATCH);
   }
+
+  bool BFS(int root);
+  void AlterPath(int root, int x);
+  int LCA(int root, int x, int y);
+  void Contract(int b, int x, int y);
 
   vector<int> Match() {
     for (int i = 0; i < size; ++i) {
@@ -45,7 +48,8 @@ public:
   }
 
   void ClearLocals() {
-    state.assign(size, UNVISITED);
+    cout << "Clear locals" << endl;
+    state.assign(size, NO_VISIT);
     parent.assign(size, NO_PARENT);
     blossom.clear();
     for (int i = 0; i < size; ++i) {
@@ -55,6 +59,8 @@ public:
       worklist.pop();
     }
     color.assign(size, NO_COLOR);
+    cross_1.assign(size, NO_CROSS);
+    cross_2.assign(size, NO_CROSS);
   }
 
   int GetBlossom(int x) {
@@ -68,10 +74,6 @@ public:
     blossom[x] = b;
   }
 
-  void BFS(int root);
-  void AlterPath(int root, int x);
-  int LCA(int root, int x, int y);
-  void Contract(int b, int x, int y);
 
   // Local variables in BFS
   queue<int> worklist;
@@ -86,7 +88,7 @@ public:
   vector<int> cross_2;
   
   // Global variables 
-  vector<set<int> > edges;
+  vector<vector<int> > edges;
   int size;
   vector<int> matches;
 };
@@ -101,14 +103,14 @@ void EdmondMatcher::AlterPath(int root, int x) {
   if (state[x] == EVEN) {
     int p = parent[x];
     int g = parent[p];
-    AlterPath(g);
+    AlterPath(root, g);
     matches[p] = g;
     matches[g] = p; 
   } else if (state[x] == ODD) {
     AlterPath(cross_1[x], matches[x]);
     AlterPath(root, cross_2[x]);
-    matches[cross_2[x]] = corss_1[x];
-    matches[corss_1[x]] = cross_2[x];
+    matches[cross_2[x]] = cross_1[x];
+    matches[cross_1[x]] = cross_2[x];
   } else {
     cout << "IMPOSSIBLE: " << state[x];
   }
@@ -150,7 +152,7 @@ int EdmondMatcher::LCA(int root, int x, int y) {
   }
 
   // TODO: clean color from z->b, including b
-  for (i = b; i != z; i = GetBlossom(parent(i))) {
+  for (i = b; i != z; i = GetBlossom(parent[i])) {
     color[i] = NO_COLOR;
   }
   color[z] = NO_COLOR;
@@ -189,7 +191,7 @@ bool EdmondMatcher::BFS(int root) {
   while (!worklist.empty()) {
     int u = worklist.front();
     worklist.pop();
-    for (int i = 0; i < edges[u]; ++i) {
+    for (int i = 0; i < edges[u].size(); ++i) {
       int v = edges[u][i];
       // If u and v are in the same blossom, skip v
       // because v must has been processed before.
@@ -197,7 +199,7 @@ bool EdmondMatcher::BFS(int root) {
 
       // u and v are in different blossom.
       switch(state[v]) {
-        case UNVISITED: {
+        case NO_VISIT: {
           if (matches[v] == NO_MATCH) {
             // EVEN, and find aug path
             AlterPath(root, u);
@@ -216,17 +218,64 @@ bool EdmondMatcher::BFS(int root) {
         }
         break;
         case EVEN: {
-          int b = LCA(root, x, y);
-          Contract(b, x, y);
-          Contract(b, y, x);
+          int b = LCA(root, u, v);
+          Contract(b, u, v);
+          Contract(b, v, u);
         }
         break;
         case ODD:  // skip
         case IMPOSSIBLE:   // skip
-        case default:
+        default:
         break;
       }
     }
   }
   return false;
+}
+
+vector<int> MakeVec(int array[], int cnt) {
+  return vector<int>(array, array + cnt);
+}
+
+void InitGraph(vector<vector<int> >& graph) {
+  int n0[] = {2, 4};
+  int n1[] = {2, 3};
+  int n2[] = {0, 1};
+  int n3[] = {1, 6, 7};
+  int n4[] = {5, 0};
+  int n5[] = {4, 6};
+  int n6[] = {3, 5};
+  int n7[] = {3, 8};
+  int n8[] = {7, 9};
+  int n9[] = {8};
+  graph.push_back(MakeVec(n0, 2));
+  graph.push_back(MakeVec(n1, 2));
+  graph.push_back(MakeVec(n2, 2));
+  graph.push_back(MakeVec(n3, 3));
+  graph.push_back(MakeVec(n4, 2));
+
+  graph.push_back(MakeVec(n5, 2));
+  graph.push_back(MakeVec(n6, 2));
+  graph.push_back(MakeVec(n7, 2));
+  graph.push_back(MakeVec(n8, 2));
+  graph.push_back(MakeVec(n9, 1));
+}
+
+
+// Test
+int main() {
+  vector<vector<int> > graph;
+  InitGraph(graph);
+ 
+  for (int i = 0; i < graph.size(); ++i) {
+    cout << graph[i].size() << endl;
+  }
+
+  EdmondMatcher matcher(graph);
+  cout << "start match:" << endl;
+  vector<int> matches = matcher.Match();
+
+  cout << "match result:" << endl;
+  for (int i = 0; i < matches.size(); ++i) 
+    cout << "match of [" << i << "]: " << matches[i] << endl;
 }
