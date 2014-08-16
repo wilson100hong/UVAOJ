@@ -48,7 +48,6 @@ public:
   }
 
   void ClearLocals() {
-    cout << "Clear locals" << endl;
     state.assign(size, NO_VISIT);
     parent.assign(size, NO_PARENT);
     blossom.clear();
@@ -74,6 +73,23 @@ public:
     blossom[x] = b;
   }
 
+  void DumpVec(const string& str, const vector<int>& vec) {
+    cout << str << ": " << endl;
+    for (int i = 0; i < size; ++i) {
+      cout << vec[i] << ", ";
+    }
+    cout << endl;
+  }
+
+  void Dump() {
+    DumpVec("state", state);
+    DumpVec("matches", matches);
+    DumpVec("parent", parent);
+    DumpVec("blossom", blossom);
+    DumpVec("color", color);
+    DumpVec("cross_1", cross_1);
+    DumpVec("cross_2", cross_2);
+  }
 
   // Local variables in BFS
   queue<int> worklist;
@@ -94,6 +110,7 @@ public:
 };
 
 void EdmondMatcher::AlterPath(int root, int x) {
+  cout << "AlterPath: " << root << ", " << x << endl;
   if (root == x) return;
   // -: unmatch
   // =: match
@@ -101,12 +118,14 @@ void EdmondMatcher::AlterPath(int root, int x) {
   // => r.......g=p-x
   // but we don't need to handle x
   if (state[x] == EVEN) {
+    //cout << "EVEN:" << endl;
     int p = parent[x];
     int g = parent[p];
     AlterPath(root, g);
     matches[p] = g;
     matches[g] = p; 
   } else if (state[x] == ODD) {
+    //cout << "ODD:" << endl;
     AlterPath(cross_1[x], matches[x]);
     AlterPath(root, cross_2[x]);
     matches[cross_2[x]] = cross_1[x];
@@ -117,6 +136,7 @@ void EdmondMatcher::AlterPath(int root, int x) {
 }
 
 int EdmondMatcher::LCA(int root, int x, int y) {
+  cout << "LCA: "  << root << ", " << x << ", " << y << endl;
   // x and y in different blossom.
   int i = GetBlossom(x);  // root ... x is RED
   int j = GetBlossom(y);  // root(not include) ... y is BLUE
@@ -202,6 +222,9 @@ bool EdmondMatcher::BFS(int root) {
         case NO_VISIT: {
           if (matches[v] == NO_MATCH) {
             // EVEN, and find aug path
+            cout << "root: " << root << endl;
+            cout << "path_u: " << u << " _v:" << v << endl;
+            Dump();
             AlterPath(root, u);
             matches[u] = v;
             matches[v] = u;
@@ -268,7 +291,9 @@ int main() {
   InitGraph(graph);
  
   for (int i = 0; i < graph.size(); ++i) {
-    cout << graph[i].size() << endl;
+    for (int j = 0; j < graph[i].size(); ++j) 
+      cout << graph[i][j] << ",";
+    cout << endl;
   }
 
   EdmondMatcher matcher(graph);
