@@ -68,31 +68,33 @@ public:
   void ClearLocals() {
     state_.assign(size_, NO_VISIT);
     parent_.assign(size_, NO_PARENT);
-    blossom.clear();
+    blossom_.clear();
     for (int i = 0; i < size_; ++i) {
-      blossom.push_back(i);
+      blossom_.push_back(i);
     }
     color.assign(size_, NO_COLOR);
     cross_1.assign(size_, NO_CROSS);
     cross_2.assign(size_, NO_CROSS);
   }
 
+  // Return the the root of blossom x belongs. Return x itself if
+  // not in any blossom.
+  // Also recursively update x's ancestor upto to blossom root.
   int GetBlossom(int x) {
-    // Also recursively update blossom
-    if (x != blossom[x])
-      blossom[x] = GetBlossom(parent_[x]);
-    return blossom[x];
+    if (x != blossom_[x])
+      blossom_[x] = GetBlossom(parent_[x]);
+    return blossom_[x];
   }
 
-  void Union(int b, int x) {
-    blossom[x] = b;
-  }
+  //void Union(int b, int x) {
+    //blossom_[x] = b;
+  //}
 
   void Dump() {
     DumpVec("state", state_);
     DumpVec("matches", matches_);
     DumpVec("parent", parent_);
-    DumpVec("blossom", blossom);
+    DumpVec("blossom", blossom_);
     DumpVec("color", color);
     DumpVec("cross_1", cross_1);
     DumpVec("cross_2", cross_2);
@@ -103,8 +105,9 @@ public:
   
   vector<int> state_;   // NO_VISIT, EVEN, ODD or IMPOSSIBLE
   vector<int> parent_;  // node's immediate parent node
+
   // nodes in same blossom has value equals to blossom root.
-  vector<int> blossom;
+  vector<int> blossom_;
   vector<int> color;
   vector<int> cross_1;
   vector<int> cross_2;
@@ -197,7 +200,8 @@ int EdmondMatcher::LCA(int root, int x, int y) {
 void EdmondMatcher::Contract(int b, int x, int y, queue<int>& worklist) {
   for (int i = GetBlossom(x); i != b; i = GetBlossom(parent_[i])) {
     // here i is either a not-contracted node or root of the blossom
-    Union(b, i);
+    //Union(b, i);
+    blossom_[i] = b;
     // An ODD node n is only handled once here: when it is contracted the first time.
     // It will never be considered later.
     // 1. GetBlossom(n) never return the n. It will return the blossom root instead
@@ -216,17 +220,18 @@ void EdmondMatcher::Contract(int b, int x, int y, queue<int>& worklist) {
 // Return true if there is augmented path from root.
 bool EdmondMatcher::BFS(int root) {
   state_[root] = EVEN;  // root is always EVEN 
-  parent_[root] = root;
+  parent_[root] = root;  // and itself parent
 
   queue<int> worklist;
   worklist.push(root);
+
   while (!worklist.empty()) {
     int u = worklist.front();
     worklist.pop();
     for (int i = 0; i < edges_[u].size(); ++i) {
       int v = edges_[u][i];
       // If u and v are in the same blossom, skip v
-      // because v must has been processed before.
+      // because v has been processed before.
       if (GetBlossom(u) == GetBlossom(v)) continue;
 
       // u and v are in different blossom.
