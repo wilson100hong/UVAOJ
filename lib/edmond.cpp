@@ -2,6 +2,7 @@
 #include <map>
 #include <vector>
 #include <queue>
+#include <assert.h>
 
 using namespace std;
 
@@ -72,7 +73,7 @@ public:
     for (int i = 0; i < size_; ++i) {
       blossom_.push_back(i);
     }
-    color.assign(size_, NO_COLOR);
+    color_.assign(size_, NO_COLOR);
     cross_1.assign(size_, NO_CROSS);
     cross_2.assign(size_, NO_CROSS);
   }
@@ -95,7 +96,7 @@ public:
     DumpVec("matches", matches_);
     DumpVec("parent", parent_);
     DumpVec("blossom", blossom_);
-    DumpVec("color", color);
+    DumpVec("color", color_);
     DumpVec("cross_1", cross_1);
     DumpVec("cross_2", cross_2);
   }
@@ -108,7 +109,7 @@ public:
 
   // nodes in same blossom has value equals to blossom root.
   vector<int> blossom_;
-  vector<int> color;
+  vector<int> color_;
   vector<int> cross_1;
   vector<int> cross_2;
   
@@ -148,16 +149,22 @@ void EdmondMatcher::AlterPath(int root, int x) {
 // Find the Least Common Ancestor of node x and y, given root.
 int EdmondMatcher::LCA(int root, int x, int y) {
 #ifdef DEBUG
-  cout << "LCA for: {" << x << "," << y << "}, root" << root << endl;
+  cout << "LCA for: {" << x << "," << y << "} with root: " << root << endl;
 #endif
 
-  // x and y in different blossom.
-  int i = GetBlossom(x);  // root ... x is RED
-  int j = GetBlossom(y);  // root(not include) ... y is BLUE
+  // x and y should be in different blossom.
+  int i = GetBlossom(x);  // i is the root of blossom x belongs
+  int j = GetBlossom(y);  // j is the root of blossom y belongs
+  assert(i != j);
 
-  // color nodes iterativaly on their blossoms until:
-  // 1. node collision: i == j
-  // 2. node meet different color node, which is the path of the other path:
+  // NOTE: If we paint the root of blossom, all included nodes are painted
+  //       because we always use GetBlossom(node) to compare color.
+  // NOTE: since x and y are in different blossom, their root of blossom should
+  // be colorless.
+  // We let the path from i is RED, path from j is BLUE, then keep painting
+  // util:
+  // 1. i == j 
+  // 2. path hits node with different color, such as
   //    a. color[i] is BLUE
   //    b. color[j] is RED
   while(i != j && color[i] != BLUE && color[j] != RED) {
@@ -169,6 +176,8 @@ int EdmondMatcher::LCA(int root, int x, int y) {
       j = GetBlossom(parent_[j]);
   }
 
+  // let b: root of blossom, 
+  //     z: the node painted in this round which closest to root.
   //           ----x
   //  r---i--j/
   //          \--y    => color[i] is RED: z = i, b = j
@@ -177,7 +186,7 @@ int EdmondMatcher::LCA(int root, int x, int y) {
   //  r---j--i/
   //          \----y  => color[i] is BLUE: z = j, b = i
   int z, b;
-  if (color[i] == RED) {
+  if (color_[i] == RED) {
     z = i;
     b = j;
   } else {  // color[i] == BLUE
@@ -185,14 +194,15 @@ int EdmondMatcher::LCA(int root, int x, int y) {
     b = i;
   }
 
-  // TODO: clean color from z->b, including b
+  // We then all blossom root's color from b -> z, including b.
   for (i = b; i != z; i = GetBlossom(parent_[i])) {
-    color[i] = NO_COLOR;
+    color_[i] = NO_COLOR;
   }
-  color[z] = NO_COLOR;
+  color_[z] = NO_COLOR;
 
-  // we don't need to clear b->x and b->y, because GetBlossom(x) and GetBlossom(y)
-  // should return b and skip all colored nodes. This is smart!
+  // NOTE: we don't need to clear color from x -> b or y -> b,
+  //       because GetBlossom(x) and GetBlossom(y)
+  //       should return b and skip all colored nodes. This is smart!
   return b;
 }
 
@@ -230,24 +240,26 @@ bool EdmondMatcher::BFS(int root) {
     worklist.pop();
     for (int i = 0; i < edges_[u].size(); ++i) {
       int v = edges_[u][i];
-      // If u and v are in the same blossom, skip v
-      // because v has been processed before.
+      // If u and v are in same blossom, skip v because already processed.
       if (GetBlossom(u) == GetBlossom(v)) continue;
 
       // u and v are in different blossom.
       switch(state_[v]) {
         case NO_VISIT: {
-          if (matches[v] == NO_MATCH) { // EVEN, aug path found
-            cout << "root: " << root << endl;
-            cout << "path_u: " << u << " _v:" << v << endl;
+          if (matches[v] == NO_MATCH) { // v is EVEN and aug-path found
+# ifdef DEBUG
+            cout << "Find aug-path, root: " << root 
+                 << "u: " << u << ", v: " << v << endl;
             Dump();
+#endif 
             AlterPath(root, u);
             matches[u] = v;
             matches[v] = u;
             return true;
-          } else {  // ODD
+          } else {  // v is matched so is ODD
             state_[v] = ODD;
             parent_[v] = u;
+            // Extend w from v
             int w = matches[v];
             state_[w] = EVEN;
             parent_[w] = v;
@@ -255,14 +267,18 @@ bool EdmondMatcher::BFS(int root) {
           }
         }
         break;
+
         case EVEN: {
           int b = LCA(root, u, v);
           Contract(b, u, v, worklist);
           Contract(b, v, u, worklist);
         }
         break;
-        case ODD:  // skip
-        case IMPOSSIBLE:   // skip
+
+        // Skip ODD because already processed.
+        case ODD:
+        // Skip IMPOSSIBLE because no aug-path can be found from this node.
+        case IMPOSSIBLE:
         default:
         break;
       }
