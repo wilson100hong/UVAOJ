@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// TODO: put into class's enums
 #define NO_MATCH -1
 #define NO_PARENT -1
 #define NO_CROSS -1
@@ -73,11 +74,9 @@ public:
         if (!BFS(i)) {
           state_[i] = IMPOSSIBLE;
         }
-#ifdef DEBUG
-        else {
-          DumpVec("matches", matches_);
-        }
-#endif
+        //else {
+          //DumpVec("matches", matches_);
+        //}
       }
     }
     return matches_;
@@ -92,19 +91,15 @@ public:
     return blossom_[x];
   }
 
-  //void Union(int b, int x) {
-    //blossom_[x] = b;
+  //void Dump() {
+    //DumpVec("state", state_);
+    //DumpVec("matches", matches_);
+    //DumpVec("parent", parent_);
+    //DumpVec("blossom", blossom_);
+    //DumpVec("color", color_);
+    //DumpVec("cross_1", cross_1);
+    //DumpVec("cross_2", cross_2);
   //}
-
-  void Dump() {
-    DumpVec("state", state_);
-    DumpVec("matches", matches_);
-    DumpVec("parent", parent_);
-    DumpVec("blossom", blossom_);
-    DumpVec("color", color_);
-    DumpVec("cross_1", cross_1);
-    DumpVec("cross_2", cross_2);
-  }
 
   // Local variables in BFS
   //queue<int> worklist;
@@ -213,7 +208,6 @@ int EdmondMatcher::LCA(int root, int x, int y) {
 void EdmondMatcher::Contract(int b, int x, int y, queue<int>& worklist) {
   for (int i = GetBlossom(x); i != b; i = GetBlossom(parent_[i])) {
     // i is either a) a not-contracted node or b) root of sub-blossom
-    //Union(b, i);
     blossom_[i] = b;  // Union
     // The spirit of Contract is to "fan out" from ODD nodes because now ODD nodes
     // can be treat as EVEN nodes by cross edge. 
@@ -251,10 +245,10 @@ bool EdmondMatcher::BFS(int root) {
         case NO_VISIT: {
           if (matches_[v] == NO_MATCH) { // v is EVEN and aug-path found
 # ifdef DEBUG
-            cout << endl;
-            cout << "Find augmented path, root: " << root 
-                 << ", u: " << u << ", v: " << v << endl;
-            Dump();
+            //cout << endl;
+            //cout << "Find augmented path, root: " << root 
+                 //<< ", u: " << u << ", v: " << v << endl;
+            //Dump();
 #endif 
             Relax(root, u);
             matches_[u] = v;
