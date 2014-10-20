@@ -19,7 +19,7 @@ using namespace std;
 #define RED 1
 #define BLUE 2
 
-#define DEBUG
+//#define DEBUG
 
 vector<int> MakeVec(int array[], int cnt) {
   return vector<int>(array, array + cnt);
@@ -36,7 +36,7 @@ void DumpGraph(const vector<vector<int> >& graph) {
 void DumpVec(const string& str, const vector<int>& vec) {
   cout << str << ": " << endl;
   for (int i = 0; i < vec.size(); ++i) {
-    cout << vec[i] << ", ";
+    cout << vec[i] << " ";
   }
   cout << endl;
 }
@@ -49,22 +49,9 @@ public:
   }
 
   bool BFS(int root);
-  void AlterPath(int root, int x);
+  void Relax(int root, int x);
   int LCA(int root, int x, int y);
-  void Contract(int b, int x, int y);
-
-  vector<int> Match() {
-    matches_.assign(size_, NO_MATCH);
-    for (int i = 0; i < size_; ++i) {
-      if (matches_[i] == NO_MATCH) {
-        ClearLocals();
-        if (!BFS(i)) {
-          state_[i] = IMPOSSIBLE;
-        }
-      }
-    }
-    return matches_;
-  }
+  void Contract(int b, int x, int y, queue<int>& worklist);
 
   void ClearLocals() {
     state_.assign(size_, NO_VISIT);
@@ -76,6 +63,24 @@ public:
     color_.assign(size_, NO_COLOR);
     cross_1.assign(size_, NO_CROSS);
     cross_2.assign(size_, NO_CROSS);
+  }
+
+  vector<int> Match() {
+    matches_.assign(size_, NO_MATCH);
+    for (int i = 0; i < size_; ++i) {
+      if (matches_[i] == NO_MATCH) {
+        ClearLocals();
+        if (!BFS(i)) {
+          state_[i] = IMPOSSIBLE;
+        }
+#ifdef DEBUG
+        else {
+          DumpVec("matches", matches_);
+        }
+#endif
+      }
+    }
+    return matches_;
   }
 
   // Return the the root of blossom x belongs. Return x itself if
@@ -119,28 +124,28 @@ public:
   vector<int> matches_;
 };
 
-// TODO: comment
-void EdmondMatcher::AlterPath(int root, int x) {
-  cout << "AlterPath: " << root << ", " << x << endl;
+// -: unmatch
+// =: match
+//    root-.......g-p=x
+// => root=.......g=p-x
+void EdmondMatcher::Relax(int root, int x) {
+#ifdef DEBUG
+  cout << "Relax root: " << root << ", leaf: " << x << endl;
+#endif 
   if (root == x) return;
-  // -: unmatch
-  // =: match
-  //    r.......g-p=x
-  // => r.......g=p-x
-  // but we don't need to handle x
   if (state_[x] == EVEN) {
     //cout << "EVEN:" << endl;
     int p = parent_[x];
     int g = parent_[p];
-    AlterPath(root, g);
-    matches[p] = g;
-    matches[g] = p; 
+    Relax(root, g);
+    matches_[p] = g;
+    matches_[g] = p; 
   } else if (state_[x] == ODD) {
     //cout << "ODD:" << endl;
-    AlterPath(cross_1[x], matches[x]);
-    AlterPath(root, cross_2[x]);
-    matches[cross_2[x]] = cross_1[x];
-    matches[cross_1[x]] = cross_2[x];
+    Relax(matches_[x], cross_1[x]);
+    Relax(root, cross_2[x]);
+    matches_[cross_2[x]] = cross_1[x];
+    matches_[cross_1[x]] = cross_2[x];
   } else {
     cout << "IMPOSSIBLE: " << state_[x];
   }
@@ -148,9 +153,6 @@ void EdmondMatcher::AlterPath(int root, int x) {
 
 // Find the Least Common Ancestor of node x and y, given root.
 int EdmondMatcher::LCA(int root, int x, int y) {
-#ifdef DEBUG
-  cout << "LCA for: {" << x << "," << y << "} with root: " << root << endl;
-#endif
 
   // x and y should be in different blossom.
   int i = GetBlossom(x);  // i is the root of blossom x belongs
@@ -167,9 +169,9 @@ int EdmondMatcher::LCA(int root, int x, int y) {
   // 2. path hits node with different color, such as
   //    a. color[i] is BLUE
   //    b. color[j] is RED
-  while(i != j && color[i] != BLUE && color[j] != RED) {
-    color[i] = RED;
-    color[j] = BLUE;
+  while(i != j && color_[i] != BLUE && color_[j] != RED) {
+    color_[i] = RED;
+    color_[j] = BLUE;
     if (i != root)
       i = GetBlossom(parent_[i]);
     if (j != root)
@@ -206,20 +208,21 @@ int EdmondMatcher::LCA(int root, int x, int y) {
   return b;
 }
 
-
+// Contract nodes into a blossom. B is the root of blossom, edge x-y is the
+// cross edge.
 void EdmondMatcher::Contract(int b, int x, int y, queue<int>& worklist) {
   for (int i = GetBlossom(x); i != b; i = GetBlossom(parent_[i])) {
-    // here i is either a not-contracted node or root of the blossom
+    // i is either a) a not-contracted node or b) root of sub-blossom
     //Union(b, i);
-    blossom_[i] = b;
-    // An ODD node n is only handled once here: when it is contracted the first time.
-    // It will never be considered later.
-    // 1. GetBlossom(n) never return the n. It will return the blossom root instead
-    // 2. BFS never push n into worklist.
+    blossom_[i] = b;  // Union
+    // The spirit of Contract is to "fan out" from ODD nodes because now ODD nodes
+    // can be treat as EVEN nodes by cross edge. 
+    // An ODD node is only handle once in Contract in one BFS.
     if (state_[i] == ODD) {
-      //    --i----x      c1[i] = x
-      //  b/   
-      //   \--y        => c2[i] = y
+      // The meaning of cross edge:
+      //    --i----x   => x is cross_1[i]
+      //  b/    
+      //   \--y        => y is cross_2[i]
       cross_1[i] = x;
       cross_2[i] = y;
       worklist.push(i);
@@ -246,21 +249,22 @@ bool EdmondMatcher::BFS(int root) {
       // u and v are in different blossom.
       switch(state_[v]) {
         case NO_VISIT: {
-          if (matches[v] == NO_MATCH) { // v is EVEN and aug-path found
+          if (matches_[v] == NO_MATCH) { // v is EVEN and aug-path found
 # ifdef DEBUG
-            cout << "Find aug-path, root: " << root 
-                 << "u: " << u << ", v: " << v << endl;
+            cout << endl;
+            cout << "Find augmented path, root: " << root 
+                 << ", u: " << u << ", v: " << v << endl;
             Dump();
 #endif 
-            AlterPath(root, u);
-            matches[u] = v;
-            matches[v] = u;
+            Relax(root, u);
+            matches_[u] = v;
+            matches_[v] = u;
             return true;
           } else {  // v is matched so is ODD
             state_[v] = ODD;
             parent_[v] = u;
             // Extend w from v
-            int w = matches[v];
+            int w = matches_[v];
             state_[w] = EVEN;
             parent_[w] = v;
             worklist.push(w);
@@ -269,9 +273,15 @@ bool EdmondMatcher::BFS(int root) {
         break;
 
         case EVEN: {
+#ifdef DEBUG
+  cout << endl << "LCA for: {" << u << "," << v << "} with root: " << root << endl;
+#endif
           int b = LCA(root, u, v);
           Contract(b, u, v, worklist);
           Contract(b, v, u, worklist);
+#ifdef DEBUG
+  cout << "blossom: " << b << endl;
+#endif 
         }
         break;
 
@@ -310,18 +320,14 @@ void InitGraph(vector<vector<int> >& graph) {
   graph.push_back(MakeVec(n8, 2));
   graph.push_back(MakeVec(n9, 1));
 }
+
 // Test
 int main() {
   vector<vector<int> > graph;
   InitGraph(graph);
-  //DumpGraph(graph);
  
   EdmondMatcher matcher(graph);
-  cout << "start match:" << endl;
   vector<int> matches = matcher.Match();
 
-  //cout << "match result:" << endl;
-  //for (int i = 0; i < matches.size(); ++i) {
-    //cout << "match of [" << i << "]: " << matches[i] << endl;
-  //}
+  DumpVec("result", matches);
 }
