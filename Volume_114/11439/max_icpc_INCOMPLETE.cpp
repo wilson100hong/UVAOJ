@@ -26,8 +26,10 @@ public:
     matches_.assign(size_, NO_MATCH);
 
     // Greedy match first, then Edmond
+    cout << "Greedy start" << endl;
     Greedy();
 
+    cout << "Edmond start" << endl;
     for (int i = 0; i < size_; ++i) {
       if (matches_[i] == NO_MATCH) {
         ClearLocals();
@@ -40,6 +42,10 @@ public:
   }
 
 private:
+  bool HasEdge(int u, int v) {
+    return u != v && (graph_[u][v] >= threshold_);
+  }
+
   void Greedy() {
     for (int u = 0; u < size_; ++u) {
       for (int v = 0; v < size_; ++v) {
@@ -51,10 +57,6 @@ private:
         }
       }
     }
-  }
-
-  bool HasEdge(int u, int v) {
-    return u != v && (graph_[u][v] >= threshold_);
   }
 
   void ClearLocals() {
@@ -70,8 +72,11 @@ private:
   }
 
   int GetBlossom(int x) {
-    if (x != blossom_[x])
-      blossom_[x] = GetBlossom(blossom_[x]);
+    // TODO: here has inf loop
+    cout << "    GetBlossom, x= " << x << endl;
+    if (x == blossom_[x]) return x;
+    blossom_[x] = GetBlossom(blossom_[x]);
+    cout << "    GetBlossom, blossom_[x]= " << blossom_[x] << endl;
     return blossom_[x];
   }
 
@@ -80,6 +85,7 @@ private:
     int j = GetBlossom(y); 
 
     while(i != j && color_[i] != BLUE && color_[j] != RED) {
+      cout << "    inf loop... " << endl;
       color_[i] = RED;
       color_[j] = BLUE;
       if (i != root)
@@ -87,7 +93,6 @@ private:
       if (j != root)
         j = GetBlossom(parent_[j]);
     }
-
     int z, b;
     if (color_[i] == RED) {
       z = i;
@@ -96,12 +101,10 @@ private:
       z = j;
       b = i;
     }
-
     for (i = b; i != z; i = GetBlossom(parent_[i])) {
       color_[i] = NO_COLOR;
     }
     color_[z] = NO_COLOR;
-
     return b;
   }
   
@@ -133,6 +136,7 @@ private:
   }
 
   bool BFS(int root) {
+    cout << "BFS start" << endl;
     state_[root] = EVEN;
     parent_[root] = root;
 
@@ -140,14 +144,16 @@ private:
     worklist.push(root);
 
     while (!worklist.empty()) {
-      int u = worklist.front();
-      worklist.pop();
-      for (int v = 0; v < graph_[u].size(); ++v) {
+      int u = worklist.front();  worklist.pop();
+      cout << "traverse from u = " << u << endl;
+      for (int v = 0; v < size_; ++v) {
         if (!HasEdge(u, v)) continue;
         if (GetBlossom(u) == GetBlossom(v)) continue;
 
+        cout << " v=" << v << endl;
         switch(state_[v]) {
           case NO_VISIT: {
+            cout << "  NO_VISIT " << endl;
             if (matches_[v] == NO_MATCH) {
               Relax(root, u);
               matches_[u] = v;
@@ -164,14 +170,18 @@ private:
           }
           break;
           case EVEN: {
+            cout << "  EVEN " << endl;
             int b = LCA(root, u, v);
+            cout << "  LCA: " << b << endl;
             Contract(b, u, v, worklist);
             Contract(b, v, u, worklist);
+            cout << "  contracted done" << endl;
           }
           break;
           case ODD:
           case IMPOSSIBLE:
           default:
+            cout << "  NEVERMIND " << endl;
           break;
         }
       }
@@ -221,20 +231,13 @@ struct score_compare {
   }
 };
 
-int pow2(int n) {
-  int s = 1;
-  while (n-- > 0)
-    s *= 2;
-  return s;
-}
-
 int main () {
   int T;  cin >> T;
   vector<vector<int> > graph;
   for (int t = 1; t <= T; t++) {
     // Get Input
-    int logN;  cin >> logN;
-    int N = pow2(logN);
+    int W;  cin >> W;
+    int N = 1 << W;
 
     graph.clear();
     for (int n = 0; n < N; ++n) {
@@ -258,22 +261,27 @@ int main () {
       sorted_scores.push_back(*it);
     }
     //cout << endl;
-    //DumpVector(sorted_scores);
+    DumpVector(sorted_scores);
     //DumpGraph(graph);
     
     // Binary Search
     EdmondMatcher matcher(graph);
+    vector<int> matched;
     int L = 0, H = sorted_scores.size() - 1;
     while (L < H) {
       int MID = (L + 1 + H) / 2;  // round up
-      vector<int> matched = matcher.Match(sorted_scores[MID]);
+      cout << "threshold: " << sorted_scores[MID] << endl;
+      matched = matcher.Match(sorted_scores[MID]);
       if (AllMatch(matched)) {
         L = MID;
       } else {
         H = MID - 1;
       }
     }
-    //cout << L << endl;
-    cout << "Case " << t << ": " << sorted_scores[L] << endl;
+    cout << L << endl;
+    int best = sorted_scores[L];
+    DumpVector(matcher.Match(best));
+    cout << "Case " << t << ": " << best << endl;
+    
   }
 }
