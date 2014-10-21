@@ -152,7 +152,6 @@ int Intersect(Point2D p1, Point2D p2, Point2D p3, Point2D p4, Point2D& intr) {
    return 1;
 }
 
-
 class ConvexHull{
 public:
    ConvexHull() {}
