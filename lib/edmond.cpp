@@ -87,7 +87,7 @@ public:
   // Also recursively update x's ancestor upto to blossom root.
   int GetBlossom(int x) {
     if (x != blossom_[x])
-      blossom_[x] = GetBlossom(parent_[x]);
+      blossom_[x] = GetBlossom(blossom_[x]);
     return blossom_[x];
   }
 
