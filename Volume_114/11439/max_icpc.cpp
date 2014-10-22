@@ -9,7 +9,18 @@ using namespace std;
 #define NO_PARENT -1
 #define NO_CROSS -1
 
-// ---- Edmond start ----
+bool AllMatch(const vector<int>& matched) {
+  for (int i = 0; i < matched.size(); ++i) {
+    if (matched[i] == NO_MATCH) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// General Matcher that applied Edmond Algorithm.
+// wiki: http://en.wikipedia.org/wiki/Edmonds'_algorithm
+// refer: http://www.csie.ntnu.edu.tw/~u91029/Matching.html
 class EdmondMatcher{
 public:
   enum Color { NO_COLOR, RED, BLUE };
@@ -24,12 +35,9 @@ public:
   vector<int> Match(int threshold) {
     threshold_ = threshold;
     matches_.assign(size_, NO_MATCH);
-
-    // Greedy match first, then Edmond
-    cout << "Greedy start" << endl;
+    // Greedy match first
     Greedy();
-
-    cout << "Edmond start" << endl;
+    // Edmond to find augmented path
     for (int i = 0; i < size_; ++i) {
       if (matches_[i] == NO_MATCH) {
         ClearLocals();
@@ -72,11 +80,9 @@ private:
   }
 
   int GetBlossom(int x) {
-    // TODO: here has inf loop
-    cout << "    GetBlossom, x= " << x << endl;
-    if (x == blossom_[x]) return x;
+    if (x == blossom_[x])
+      return x;
     blossom_[x] = GetBlossom(blossom_[x]);
-    cout << "    GetBlossom, blossom_[x]= " << blossom_[x] << endl;
     return blossom_[x];
   }
 
@@ -85,7 +91,6 @@ private:
     int j = GetBlossom(y); 
 
     while(i != j && color_[i] != BLUE && color_[j] != RED) {
-      cout << "    inf loop... " << endl;
       color_[i] = RED;
       color_[j] = BLUE;
       if (i != root)
@@ -93,13 +98,9 @@ private:
       if (j != root)
         j = GetBlossom(parent_[j]);
     }
-    int z, b;
-    if (color_[i] == RED) {
-      z = i;
-      b = j;
-    } else {
-      z = j;
-      b = i;
+    int z = i, b = j;
+    if (color_[i] == BLUE) {
+      swap(z, b);
     }
     for (i = b; i != z; i = GetBlossom(parent_[i])) {
       color_[i] = NO_COLOR;
@@ -136,24 +137,19 @@ private:
   }
 
   bool BFS(int root) {
-    cout << "BFS start" << endl;
     state_[root] = EVEN;
     parent_[root] = root;
 
     queue<int> worklist;
     worklist.push(root);
-
     while (!worklist.empty()) {
       int u = worklist.front();  worklist.pop();
-      cout << "traverse from u = " << u << endl;
       for (int v = 0; v < size_; ++v) {
         if (!HasEdge(u, v)) continue;
         if (GetBlossom(u) == GetBlossom(v)) continue;
 
-        cout << " v=" << v << endl;
         switch(state_[v]) {
           case NO_VISIT: {
-            cout << "  NO_VISIT " << endl;
             if (matches_[v] == NO_MATCH) {
               Relax(root, u);
               matches_[u] = v;
@@ -170,18 +166,14 @@ private:
           }
           break;
           case EVEN: {
-            cout << "  EVEN " << endl;
             int b = LCA(root, u, v);
-            cout << "  LCA: " << b << endl;
             Contract(b, u, v, worklist);
             Contract(b, v, u, worklist);
-            cout << "  contracted done" << endl;
           }
           break;
           case ODD:
           case IMPOSSIBLE:
           default:
-            cout << "  NEVERMIND " << endl;
           break;
         }
       }
@@ -201,29 +193,6 @@ private:
   vector<int> matches_;
   int threshold_;
 };
-// ---- Edmond end ----
-
-void DumpVector(const vector<int>& vec) {
-  for (int i = 0; i < vec.size(); ++i) {
-    cout << vec[i] << " ";
-  }
-  cout << endl;
-}
-
-void DumpGraph(const vector<vector<int> >& graph) {
-  for (int i = 0; i < graph.size(); ++i) {
-    DumpVector(graph[i]);
-  }
-}
-
-bool AllMatch(const vector<int>& matched) {
-  for (int i = 0; i < matched.size(); ++i) {
-    if (matched[i] == NO_MATCH) {
-      return false;
-    }
-  }
-  return true;
-}
 
 struct score_compare {
   bool operator() (const int& a, const int& b) const {
@@ -238,7 +207,6 @@ int main () {
     // Get Input
     int W;  cin >> W;
     int N = 1 << W;
-
     graph.clear();
     for (int n = 0; n < N; ++n) {
       vector<int> edges; 
@@ -260,9 +228,6 @@ int main () {
         it != scores.end(); ++it) {
       sorted_scores.push_back(*it);
     }
-    //cout << endl;
-    DumpVector(sorted_scores);
-    //DumpGraph(graph);
     
     // Binary Search
     EdmondMatcher matcher(graph);
@@ -270,7 +235,6 @@ int main () {
     int L = 0, H = sorted_scores.size() - 1;
     while (L < H) {
       int MID = (L + 1 + H) / 2;  // round up
-      cout << "threshold: " << sorted_scores[MID] << endl;
       matched = matcher.Match(sorted_scores[MID]);
       if (AllMatch(matched)) {
         L = MID;
@@ -278,10 +242,7 @@ int main () {
         H = MID - 1;
       }
     }
-    cout << L << endl;
     int best = sorted_scores[L];
-    DumpVector(matcher.Match(best));
     cout << "Case " << t << ": " << best << endl;
-    
   }
 }

@@ -175,20 +175,24 @@ int EdmondMatcher::LCA(int root, int x, int y) {
 
   // let b: root of blossom, 
   //     z: the node painted in this round which closest to root.
-  //           ----x
+  //
+  //           ----x    i, j collide
+  //  r------*/
+  //          \--y    => i == j: z = i = b = j
+  //         
+  //           ----x    i lead
   //  r---i--j/
-  //          \--y    => color[i] is RED: z = i, b = j
+  //          \--y    => color[j] is RED: z = i, b = j
   // 
-  //           --x
+  //           --x      j lead
   //  r---j--i/
   //          \----y  => color[i] is BLUE: z = j, b = i
-  int z, b;
-  if (color_[i] == RED) {
-    z = i;
-    b = j;
-  } else {  // color[i] == BLUE
-    z = j;
-    b = i;
+  //
+  // simplify the condition:
+  //
+  int z = i, b = j;
+  if (color_[i] == BLUE) {
+    swap(z, b);
   }
 
   // We then all blossom root's color from b -> z, including b.
@@ -291,6 +295,7 @@ bool EdmondMatcher::BFS(int root) {
   return false;
 }
 
+// Test
 void InitGraph(vector<vector<int> >& graph) {
   int n0[] = {2, 4};
   int n1[] = {2, 3};
@@ -315,7 +320,6 @@ void InitGraph(vector<vector<int> >& graph) {
   graph.push_back(MakeVec(n9, 1));
 }
 
-// Test
 int main() {
   vector<vector<int> > graph;
   InitGraph(graph);
