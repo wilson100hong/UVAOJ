@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -8,25 +9,40 @@ using namespace std;
 #define LAND -2
 
 int N, M;
-int index = 0;
+int COLOR = 0;
 int cells[MAX][MAX];
 int dn[] = {-1, -1, -1, 0, 1, 1,  1,  0};
 int dm[] = {-1,  0,  1, 1, 1, 0, -1, -1};
 
 int DFS(int n, int m) {
-  cells[n][m] = index;  // coloring
+  cells[n][m] = COLOR;  // coloring
   int area = 1;
   for (int i = 0; i < 8; ++i) {
-    int nn = n + dn;
-    int mm = m + dm;
+    int nn = n + dn[i];
+    int mm = m + dm[i];
     if (0 <= nn && nn < N && 0 <= mm && mm < M &&
-        celss[nn][mm] == NON_VISIT) {
+        cells[nn][mm] == NON_VISIT) {
       area += DFS(nn, mm);
     }
   }
   return area;
 }
 
+char Int2Char(int x) {
+  if (x == LAND) return 'L';
+  return (char) (x + 'a');
+}
+
+
+void DumpCells() {
+  for (int n = 0; n < N; ++n) {
+    for (int m = 0; m < M; ++m) {
+      cout << Int2Char(cells[n][m]);
+    }
+    cout << endl;
+  }
+
+}
 
 int main() {
   int rounds;
@@ -39,6 +55,7 @@ int main() {
   getline(cin, line); 
   getline(cin, line); 
 
+  bool first = true;
   while (rounds-- > 0) {
     land_strs.clear();
     queries.clear();
@@ -61,16 +78,34 @@ int main() {
       }
     }
 
-    index = 0;
+    COLOR = 0;
     areas.clear();
     for (int n = 0; n < N; ++n) {
       for (int m = 0; m < M; ++m) {
         if (cells[n][m] == NON_VISIT) {
           int area = DFS(n, m);
-          lakes.push_back(area);
-          index++;
+          areas.push_back(area);
+          COLOR++;
         }
       }
+    }
+
+/*
+    DumpCells();
+    for (int i = 0; i < areas.size(); ++i) 
+      cout << areas[i] << " ";
+    cout << endl;
+    */
+
+    if (!first) cout << endl;
+    first = false;
+
+    for (int i = 0; i < queries.size(); ++i) {
+      stringstream ss(queries[i]);
+      int qn, qm;
+      ss >> qn >> qm;
+      qn--; qm--;
+      cout << areas[cells[qn][qm]] << endl;
     }
   }
 }
