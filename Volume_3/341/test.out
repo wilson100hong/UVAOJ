@@ -1,0 +1,6 @@
+Case 1: Path = 2 1 4; 8 second delay
+Case 2: Path = 1 2; 5 second delay
+Case 3: Path = 1 2 3 6 7; 20 second delay
+Case 4: Path = 3 4 1 2; 66 second delay
+Case 5: Path = 1 3 4; 3 second delay
+Case 6: Path = 1 3 2; 10 second delay
