@@ -1,9 +1,8 @@
 UVAOJ
 =====
 
-UVA OJ problem solutions.
+UVA online judge solutions.
 
 see http://uva.onlinejudge.org/
 
-Solving UVA problems is my hobit. However, keep getting WA and lacking of test cases drove me nut.
-Hopefully my AC solutions can give you some hint when you are debugging it. :)
+Sometimes I struggle in WA (wrong answer) and cannot figure out how to fix it. A good test case usually help me address the bug. So I try to add helpful test cases in each problem as possible.
