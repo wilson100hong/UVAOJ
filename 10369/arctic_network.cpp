@@ -1,3 +1,18 @@
+// I use Krusal's in this problem since we need to union edges by the ordering of its weight. 
+// Prim probably does not works because it consider the "distance between nodes" instead of "weight of edge".
+// Eg.
+//
+// a -- b -- c -- d
+// |______________|
+//
+// (a, b) = 20
+// (b, c) = 30
+// (c, d) = 20
+// (a, d) = 10000
+// 
+// The answer is D = 20, with satelite between (b, c)
+// If we use Prim from a, it will consider a->b->c->d in order, thus not knowing where is the
+// best place to use satelite.
 #include <algorithm> 
 #include <iostream>
 #include <iomanip>
