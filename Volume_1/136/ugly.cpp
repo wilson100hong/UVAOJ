@@ -1,14 +1,17 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+
 int min(int a, int b) {
   return a < b ? a : b;  
 }
+
+int TH = 1500;
 int main() {
-  int th = 1500;
-  int* sol= new int[th];
+  vector<int> sol(TH, 0);
   sol[0] = 1;
   int n = 0;
-  while (n < th - 1) {
+  while (n < TH - 1) {
     int cur = sol[n];
     int i, j, k = 0;
     
@@ -22,10 +25,7 @@ int main() {
     ;
     }
 
-    int solution = min(sol[i]*2, min(sol[j]*3, sol[k]*5));
-    sol[n + 1] = solution;
-    n++;
+    sol[++n] = min(sol[i]*2, min(sol[j]*3, sol[k]*5));
   }
-  cout << "The 1500'th ugly number is " << sol[th-1] << "." << endl;
-  delete sol;
+  cout << "The 1500'th ugly number is " << sol[TH - 1] << "." << endl;
 }
