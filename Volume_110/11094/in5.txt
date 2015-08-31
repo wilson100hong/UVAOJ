@@ -1,0 +1,49 @@
+5 5
+wwwww
+wwllw
+wwwww
+wllww
+wwwww
+1 3
+
+6 6
+----l-
+l---l-
+l-----
+------
+--l---
+------
+4 2
+
+6 6
+l---ll
+------
+------
+------
+--l---
+------
+0 0
+
+20 20
+vqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqVqqqVqqqqqqq
+qqqqqqqqqVVVqqqqqqqq
+qqqqqqqqqVVVqqqqqqqq
+qqqqqqqqqVvVqqqqqqqq
+qqqqqqqqVqqqvqqqqqqq
+qqqqqqqVqqvqqvqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqvqqqqqqqqq
+qqqqqqqqqqvqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqqqqqq
+0 0
+

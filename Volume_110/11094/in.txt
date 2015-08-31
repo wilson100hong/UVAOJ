@@ -1,0 +1,39 @@
+5 5
+wwwww
+wwllw
+wwwww
+wllww
+wwwww
+1 3
+
+5 5
+wwwww
+wwllw
+wwlww
+wllww
+wwwww
+1 3
+
+5 5
+wwlww
+wwllw
+wwwww
+wllww
+wwlww
+1 3
+
+5 5
+wwlww
+wwllw
+wlwww
+llllw
+wwwww
+1 3
+
+5 5
+wwlww
+wwllw
+llwwl
+llllw
+wwwww
+1 3
