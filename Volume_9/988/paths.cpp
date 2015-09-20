@@ -47,7 +47,7 @@ int main() {
 
     int ans = 0;
     for(i = 0; i < n; i++)
-      if(g[i].size() == 0)
+      if(g[i].size() == 0) 
         ans += dp[i];
     if (first) cout << endl;
     first = 1;
