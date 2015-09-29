@@ -1,151 +1,56 @@
-#include <iostream>
-using namespace std;
-
-string bigsum(string a, string b) {
-  int la = a.length();
-  int lb = b.length();
-  int ls = max(la, lb) + 1;
-  char* s = new char[ls];
-  int da, db, dc = 0, ds = 0;
-  for (int i = la - 1, j = lb - 1, k = ls - 1; k >= 0; --i, --j, --k) {
-    da = i >= 0 ? (int) (a[i] - '0') : 0;
-    db = j >= 0 ? (int) (b[j] - '0') : 0;
-    ds = da + db + dc;
-    dc = ds / 10;
-    ds = ds % 10;
-    s[k] = ds + '0';
-  }
-  
+// Bignumber arithematics.
+// TODO: subtraction
+// TODO: division
+string strip_leading_zeros(string s) {
   int start = 0;
-  while (s[start] == '0' && start < ls - 1)
-     start++;
-  string ret = string(&s[start], ls - start);
-  delete s;
-  return ret;
-}
-
-int numdigit(int a) {
-  int n = 1;
-  while (a / 10 > 0) {
-    n++;
-    a /= 10;
-  }
-  return n;
-}
-
-string scinum(int frac, int exp) {
-  int d = numdigit(frac);
-  string s(d + exp, '0');
-  for (int i = d - 1; i >= 0; --i) {
-    s[i] = (char) (frac % 10 + '0');
-    frac /= 10;
-  }
-  return s;
-}
-
-/**
-  Add an integer to big numbers.
-  input:
-    frac : the fraction part, must < 10000
-    exp  : the exponential part, which is power of 10.  
-*/
-string bigsum(string s, int frac, int exp) {
-  return bigsum(s, scinum(frac, exp));
-}
-
-/**
-  retrieve part from s with exp offset. Only x digit part will be return
-  eg. part("12345", 0) = 2345
-      part("12345", 1) = 1234
-      part("234", 0) = 234
-      part("123, 2) = 1
-      part("99998888", 8) = 0;
-*/
-int part(string s, int exp, int x) {
-  int len = s.length();
-  if (exp >= len)
-    return 0;
-  // len must > exp
-  int start = len - exp - x;
-  if (start < 0) {
-    x += start;
-    start = 0;
-  }
-  int sum = 0;
-  while (start < len && x > 0) {
-    sum *= 10;
-    sum += (int) (s[start] - '0');
-    x--; 
+  while (s[start] == '0' && start < s.size()) {
     start++;
   }
-  return sum;
+  return s.substr(start);
 }
 
-/*
-  Calculate a * b
-  We use multiplication learned from elementary school
-      a =   a2 a1 a0
-      b = x    b1 b0
-      -------------------
-               ma0b0  (a0 x b0)
-            ma1b0     (a1 x b0)
-         ma2b0        (a2 x b0)
-            ma0b1     (a0 x b1)
-         ma1b1        (a1 x b1)
-    +  ma2b1          (a2 x b1)
-    ---------------------
-
-  For each round, calculate one chunk (ai x bj), coumpute the multiplication maibj,
-  combine maibj with the power of 10 offset to form a new string, then use bigsum
-  to sum them together get a new string.
-*/
-string bigmul(string a, string b) {
-    string sum = "0";
-    int j = 0;
-    int lb = b.length();
-    // TODO(wilsonhong): bug
-    while (lb > 0) {
-        int bj = part(b, 4 * j, 4);
-        int i = 0;
-        int la = a.length();
-        // TODO(wilsonhong): bug
-        while (la > 0) {
-            int ai = part(a, 4 * i, 4);
-            int mij = ai * bj;
-            string tij = scinum(mij, 4 * (i + j));
-            sum = bigsum(sum, tij);
-            i++;
-            la -= 4;
-        }
-        j++;
-        lb -= 4;
-    }
-    return sum;
-}
-
-string bigpow(string a, string pow) {
-    string answer = "1";
-    while (pow-- > 0){
-        answer = bigmul(answer, a);
-    }
-    return answer;
-}
-
-
-int main() {
-  // test only
-  int f, e;
-  /*cin >> f >> e;
-  cout << scinum(f, e) << endl;
-  string s;
-  cin >> s;
-  cout << s << endl;
-  cout << bigsum(s, f, e) << endl;
-*/
-  string s1, s2;
-  while (cin >> s1 >> s2) {
-    cout << bigmul(s1, s2) << endl;  
+string bigadd(string s1, string s2) {
+  int size = max(s1.size(), s2.size()) + 1;
+  string result(size, '0');
+  int carry = 0; 
+  for (int k = size - 1, i = s1.size() - 1, j = s2.size() - 1; k >= 0; --k, --i, --j) {
+    int di = i >= 0 ? s1[i] - '0' : 0;
+    int dj = j >= 0 ? s2[j] - '0' : 0;
     
+    int dk = carry + di + dj;
+    carry = dk / 10;
+    result[k] = (dk % 10) + '0';
   }
-  return 0;
+  return strip_leading_zeros(result);
 }
+
+string bigmul(string s1, string s2) {
+  int size = s1.size() + s2.size();
+  vector<int> buffer(size, 0);
+
+  for (int i = s1.size() - 1; i >= 0; --i) {
+    int carry = 0;
+    for (int j = s2.size() - 1; j >= 0; --j) {
+      int di = s1[i] - '0', dj = s2[j] - '0';
+      int offset = s1.size() - 1 - i + s2.size() - 1 - j;
+      int sum = di * dj + carry + (buffer[offset]);
+      buffer[offset] = sum % 10;
+      carry = sum / 10;
+    }
+    // handle carry
+    int start = s2.size() + s1.size() - 1 - i, index = 0;
+    while (carry > 0) {
+      int sum = buffer[start + index] + carry;
+      buffer[start + index] = sum % 10;
+      carry = sum / 10;
+      index++;
+    }
+  }
+  // generate result
+  string result(size, '0');
+  for (int i = 0; i < size; ++i) {
+    result[size - i - 1] = buffer[i] + '0';
+  }
+  return strip_leading_zeros(result);
+}
+
