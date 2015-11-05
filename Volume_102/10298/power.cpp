@@ -20,18 +20,16 @@ int solve(const string& str) {
   }
 
   int end = str.size() - 1;
-  if (table[end] == 0) {
-    return 1;
-  } else {
-    int len = (end - table[end]);
-    return end / (end - table[end]);
-  }
+  if (str[end] != str[table[end]]) return 1;
+  int period = end - table[end];
+  if (str.size() % period != 0) return 1;
+  return str.size() / period;
 }
 
 int main() {
   string line;
   while (getline(cin, line)) {
-    string str = line + line[0];
+    string str = line;
     if (line == ".") break;
     cout << solve(str) << endl;
   }
