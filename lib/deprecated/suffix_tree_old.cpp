@@ -1,4 +1,3 @@
-// TODO: simplify the code.
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -74,20 +73,30 @@ void dump_point(const STActivePoint& point) {
        << endl;
 }
 
-// relocate active point when reaching edge's end
-void relocate(STActivePoint& point) {
+// advance active node.
+void advance(STActivePoint& point) {
+  cout << "ADV" << endl;
   dump_point(point);
   STNode* child = point.node->edge[point.edge];
-  if (child != nullptr) {
-    // TODO: not sure if we need this
-    //int st  = point.node->end == 0 ? child->start : point.node-> end; 
-    //if (st + point.offset >= child->end) {
-      //point = {child, 0, 0};
+  cout << "cs: " << child->start << endl;
+  cout << "ce: " << child->end << endl;
+  // TODO: BUG
+  //
+  //if (child != nullptr) {
+    //if (point.node->end == 0) {
+      //if (child->start + point.offset >= child->end) {
+        //point = {child, 0, 0};
+      //}
+    //} else {
+      //if (point.node->end + point.offset >= child->end) {
+        //point = {child, 0, 0};
+      //}
     //}
-    // TODO: make sure this is correct
-    if (child->start + point.offset >= child->end) {
-      point = {child, 0, 0};
-    }
+  //}
+
+  if (child != nullptr &&  // has child, and reach the end of current node's edge
+      point.node->end + point.offset >= child->end) {
+    point = {child, 0, 0};
   }
 }
 
@@ -104,8 +113,8 @@ STNode* build_suffix_tree(const string& str) {
 
     remainder++;
     char ch = list[index];
-    //cout << "round #" << index << endl;
-    //cout << "ch: " << ch << endl;
+    cout << "round #" << index << endl;
+    cout << "ch: " << ch << endl;
 
     STNode* prev = nullptr;
     while (remainder > 0) {
@@ -115,7 +124,7 @@ STNode* build_suffix_tree(const string& str) {
         existed = point.node->edge[ch] != nullptr;
       } else {
           STNode* child = point.node->edge[point.edge];
-          //if (child == nullptr) { cout << "WILSON IS STUPID" << endl;}  // should not happen
+          if (child == nullptr) { cout << "WILSON IS STUPID" << endl;}  // should not happen
           //cout << "start: " << point.node->start << endl;
           //cout << "offset: " << point.offset << endl;
           existed = list[child->start + point.offset] == ch;
@@ -126,16 +135,16 @@ STNode* build_suffix_tree(const string& str) {
           point.edge = ch;
         }
         point.offset++;
-        relocate(point);
+        advance(point);
         // prefix exist in current tree, either explicitly or implicitly, so no
         // need to insert.
 
-  //cout << "CASE 1" << endl;
-  //dump_suffix_tree(list, root, 0, index, remainder);
-  //cout << endl;
-  //cout << "remainder:" << remainder << endl;
-  //dump_point(point);
-  //cout << "-------------------------------------" << endl;
+  cout << "CASE 1" << endl;
+  dump_suffix_tree(list, root, 0, index, remainder);
+  cout << endl;
+  cout << "remainder:" << remainder << endl;
+  dump_point(point);
+  cout << "-------------------------------------" << endl;
         break;
       } else {
         STNode* inserted;
@@ -181,48 +190,47 @@ STNode* build_suffix_tree(const string& str) {
             point = {root, ch, 0};
           }
         }
-        relocate(point);
 
-  //cout << "CASE 2" << endl;
-  //dump_suffix_tree(list, root, 0, index, remainder);
-  //cout << endl;
-  //cout << "remainder:" << remainder << endl;
-  //dump_point(point);
-  //cout << "-------------------------------------" << endl;
+  cout << "CASE 2" << endl;
+  dump_suffix_tree(list, root, 0, index, remainder);
+  cout << endl;
+  cout << "remainder:" << remainder << endl;
+  dump_point(point);
+  cout << "-------------------------------------" << endl;
       }
     }
   }
 
   // TEST
-  //cout << "Result for str: " <<  str << endl;
-  //dump_suffix_tree(list, root, 0, list.size() - 1, 0);
-  //cout << endl;
-  //dump_point(point);
-  //cout << "-------------------------------------" << endl;
+  cout << "Result for str: " <<  str << endl;
+  dump_suffix_tree(list, root, 0, list.size() - 1, 0);
+  cout << endl;
+  dump_point(point);
+  cout << "-------------------------------------" << endl;
   return root;
 }
 
 int main() {
   vector<string> inputs = {
-    "aaa", 
-    "aba", 
-    "abc", 
-    "abab", 
-    "abca", 
-    "abcab", 
-    "abcac", 
-    "abcabc", 
-    "abcabx", 
-    "abcabxa", 
-    "abcabxab", 
-    "abcabxabc", 
-    "abcabxaby", 
-    "abcabxabcd"
-    "badd",
-    "badda",
-    "baddac",
-    "baddaca",
-    "cdddcdc"
+    //"aaa", 
+    //"aba", 
+    //"abc", 
+    //"abab", 
+    //"abca", 
+    //"abcab", 
+    //"abcac", 
+    //"abcabc", 
+    //"abcabx", 
+    //"abcabxa", 
+    //"abcabxab", 
+    //"abcabxabc", 
+    //"abcabxaby", 
+    //"abcabxabcd", 
+    //"badd",
+    //"badda",
+    //"baddac",
+    "baddaca",  // TODO: has empty node?
+    //"cdddcdc"
   };
 
   string str;
