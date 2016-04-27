@@ -1,8 +1,9 @@
-// TODO: simplify the code.
 #include <iostream>
 #include <vector>
+#include <tuple>
 using namespace std;
 
+/*** Suffix Tree begin ***/
 #define oo 1000000
 #define NULLCHAR '$'
 
@@ -68,23 +69,16 @@ void dump_suffix_tree(const vector<char>& list, STNode* node, int depth,
 }
 
 void dump_point(const STActivePoint& point) {
-  cout << "active point node: " << point.node->label // << pc(list[point.node->start])
-       << ", edge: " << pc(point.edge)  // static_cast<char>(point.edge)
+  cout << "active point node: " << point.node->label
+       << ", edge: " << pc(point.edge)
        << ", offset: " << point.offset
        << endl;
 }
 
 // relocate active point when reaching edge's end
 void relocate(STActivePoint& point) {
-  dump_point(point);
   STNode* child = point.node->edge[point.edge];
   if (child != nullptr) {
-    // TODO: not sure if we need this
-    //int st  = point.node->end == 0 ? child->start : point.node-> end; 
-    //if (st + point.offset >= child->end) {
-      //point = {child, 0, 0};
-    //}
-    // TODO: make sure this is correct
     if (child->start + point.offset >= child->end) {
       point = {child, 0, 0};
     }
@@ -104,8 +98,6 @@ STNode* build_suffix_tree(const string& str) {
 
     remainder++;
     char ch = list[index];
-    //cout << "round #" << index << endl;
-    //cout << "ch: " << ch << endl;
 
     STNode* prev = nullptr;
     while (remainder > 0) {
@@ -115,9 +107,6 @@ STNode* build_suffix_tree(const string& str) {
         existed = point.node->edge[ch] != nullptr;
       } else {
           STNode* child = point.node->edge[point.edge];
-          //if (child == nullptr) { cout << "WILSON IS STUPID" << endl;}  // should not happen
-          //cout << "start: " << point.node->start << endl;
-          //cout << "offset: " << point.offset << endl;
           existed = list[child->start + point.offset] == ch;
       } 
 
@@ -129,13 +118,6 @@ STNode* build_suffix_tree(const string& str) {
         relocate(point);
         // prefix exist in current tree, either explicitly or implicitly, so no
         // need to insert.
-
-  //cout << "CASE 1" << endl;
-  //dump_suffix_tree(list, root, 0, index, remainder);
-  //cout << endl;
-  //cout << "remainder:" << remainder << endl;
-  //dump_point(point);
-  //cout << "-------------------------------------" << endl;
         break;
       } else {
         STNode* inserted;
@@ -182,13 +164,6 @@ STNode* build_suffix_tree(const string& str) {
           }
         }
         relocate(point);
-
-  //cout << "CASE 2" << endl;
-  //dump_suffix_tree(list, root, 0, index, remainder);
-  //cout << endl;
-  //cout << "remainder:" << remainder << endl;
-  //dump_point(point);
-  //cout << "-------------------------------------" << endl;
       }
     }
   }
@@ -202,31 +177,71 @@ STNode* build_suffix_tree(const string& str) {
   return root;
 }
 
-int main() {
-  vector<string> inputs = {
-    "aaa", 
-    "aba", 
-    "abc", 
-    "abab", 
-    "abca", 
-    "abcab", 
-    "abcac", 
-    "abcabc", 
-    "abcabx", 
-    "abcabxa", 
-    "abcabxab", 
-    "abcabxabc", 
-    "abcabxaby", 
-    "abcabxabcd"
-    "badd",
-    "badda",
-    "baddac",
-    "baddaca",
-    "cdddcdc"
-  };
+void release_suffix_tree(STNode* node) {
+  for (int i = 0; i < 128; ++i) {
+    if (node->edge[i] != nullptr) {
+      release_suffix_tree(node->edge[i]);
+    }
+  }
+  free(node);
+}
 
-  string str;
-  for (const string& str : inputs) {
-    STNode* root = build_suffix_tree(str);
+/*** Suffix Tree end ***/
+
+tuple<string, int> DFS(const string& str, const string& prev, STNode* node) {
+  if (node->end == oo) {  // leaf
+    return prev;
+  }
+
+  string current = prev;
+  int pz = prev.size();
+  int len = node->end - node->start;
+  current.resize(pz + len);
+  for (int i = 0; i < len; ++ i) {
+    current[pz + i] = str[node->start + i];
+  }
+
+  int cnt = 0;
+  for (int i = 0; i < 128; ++i) {
+    if (node->edge[i] != nullptr) {
+      cnt++;
+    }
+  }
+  string best = current;
+  for (int i = 0; i < 128; ++i) {
+    if (node->edge[i] != nullptr) {
+      string ts;
+      int tc;
+      tie(ts, tc) = DFS(str, current, node->edge[i]);
+      if (ts.size() > best.size()) {
+        best = ts;
+        cnt = tc;
+      }
+    }
+  }
+  return make_tuple(best, cnt);
+}
+
+// need count
+void Solve(const string& str) {
+  STNode* root = build_suffix_tree(str);
+  string sequence;
+  int cnt;
+  //tie(sequence, cnt) = DFS(str, "", root);
+  release_suffix_tree(root);
+  //if (cnt == 1 || sequence == "") {
+    //cout << "No repetitions found!" << endl;
+  //} else {
+    //cout << sequence << " " << cnt << endl;
+  //}
+}
+
+int main() {
+  int T;
+  cin >> T;
+  while (T--) {
+    string str;
+    cin >> str;
+    Solve(str);
   }
 }
