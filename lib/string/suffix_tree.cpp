@@ -1,3 +1,4 @@
+// TODO: there are still some cases can be simplified.
 #include <iostream>
 #include <vector>
 #include <set>
@@ -109,10 +110,6 @@ class SuffixTree {
         return point.node->edge[ch] != nullptr;
       } else {
         STNode* child = point.node->edge[point.edge];
-        if (child == nullptr) {
-          // TODO: this will happen..
-          cout << "WILSON IS STUPID" << endl;
-        }
         return list[child->start + point.offset] == ch;
       } 
     }
@@ -135,7 +132,6 @@ class SuffixTree {
     }
 
     void Build() {
-      // TODO
       int label = 0; 
       root = new STNode(list, 0, 0, label++);
       point.Set(root, 0, 0);
@@ -197,12 +193,11 @@ class SuffixTree {
 
             prev = added;
 
-            // TODO: not sure
+            // TODO: simplify further!
             // update active point
             if (point.node == root) {
               if (split) {
                 int next_edge = remainder <= 1 ? 0 : list[index - remainder + 1];
-                // TODO: not sure it make us loss some suffix links...
                 prev = remainder <= 1 ? nullptr : prev;
                 point.Set(root, next_edge, point.offset - 1);
               } else {  // append
@@ -214,8 +209,6 @@ class SuffixTree {
                 point.Set(point.node->suffix, point.edge, point.offset);
               } else if (split) {
                 int next_edge = list[index - remainder + 1];
-                // TODO: should we consider remainder == 0?
-                // TODO: use root?
                 point.Set(root, next_edge, point.offset);
               } else {  // append
                 point.Set(root, ch, 0);
@@ -246,7 +239,6 @@ class SuffixTree {
     STNode* root = nullptr;
 };
 
-
 void ValidateSuffixStrings(const set<string>& all_suffix, const vector<char>& list) {
   string entire(list.begin(), list.end());
   for (int i = 0; i < list.size(); ++i) {
@@ -261,14 +253,8 @@ int main() {
   string str;
   cout << "Input string: " << endl;
   cin >> str;
-  //STNode* root = BuildSuffixTree(str);
   SuffixTree st(str);
-  //st.Dump();
   set<string> suffix = st.GetAllSuffix();
   cout << "------" << endl;
-  //for (const string& s : suffix) {
-    //cout << s << endl;
-  //}
   ValidateSuffixStrings(suffix, st.list);
-
 }
