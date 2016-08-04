@@ -79,6 +79,7 @@ void BFS(const Map& pmap, const vector<II>& points, int from, Graph& graph) {
 int rec_dp(const Graph& graph,
     const vector<II>& points,
     vector<vector<int>>& dp,
+    vector<vector<int>>& next,
     int point_set,
     int cur_point,
     int so_far) {
@@ -115,19 +116,38 @@ int rec_dp(const Graph& graph,
 
   if (treasures.empty()) {
     dp[point_set][cur_point] = so_far + graph[cur_point][landing_point];
+    next[point_set][cur_point] = landing_point;
     return dp[point_set][cur_point];
   } else {
     for (int new_point : treasures) {
       int new_point_set = point_set | (1<<new_point);
-      int cost = rec_dp(graph, points, dp, new_point_set, new_point,
+      int cost = rec_dp(graph, points, dp, next, new_point_set, new_point,
           so_far + graph[cur_point][new_point]);
       if (dp[point_set][cur_point] == -1 ||
           cost < dp[point_set][cur_point]) {
         dp[point_set][cur_point] = cost;
+        next[point_set][cur_point] = new_point;
       }
     }
   }
   return dp[point_set][cur_point];
+}
+
+// DEBUG
+void route(int n,
+           const vector<vector<int>>& dp,
+           const vector<vector<int>>& next) {
+  int cur_point = n-1;
+  int point_set = 0;
+  cout << "route: @";
+  do {
+    int next_point = next[point_set][cur_point];
+    cout << " " << next_point;
+    point_set |= (1<<next_point);
+    cur_point = next_point;
+
+  } while (cur_point != n-1);
+  cout << endl;
 }
 
 int solve(const Map& imap, int H, int W) {
@@ -162,14 +182,17 @@ int solve(const Map& imap, int H, int W) {
   points.push_back(landing);  // points has landing
 
   // DEBUG
-  /*
   for (int h = 0; h < H; ++h) {
     for (int w = 0; w < W; ++w) {
-      cout << pmap[h][w];
+      if (pmap[h][w] == '!') {
+        int idx= indexof(points, II(h, w));
+        cout << idx;
+      } else {
+        cout << pmap[h][w];
+      }
     }
     cout << endl;
   }
-  */
 
   int n = points.size();
   Graph graph(n, vector<int>(n, -1));
@@ -185,7 +208,6 @@ int solve(const Map& imap, int H, int W) {
   }
 
   // DEBUG
-  /*
   cout << "points" << endl;
   for (II p : points) {
     cout << p.first << " " << p.second << endl;
@@ -197,26 +219,30 @@ int solve(const Map& imap, int H, int W) {
     }
     cout << endl;
   }
-  */
+  
   
   // dp[points][i] means the minimum time starting from points[i],
   // collect all other treasures not in points (except landing point),
   // and finally return to landing point.
   int all_set = 1<<(n-1);
   vector<vector<int>> dp(all_set, vector<int>(n, -1));
+  vector<vector<int>> next(all_set, vector<int>(n, -1));
   dp[all_set-1][n-1] = 0;
+  next[all_set-1][n-1] = -1;
 
   int ans = rec_dp(
-      graph, points, dp,
+      graph, points, dp, next,
       0,  // point_set
       n-1,  // cur_point = landing point
       0); // so_far
                   
+  route(n, dp, next);
   return ans;
 }
 
 int main() {
   int H, W;
+  int round = 1;
   while (cin >> H >> W) {
     if (H == 0 && W == 0) break;
     Map tmap(H, vector<char>(W, SAND));
@@ -227,6 +253,8 @@ int main() {
         tmap[h][w] = c;
       }
     }
-    cout << solve(tmap, H, W) << endl;
+    if (round == 28)
+      cout << solve(tmap, H, W) << endl;
+    round++;
   }
 }
