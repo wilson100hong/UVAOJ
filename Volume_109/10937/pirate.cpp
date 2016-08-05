@@ -1,4 +1,3 @@
-// TODO: WA.
 #include <iostream>
 #include <queue>
 #include <utility>
@@ -81,10 +80,7 @@ int rec_dp(const Graph& graph,
     vector<vector<int>>& dp,
     vector<vector<int>>& next,
     int point_set,
-    int cur_point,
-    int so_far) {
-  //cout << "point_set: " << point_set << endl;
-  //cout << "cur_point: " << cur_point << endl;
+    int cur_point) {
   int landing_point = graph.size() - 1;  // n is also landing point
   if (dp[point_set][cur_point] != -1) 
     return dp[point_set][cur_point];
@@ -93,11 +89,10 @@ int rec_dp(const Graph& graph,
   for (int i=0; i<graph.size()-1; ++i) {  // landing point is not treasure
     treasures.insert(i);
   }
-  // TODO: whats point need to visit?
+
   int tmp_set = point_set;
   int idx = 0;
   while (tmp_set) {
-    //cout << "tmp_set: " << tmp_set << endl;
     if (tmp_set & 1) {
       treasures.erase(idx);
     }
@@ -105,24 +100,15 @@ int rec_dp(const Graph& graph,
     idx++;
   }
 
-  // DEBUG
-  /*
-  cout << "treasures: ";
-  for (int t : treasures) {
-    cout << t << ",";
-  }
-  cout << endl;
-  */
-
   if (treasures.empty()) {
-    dp[point_set][cur_point] = so_far + graph[cur_point][landing_point];
+    dp[point_set][cur_point] = graph[cur_point][landing_point]; // + so_far
     next[point_set][cur_point] = landing_point;
     return dp[point_set][cur_point];
   } else {
     for (int new_point : treasures) {
       int new_point_set = point_set | (1<<new_point);
-      int cost = rec_dp(graph, points, dp, next, new_point_set, new_point,
-          so_far + graph[cur_point][new_point]);
+      int cost = graph[cur_point][new_point] +
+          rec_dp(graph, points, dp, next, new_point_set, new_point);
       if (dp[point_set][cur_point] == -1 ||
           cost < dp[point_set][cur_point]) {
         dp[point_set][cur_point] = cost;
@@ -131,23 +117,6 @@ int rec_dp(const Graph& graph,
     }
   }
   return dp[point_set][cur_point];
-}
-
-// DEBUG
-void route(int n,
-           const vector<vector<int>>& dp,
-           const vector<vector<int>>& next) {
-  int cur_point = n-1;
-  int point_set = 0;
-  cout << "route: @";
-  do {
-    int next_point = next[point_set][cur_point];
-    cout << " " << next_point;
-    point_set |= (1<<next_point);
-    cur_point = next_point;
-
-  } while (cur_point != n-1);
-  cout << endl;
 }
 
 int solve(const Map& imap, int H, int W) {
@@ -181,19 +150,6 @@ int solve(const Map& imap, int H, int W) {
   }
   points.push_back(landing);  // points has landing
 
-  // DEBUG
-  for (int h = 0; h < H; ++h) {
-    for (int w = 0; w < W; ++w) {
-      if (pmap[h][w] == '!') {
-        int idx= indexof(points, II(h, w));
-        cout << idx;
-      } else {
-        cout << pmap[h][w];
-      }
-    }
-    cout << endl;
-  }
-
   int n = points.size();
   Graph graph(n, vector<int>(n, -1));
   for (int from = 0; from < points.size(); ++from) {
@@ -207,20 +163,6 @@ int solve(const Map& imap, int H, int W) {
     }
   }
 
-  // DEBUG
-  cout << "points" << endl;
-  for (II p : points) {
-    cout << p.first << " " << p.second << endl;
-  }
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
-      cout.width(5);
-      cout << graph[i][j];
-    }
-    cout << endl;
-  }
-  
-  
   // dp[points][i] means the minimum time starting from points[i],
   // collect all other treasures not in points (except landing point),
   // and finally return to landing point.
@@ -233,10 +175,8 @@ int solve(const Map& imap, int H, int W) {
   int ans = rec_dp(
       graph, points, dp, next,
       0,  // point_set
-      n-1,  // cur_point = landing point
-      0); // so_far
+      n-1);  // cur_point = landing point
                   
-  route(n, dp, next);
   return ans;
 }
 
@@ -253,8 +193,7 @@ int main() {
         tmap[h][w] = c;
       }
     }
-    if (round == 28)
-      cout << solve(tmap, H, W) << endl;
+    cout << solve(tmap, H, W) << endl;
     round++;
   }
 }
