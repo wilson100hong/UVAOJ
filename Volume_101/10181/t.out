@@ -1,0 +1,5535 @@
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=36
+Old f=38
+Old g=13
+Old h=25
+Old moves: LUURRDLDRULDR
+New f=36
+New g=11
+New h=25
+New moves: LUURRDDLURD
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=38
+Old f=40
+Old g=15
+Old h=25
+Old moves: LUUURRDDLDRULDR
+New f=38
+New g=13
+New h=25
+New moves: LUUURRDDDLURD
+Erase happen
+Board: 
+  2  14   8   4 
+  6   1   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=38
+Old f=40
+Old g=15
+Old h=25
+Old moves: LUUURDRDLDRULDR
+New f=38
+New g=13
+New h=25
+New moves: LUUURDRDDLURD
+Erase happen
+Board: 
+  6   2   3   8 
+ 12   1   9   4 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=38
+Old f=40
+Old g=15
+Old h=25
+Old moves: UURDDLURRUULDDL
+New f=38
+New g=13
+New h=25
+New moves: UURDRUULDDDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  1  12   3  10 
+ 14  11   0   9 
+ 13   5  15   7 
+Cur f=38
+Old f=40
+Old g=16
+Old h=24
+Old moves: LUURRDLDRULLURDR
+New f=38
+New g=14
+New h=24
+New moves: LUURRDLLURDDRU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5   3  10 
+ 12  11   9   0 
+ 13  14  15   7 
+Cur f=38
+Old f=40
+Old g=21
+Old h=19
+Old moves: UURDDLURRDLLLUURDDRRU
+New f=38
+New g=19
+New h=19
+New moves: UURDDLURDLLUURDDRUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+  5  11   9   0 
+ 13  14  15   7 
+Cur f=38
+Old f=40
+Old g=19
+Old h=21
+Old moves: UURDDLURRDLLLURDRRU
+New f=38
+New g=17
+New h=21
+New moves: UURDDLURDLLURDRUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+ 13   0  15   9 
+ 11   5  14   7 
+Cur f=38
+Old f=40
+Old g=11
+Old h=29
+Old moves: UURDDLURDLU
+New f=38
+New g=9
+New h=29
+New moves: UURDLDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+ 15   0  11   9 
+ 13   5  14   7 
+Cur f=38
+Old f=40
+Old g=13
+Old h=27
+Old moves: LURURDDLURDLU
+New f=38
+New g=11
+New h=27
+New moves: LURURDLDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   3 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=38
+Old f=40
+Old g=13
+Old h=27
+Old moves: UURDDLURRULDL
+New f=38
+New g=11
+New h=27
+New moves: UURDRULDDLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   0 
+ 13  14  10   3 
+ 11  15   5   7 
+Cur f=38
+Old f=40
+Old g=10
+Old h=30
+Old moves: UURDRULDRU
+New f=38
+New g=8
+New h=30
+New moves: UURRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1  10   9 
+ 13   5   0   3 
+ 11  14  15   7 
+Cur f=38
+Old f=40
+Old g=12
+Old h=28
+Old moves: UURDDLURURDL
+New f=38
+New g=10
+New h=28
+New moves: UURRDLDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   0 
+ 13   5  10   3 
+ 11  14  15   7 
+Cur f=38
+Old f=40
+Old g=14
+Old h=26
+Old moves: UURDDLURRULDRU
+New f=38
+New g=12
+New h=26
+New moves: UURRDLDLURUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+  5  14  11   9 
+ 13   0  15   7 
+Cur f=38
+Old f=40
+Old g=18
+Old h=22
+Old moves: UURDDLURDLLURDRULD
+New f=38
+New g=16
+New h=22
+New moves: RULDLURRDLUURDDL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12  14   1  10 
+  0  11  15   9 
+  5  13   3   7 
+Cur f=38
+Old f=40
+Old g=10
+Old h=30
+Old moves: RULDLURDLU
+New f=38
+New g=8
+New h=30
+New moves: RULLDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+  0   5   1  10 
+ 14  12  15   9 
+ 13  11   3   7 
+Cur f=38
+Old f=40
+Old g=13
+Old h=27
+Old moves: RULDLURULDRUL
+New f=38
+New g=11
+New h=27
+New moves: RULDLUURDLU
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8  10 
+ 13  14   3   9 
+ 11  15   5   7 
+Cur f=38
+Old f=40
+Old g=12
+Old h=28
+Old moves: UURULDLURDLU
+New f=38
+New g=10
+New h=28
+New moves: UURULLDRUL
+Erase happen
+Board: 
+  1   2   3   8 
+  6  12   9   4 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UURDDLURRUULLDLURRDDL
+New f=40
+New g=19
+New h=21
+New moves: UURDRUULLDLURRDDDLU
+Erase happen
+Board: 
+  1   2   3   8 
+  6   9   5   4 
+ 13   0  12  10 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=25
+Old h=17
+Old moves: UURDDLURRUULLDLURRDLDRULD
+New f=40
+New g=23
+New h=17
+New moves: UURDRUULLDLURRDDDLUURDL
+Erase happen
+Board: 
+  1   2   8   4 
+  6  14   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: LUURRULDLURRDDLDRULDR
+New f=40
+New g=19
+New h=21
+New moves: LUURRULDLURRDDDLURD
+Erase happen
+Board: 
+  1  12   2   8 
+  6  10   3   4 
+ 13   0   5   9 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURRULLDRDDLUULURDD
+New f=40
+New g=17
+New h=23
+New moves: UURRULLDLURDRDDLU
+Erase happen
+Board: 
+  2   1   3   4 
+  6  14   8  10 
+ 12  11   0   9 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: LUUURRDDLDRULUURDLDR
+New f=40
+New g=18
+New h=22
+New moves: LUUURRDDLUURDLDDRU
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5   3  10 
+ 12  11   9   0 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=23
+Old h=19
+Old moves: UURDDLURRDLLLUUURDDDRRU
+New f=40
+New g=21
+New h=19
+New moves: UURDDLURDLLUUURDDDRUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6  12   3  10 
+ 14  11   0   9 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: LUURRDLDRULLUURDDR
+New f=40
+New g=16
+New h=24
+New moves: LUURRDLLUURDDDRU
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   0  10 
+ 14  12   5   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: URDLLUURDLUURDRULDR
+New f=40
+New g=17
+New h=23
+New moves: UULURRDDDLLURUURD
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   5  10 
+ 14   0  12   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UULURRDDDLUUURDDLDLUR
+New f=40
+New g=19
+New h=21
+New moves: UULURRDDDLLURUURDDL
+Erase happen
+Board: 
+  0   2   8   4 
+  1  12   3  10 
+  6  14   5   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURULDLURRDDDLLUUU
+New f=40
+New g=16
+New h=24
+New moves: UULURDRDDLLUURUL
+Erase happen
+Board: 
+  1   2   8   4 
+  0  14   3  10 
+  6  12   5   9 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: LUURRULDLURRDDDLULU
+New f=40
+New g=17
+New h=23
+New moves: LUUURDRDDLULURULD
+Erase happen
+Board: 
+  1   2   8   4 
+  0  14   3  10 
+  6  12  11   9 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: LUURRULDLURRDDLDRULLU
+New f=40
+New g=19
+New h=21
+New moves: LUUURDRDLDRULLURULD
+Erase happen
+Board: 
+  1   2   8   4 
+  0  14   3  10 
+  6  12  15   9 
+ 13  11   5   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRULDLURRDDLLU
+New f=40
+New g=15
+New h=25
+New moves: LUUURDRDLLURULD
+Erase happen
+Board: 
+  1   2   3   4 
+  6   5   8  10 
+ 13  12   0   9 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURULDRDDLUULURRDLDRULDR
+New f=40
+New g=22
+New h=18
+New moves: UURULDRDDLUULURRDDLURD
+Erase happen
+Board: 
+  1   2   3   4 
+  6   8   5  10 
+ 12  15   0   9 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURULDRDDLLUUURRDDDLUR
+New f=40
+New g=20
+New h=20
+New moves: LURURULDRDDLULUURRDD
+Erase happen
+Board: 
+  6   1   2   4 
+ 12  14   8  10 
+  0   5  15   9 
+ 13  11   3   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: RULDLURURULDDL
+New f=40
+New g=12
+New h=28
+New moves: RULURULDDDLU
+Erase happen
+Board: 
+  6   1   2   4 
+ 12  14   8  10 
+ 13  15   3   9 
+  0  11   5   7 
+Cur f=40
+Old f=42
+Old g=11
+Old h=31
+Old moves: LUURRULDLDD
+New f=40
+New g=9
+New h=31
+New moves: UURULDDDL
+Erase happen
+Board: 
+  6   1   2   4 
+ 13  12   8  10 
+ 11   0   3   9 
+ 15  14   5   7 
+Cur f=40
+Old f=42
+Old g=13
+Old h=29
+Old moves: UULDDRUURULDD
+New f=40
+New g=11
+New h=29
+New moves: UURULDLDDRU
+Erase happen
+Board: 
+  6   1   2   4 
+ 13  12   8  10 
+ 11   0  15   9 
+  5  14   3   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: RULULDDRUURULDD
+New f=40
+New g=13
+New h=27
+New moves: RULURULDLDDRU
+Erase happen
+Board: 
+  1   2   0   4 
+  6  14   3   8 
+ 12   5   9  10 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURULDRDDLLUUURRDLDRRULU
+New f=40
+New g=22
+New h=18
+New moves: URDLLUURRULDDRRULLLURR
+Erase happen
+Board: 
+  6   1   2   4 
+  0   5   8  10 
+ 14  12  15   9 
+ 13  11   3   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: RULDLURULDRURULDL
+New f=40
+New g=15
+New h=25
+New moves: RULDLUURRULDDLU
+Erase happen
+Board: 
+  6   1   2   4 
+ 14   8   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRULDRDLDRULDR
+New f=40
+New g=15
+New h=25
+New moves: LUURRULDRDDLURD
+Erase happen
+Board: 
+  1   2   3   8 
+  6   5  12   4 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=25
+Old h=17
+Old moves: UURDDLURRUULLDLURRDLDDLUR
+New f=40
+New g=23
+New h=17
+New moves: UURDDLLURRRUULLDLURRDLD
+Erase happen
+Board: 
+  1   2   3   8 
+  6  10   5   4 
+ 12  15   0   9 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURRULLDRDDLLUUURRDDDLUR
+New f=40
+New g=22
+New h=18
+New moves: LURURRULLDRDDLULUURRDD
+Erase happen
+Board: 
+  1   2   3   8 
+  6  12   0   4 
+  9  14   5  10 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=25
+Old h=17
+Old moves: UURDRUULLDLURRDLDRDLLURUR
+New f=40
+New g=23
+New h=17
+New moves: UURDRUULLDDRDLLURULURRD
+Erase happen
+Board: 
+  6   1   2   8 
+ 14  10   3   4 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: LUURRRULLDRDLDRULDR
+New f=40
+New g=17
+New h=23
+New moves: LUURRRULLDRDDLURD
+Erase happen
+Board: 
+  6   2   1   8 
+ 12  14   3   4 
+  0  11  15  10 
+  5  13   7   9 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: RRUUULDDLDLURDLU
+New f=40
+New g=14
+New h=26
+New moves: RRUUULDDLLDRUL
+Erase happen
+Board: 
+  6   2   1   8 
+  0   5   3   4 
+ 14  12  15  10 
+ 13  11   7   9 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: RRUUULDDLDLURULDRUL
+New f=40
+New g=17
+New h=23
+New moves: RRUUULDDLDLUURDLU
+Erase happen
+Board: 
+  6   2   3   8 
+  1   0   5   4 
+ 12   9  14  10 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDDLLUURDRRUULDLDRUL
+New f=40
+New g=20
+New h=20
+New moves: UURDRUULDDDLLUURRDLU
+Erase happen
+Board: 
+  6   2   3   8 
+ 12   1   5   4 
+ 13   0  10   9 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURRULLDRDDLUUURDDL
+New f=40
+New g=17
+New h=23
+New moves: UURDDRUUULDDRDLLU
+Erase happen
+Board: 
+  6   2   3   8 
+ 12   1   9   4 
+ 15   0   5  10 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LURURDDLURRUULDDL
+New f=40
+New g=15
+New h=25
+New moves: LURURDRUULDDDLU
+Erase happen
+Board: 
+  6   2   3   8 
+  1   9   5   4 
+ 12  15   0  10 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDRUULDDDLLUURRDDLUR
+New f=40
+New g=20
+New h=20
+New moves: LURURDRUULDDDLULURRD
+Erase happen
+Board: 
+  6   2   3   8 
+ 14   1   9   4 
+ 12   0  11  10 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: LUURRDDLURRUULDDDLU
+New f=40
+New g=17
+New h=23
+New moves: LUURRDLDRURUULDDL
+Erase happen
+Board: 
+  6   2   3   8 
+ 14   1   9   4 
+ 12  11  15  10 
+ 13   5   0   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRDLDRURUULDDD
+New f=40
+New g=15
+New h=25
+New moves: LUURRDRUULDDLDR
+Erase happen
+Board: 
+  6   2   3   8 
+ 14   1   9   4 
+ 12   0   5  10 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRDDLURRUULDDL
+New f=40
+New g=15
+New h=25
+New moves: LUURRDRUULDDDLU
+Erase happen
+Board: 
+  6   2   4   3 
+  1   0   5   8 
+ 12  14   7  10 
+ 13  11  15   9 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDDRUULDDLLUURRURDLL
+New f=40
+New g=20
+New h=20
+New moves: UURDDRUULURDLDDLLUUR
+Erase happen
+Board: 
+  6   2   4   3 
+ 12   1   9   8 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: UURDDLURRULURDLDL
+New f=40
+New g=15
+New h=25
+New moves: UURDRULURDLDDLU
+Erase happen
+Board: 
+  6   2   4   3 
+  1   0   9   8 
+ 12  14   5  10 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURDRULDDLLUURRURDLL
+New f=40
+New g=18
+New h=22
+New moves: UURDRULURDLDDLLUUR
+Erase happen
+Board: 
+  6   2   4  10 
+ 14   1   3   8 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRURDLDLDRULDR
+New f=40
+New g=15
+New h=25
+New moves: LUURRURDLDDLURD
+Erase happen
+Board: 
+  6   2   3   8 
+  1   5  12   4 
+ 14   9   0  10 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: LUURRDRUULDDDLULURRDLURD
+New f=40
+New g=22
+New h=18
+New moves: LUURRDDLULURDRRUULDLDR
+Erase happen
+Board: 
+  6   2   3   8 
+  1   5  15   4 
+ 12   9   0  10 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURDRUULDDDLLUURRDDLUURD
+New f=40
+New g=22
+New h=18
+New moves: LURURDDLULURDRRUULDLDR
+Erase happen
+Board: 
+  6   2   3   8 
+ 12   1   7   4 
+ 13  14   9  10 
+ 11   0  15   5 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURDRDLLURRUULDDLD
+New f=40
+New g=16
+New h=24
+New moves: UURDRDLURUULDDDL
+Erase happen
+Board: 
+  6   2   3   8 
+  1   5   7   4 
+ 12  15   0  10 
+ 13  14  11   9 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURDDRUUULDDDLLUURRDDLUR
+New f=40
+New g=22
+New h=18
+New moves: LURURDDRUUULDDDLULURRD
+Erase happen
+Board: 
+  6   2   8   4 
+  1   3   5  10 
+ 11   0  12   9 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UULDRURDDLLUURRDLDLUR
+New f=40
+New g=19
+New h=21
+New moves: ULURRDDLULURRDLLDRU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   3  10   7 
+ 12   9   0   5 
+ 13  14  11  15 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDDLLUURRDRDLLURURDL
+New f=40
+New g=20
+New h=20
+New moves: UURDRDLLLUURRRDDLLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   3   7   0 
+ 12   9  10   5 
+ 13  14  11  15 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURDDLLUURRDRDLLURRULDRU
+New f=40
+New g=22
+New h=18
+New moves: UURDRDLLLUURRRDDLLURUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   3   9   0 
+ 12  14  10   5 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURDDLLUURRDRULDRU
+New f=40
+New g=16
+New h=24
+New moves: UURDDLLUURRRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   0   5   3 
+ 12   9  14  10 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURDDLLUURDRRULLDRUL
+New f=40
+New g=18
+New h=22
+New moves: UURDRULDDLLUURRDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5   0   9 
+ 12  10   3   7 
+ 13  14  11  15 
+Cur f=40
+Old f=42
+Old g=23
+Old h=19
+Old moves: UURDDLLUURRRDDLLURULDRU
+New f=40
+New g=21
+New h=19
+New moves: UURRDLDLLUURRDRDLLUUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1  10   3   0 
+ 12  14   9   5 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURRDLDLLUURRDRULDRU
+New f=40
+New g=18
+New h=22
+New moves: UURRDLDLLUURRRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   9   0   3 
+ 12  10   5   7 
+ 13  14  11  15 
+Cur f=40
+Old f=42
+Old g=23
+Old h=19
+Old moves: UURDRULDDLLUURRDRDLLURU
+New f=40
+New g=21
+New h=19
+New moves: UURRDLDLLUURRRDDLLUUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1  10   7   0 
+ 12  14   9   3 
+ 13  11  15   5 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURRDDLLLUURRDRULDRU
+New f=40
+New g=18
+New h=22
+New moves: UURRDDLLLUURRRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   9   3   7 
+ 12  10   0   5 
+ 13  14  11  15 
+Cur f=40
+Old f=42
+Old g=24
+Old h=18
+Old moves: UURRDLDLLUURRRDDLLUURRDL
+New f=40
+New g=22
+New h=18
+New moves: UURRDDLLLUURRRDDLLUURD
+Erase happen
+Board: 
+  6   2   8   4 
+  1  12   3  10 
+ 11   0   5   9 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UULDRURDDLLUURDDLUR
+New f=40
+New g=17
+New h=23
+New moves: ULURRDDLULURDLDRU
+Erase happen
+Board: 
+  6   2   8   4 
+  1  14   9   0 
+ 12   5  10   3 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURDDLLUURDRRULDRU
+New f=40
+New g=16
+New h=24
+New moves: UURRDLDLLUURDRUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5  15   3 
+ 12   9   0  10 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDRULDDLLUURRDDLUURD
+New f=40
+New g=20
+New h=20
+New moves: LURURDDLULURDRRULLDR
+Erase happen
+Board: 
+  6   2   8   4 
+  1  15   3  10 
+ 12  11   0   9 
+ 13   5  14   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LURURDLDRULLURDR
+New f=40
+New g=14
+New h=26
+New moves: UURDLDLUURDDRU
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   1  10 
+ 14  11   0   9 
+ 13   3  15   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: RULDLURDRULULDRR
+New f=40
+New g=14
+New h=26
+New moves: RULDLURULDRDRU
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   1  10 
+ 14  15   3   9 
+ 13   0  11   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: RULDLURRDLUULDRD
+New f=40
+New g=14
+New h=26
+New moves: RULDLURULDRRDL
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   3  10 
+  1   0   9   7 
+ 13  11  14  15 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UURDDLURRDLLLUURDLURD
+New f=40
+New g=19
+New h=21
+New moves: UURDDLURRDLLLURULDR
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   3  10 
+  1   0  11   9 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=23
+Old h=19
+Old moves: UURDDLURDLLUURDDRULLURD
+New f=40
+New g=21
+New h=19
+New moves: UURDDLURDLLURDRULULDR
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   3  10 
+  1   0  15   9 
+ 13  11  14   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURDDLURDLLUURDLURD
+New f=40
+New g=17
+New h=23
+New moves: UURDDLURDLLURULDR
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   3  10 
+  1  11   0   9 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDDLURDLLURDRULULDRR
+New f=40
+New g=20
+New h=20
+New moves: UURDDLURDLLURULDRDRU
+Erase happen
+Board: 
+  6   2   8   4 
+  5  12   3  10 
+  1  11   9   0 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=23
+Old h=19
+Old moves: UURDDLURRDLLLURULDRDRRU
+New f=40
+New g=21
+New h=19
+New moves: UURDDLURDLLURULDRDRUR
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   3  10 
+ 12   5  11   9 
+ 13  14  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UURDDLURDLLUURDDRULUL
+New f=40
+New g=19
+New h=21
+New moves: UURDDLURDLLURDRULLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+  0  11  15   9 
+  5  13  14   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: UURDDLURDLLURDLU
+New f=40
+New g=14
+New h=26
+New moves: UURDLDRULLDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+  9  11   7   0 
+ 13  14  15   5 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UURDRDLLURRDLLLURDRRU
+New f=40
+New g=19
+New h=21
+New moves: UURDRDLLURDLLURDRUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   3  10 
+ 13   5  11   9 
+  0  14  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURDDLURDLLURDRULLD
+New f=40
+New g=17
+New h=23
+New moves: LURURDDLULDRURDLL
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   3  10 
+ 12  14   9   7 
+ 13   5  11  15 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURDDLLUURDRRDLLUUL
+New f=40
+New g=17
+New h=23
+New moves: UURDDLLURRRDLLULU
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   3  10 
+ 12  14  15   9 
+ 13   5  11   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: UURDDLLUURDRDLUUL
+New f=40
+New g=15
+New h=25
+New moves: UURDDLLURRDLULU
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   3  10 
+ 12  14  11   9 
+ 13  15   5   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: UURDDLLUURDDRULUL
+New f=40
+New g=15
+New h=25
+New moves: UURDDLLURDRULLU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5   7   3 
+ 12  15   0  10 
+ 13  14  11   9 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: UURDDRUULDDLLUURRDDLUR
+New f=40
+New g=20
+New h=20
+New moves: LURURDDRUULDDLULURRD
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   5  10 
+ 12   3  14   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: UURDDLLUURRDLUL
+New f=40
+New g=13
+New h=27
+New moves: URDLLURURDLLU
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   5  10 
+ 12   3   9   7 
+ 13  14  11  15 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURDDLLUURRDRDLLUUL
+New f=40
+New g=17
+New h=23
+New moves: URDLLURURDRDLLULU
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   5  10 
+ 12   3  15   9 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: UURDDLLUURRDDLUUL
+New f=40
+New g=15
+New h=25
+New moves: URDLLURURDDLULU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   5  10 
+ 13   3  14   9 
+  0  11  15   7 
+Cur f=40
+Old f=42
+Old g=13
+Old h=29
+Old moves: URDLLURURDLLD
+New f=40
+New g=11
+New h=29
+New moves: URDLUURDLDL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   7   3 
+ 13  14   9  10 
+ 11   0  15   5 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: UURDRDLLURRULDLD
+New f=40
+New g=14
+New h=26
+New moves: UURDRDLURULDDL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   3 
+ 15   0   5  10 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: LURURDDLURRULDL
+New f=40
+New g=13
+New h=27
+New moves: LURURDRULDDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   9   5   3 
+ 12  15   0  10 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURDRULDDLLUURRDDLUR
+New f=40
+New g=18
+New h=22
+New moves: LURURDRULDDLULURRD
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   0   7 
+ 13   9  10   3 
+ 11  14  15   5 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: UURDRDLLURRULDRUL
+New f=40
+New g=15
+New h=25
+New moves: UURDRDLLURURDLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   0 
+ 14   5  10   3 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: UURDDLLURRRULDRU
+New f=40
+New g=14
+New h=26
+New moves: UURRDLDLLURRUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   0 
+ 15  14  10   3 
+ 13  11   5   7 
+Cur f=40
+Old f=42
+Old g=12
+Old h=30
+Old moves: LURURDRULDRU
+New f=40
+New g=10
+New h=30
+New moves: LURURRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1  10   3   9 
+ 12  15   0   7 
+ 13  14  11   5 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURRDDLLLUURRDDLUR
+New f=40
+New g=16
+New h=24
+New moves: LURURRDDLLULURRD
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1  10   9 
+ 15   5   0   3 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LURURDDLURURDL
+New f=40
+New g=12
+New h=28
+New moves: LURURRDLDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1  10   5   9 
+ 12  15   0   3 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURRDLDLLUURRDDLUR
+New f=40
+New g=16
+New h=24
+New moves: LURURRDLDLULURRD
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1   9   0 
+ 15   5  10   3 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LURURDDLURRULDRU
+New f=40
+New g=14
+New h=26
+New moves: LURURRDLDLURUR
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1  15  10 
+ 12   5   3   9 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LURURDDLULURDRULL
+New f=40
+New g=15
+New h=25
+New moves: RULDLURURDDLULU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   1  15  10 
+  0   5  14   9 
+ 13  11   3   7 
+Cur f=40
+Old f=42
+Old g=12
+Old h=30
+Old moves: RULDLURURDLL
+New f=40
+New g=10
+New h=30
+New moves: RULURDLDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5  15  10 
+ 12  14   0   9 
+ 13  11   3   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: URDLUURDDLLUURRD
+New f=40
+New g=14
+New h=26
+New moves: RULURDLDLUURDR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5  15  10 
+ 12  14   3   9 
+ 13   0  11   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: LURURDDLULURDRULDD
+New f=40
+New g=16
+New h=24
+New moves: RULURDLDLUURDRDL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   3  14  10 
+ 13   1   0   9 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=8
+Old h=34
+Old moves: UURDLURD
+New f=40
+New g=6
+New h=34
+New moves: URULDR
+Erase happen
+Board: 
+  6   2   8   4 
+  5   1   3  10 
+ 12  13   9   0 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURDDLURRULLDLURRRD
+New f=40
+New g=17
+New h=23
+New moves: UURDDLURULDLURRDR
+Erase happen
+Board: 
+  6   2   8   4 
+  5   1   3  10 
+ 12  14   9   0 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UURDDLURRULLDDLUURRRD
+New f=40
+New g=19
+New h=21
+New moves: UURDDLURULDDLUURRDR
+Erase happen
+Board: 
+  6   2   8   4 
+  5   1   3  10 
+ 12  15   9   0 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: LURURDDLURRULLDLURRRD
+New f=40
+New g=19
+New h=21
+New moves: LURURDDLURULDLURRDR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12  14   1  10 
+  0  11  15   3 
+  5  13   7   9 
+Cur f=40
+Old f=42
+Old g=12
+Old h=30
+Old moves: RRULLDLURDLU
+New f=40
+New g=10
+New h=30
+New moves: RRULLLDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   0   1  10 
+ 13  14   3   5 
+ 11  15   7   9 
+Cur f=40
+Old f=42
+Old g=10
+Old h=32
+Old moves: UURDDRULUL
+New f=40
+New g=8
+New h=32
+New moves: URDRULLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   0   1  10 
+ 13  14   3   7 
+ 11  15   9   5 
+Cur f=40
+Old f=42
+Old g=10
+Old h=32
+Old moves: UURDRDLUUL
+New f=40
+New g=8
+New h=32
+New moves: URRDLULU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12  14   1  10 
+  5   0   9   7 
+ 13  11   3  15 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: RULDLURDRURDLLU
+New f=40
+New g=13
+New h=27
+New moves: URDLURRDLLLUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 12  14   1  10 
+  5   0  11   7 
+ 13   9  15   3 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: RULDLURRRDLLURDLU
+New f=40
+New g=15
+New h=25
+New moves: RURDLULDLURDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12  14   3   1 
+  0  11  15  10 
+  5  13   7   9 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: RRUULDLDLURDLU
+New f=40
+New g=12
+New h=28
+New moves: RRUULDLLDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   0   3  10 
+  1  14   5   9 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LUURRDDLULURDLUR
+New f=40
+New g=14
+New h=26
+New moves: LUURRDDLUULDRU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   0   3  10 
+  1  14  11   9 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: LUURRDLDRULLURDLUR
+New f=40
+New g=16
+New h=24
+New moves: LUURRDLDRULULDRU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12   0   3  10 
+  1  14  15   9 
+ 13  11   5   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LUURRDLLURDLUR
+New f=40
+New g=12
+New h=28
+New moves: LUURRDLULDRU
+Erase happen
+Board: 
+  6   2   8   4 
+ 12  14   3  10 
+  1  11   0   9 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LUURRDLDRULULDRR
+New f=40
+New g=14
+New h=26
+New moves: LUURRDLULDRDRU
+Erase happen
+Board: 
+  6   2   8   4 
+ 13   1   3  10 
+  5  12   9   0 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: UURDDLURRULLLDRURRD
+New f=40
+New g=17
+New h=23
+New moves: UURDDLURULLDRURDR
+Erase happen
+Board: 
+  6   2   8   4 
+ 13  12   1  10 
+  5   0  15   9 
+ 14  11   3   7 
+Cur f=40
+Old f=42
+Old g=13
+Old h=29
+Old moves: RULULDDRULDRU
+New f=40
+New g=11
+New h=29
+New moves: RULULDRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+  1   5   3  10 
+ 12  14  11   9 
+  0  13  15   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: UURDDLURDLLUURDDRULDL
+New f=40
+New g=19
+New h=21
+New moves: LUURRDLDRULDLUURDLD
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   3  10 
+ 12  11   7  15 
+ 13   5   9   0 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LUURRDLDRURDLURD
+New f=40
+New g=14
+New h=26
+New moves: LUURRDLDRRULDR
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   3  10 
+ 12  11   0   7 
+ 13   9  15   5 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LUURRDRDLLURDLUR
+New f=40
+New g=14
+New h=26
+New moves: LUURRDRDLULDRU
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   3  10 
+ 13  11   5   9 
+  0  12  15   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: ULURRDDLULDRULD
+New f=40
+New g=13
+New h=27
+New moves: ULURRDDLLURDL
+Erase happen
+Board: 
+  6   2   8   4 
+  0   1   3  10 
+ 14   5  12   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=19
+Old h=23
+Old moves: URDLLUURRDLLURRDLUL
+New f=40
+New g=17
+New h=23
+New moves: LUURRDLLDRRULDLUU
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   9   3 
+ 12   0  11  10 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRDDLURRULDDLU
+New f=40
+New g=15
+New h=25
+New moves: LUURRDLDRURULDL
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   9   3 
+ 12  11  15  10 
+ 13   5   0   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: LUURRDLDRURULDD
+New f=40
+New g=13
+New h=27
+New moves: LUURRDRULDLDR
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   9   3 
+ 12   0   5  10 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: LUURRDDLURRULDL
+New f=40
+New g=13
+New h=27
+New moves: LUURRDRULDDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  1   0   5   3 
+ 14   9  12  10 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=22
+Old h=20
+Old moves: LUURRDDLULURDRRULLDRUL
+New f=40
+New g=20
+New h=20
+New moves: LUURRDRULDDLULURRDLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   9   0 
+ 12  15  10   3 
+ 13  11   5   7 
+Cur f=40
+Old f=42
+Old g=12
+Old h=30
+Old moves: LUURRDRULDRU
+New f=40
+New g=10
+New h=30
+New moves: LUURRRDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1  10   9 
+ 12  11   0   3 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LUURRDLDRUURDL
+New f=40
+New g=12
+New h=28
+New moves: LUURRRDLLDRU
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   9   0 
+ 12  11  10   3 
+ 13   5  15   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LUURRDLDRURULDRU
+New f=40
+New g=14
+New h=26
+New moves: LUURRRDLLDRUUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1  10   9 
+ 12   5   0   3 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LUURRDDLURURDL
+New f=40
+New g=12
+New h=28
+New moves: LUURRRDLDLUR
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1  10   9 
+ 12   5  11   3 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: LUURRRDLLDRULDR
+New f=40
+New g=13
+New h=27
+New moves: LUURRRDLDLURD
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   1   9   0 
+ 12   5  10   3 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LUURRDDLURRULDRU
+New f=40
+New g=14
+New h=26
+New moves: LUURRRDLDLURUR
+Erase happen
+Board: 
+  6   2   8   4 
+  5   1   0   3 
+ 14  12   9  10 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=21
+Old h=21
+Old moves: RULDLURRDLUULDRURDRUL
+New f=40
+New g=19
+New h=21
+New moves: LUURRDDLURRULLDLURR
+Erase happen
+Board: 
+  6   2   8   4 
+  0   5   1  10 
+ 14  12   3   9 
+ 13  15  11   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: RULDLURRDLUULDRUL
+New f=40
+New g=15
+New h=25
+New moves: LUURRDDLURULDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  0   5   1  10 
+ 14  12  15   3 
+ 13  11   7   9 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: RRULLDLURULDRUL
+New f=40
+New g=13
+New h=27
+New moves: RRULLDLUURDLU
+Erase happen
+Board: 
+  6   2   8   4 
+  0   5   1  10 
+ 14  12  11   9 
+ 13   3  15   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: RULDLURDRULULDRUL
+New f=40
+New g=15
+New h=25
+New moves: RULDLUURDDRULLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 14   5   1  10 
+ 12  15   3   9 
+ 13   0  11   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LUURRDDLURULDD
+New f=40
+New g=12
+New h=28
+New moves: RULDLUURDRDL
+Erase happen
+Board: 
+  6   2   8   4 
+  0   5   3   1 
+ 14  12  15  10 
+ 13  11   7   9 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: RRUULDLDLURULDRUL
+New f=40
+New g=15
+New h=25
+New moves: RRUULDLDLUURDLU
+Erase happen
+Board: 
+  6   2   8   4 
+ 14  12   3  10 
+  1   0   5   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: UURDDLLUURDLURD
+New f=40
+New g=13
+New h=27
+New moves: UURDDLLURULDR
+Erase happen
+Board: 
+  6   2   8   4 
+ 14  13   1  10 
+  0  12   3   9 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=8
+Old h=34
+Old moves: UULDRULD
+New f=40
+New g=6
+New h=34
+New moves: ULURDL
+Erase happen
+Board: 
+  6   2   8   4 
+ 14  15   1  10 
+ 12   0  11   9 
+ 13   5   3   7 
+Cur f=40
+Old f=42
+Old g=11
+Old h=31
+Old moves: LURDRULLURD
+New f=40
+New g=9
+New h=31
+New moves: LUURDDRUL
+Erase happen
+Board: 
+  6   2   8   4 
+ 15   0   3  10 
+  1  12   5   9 
+ 13  14  11   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: LURURDDLULURDLUR
+New f=40
+New g=14
+New h=26
+New moves: LURURDDLUULDRU
+Erase happen
+Board: 
+  6   2  10   8 
+ 14   1   3   4 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=17
+Old h=25
+Old moves: LUURRRULDDLDRULDR
+New f=40
+New g=15
+New h=25
+New moves: LUURRRULDDDLURD
+Erase happen
+Board: 
+  0   1   3   4 
+  6   2   8  10 
+ 12  14   5   9 
+ 13  11  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURULDRDDLLUUURRDLUL
+New f=40
+New g=18
+New h=22
+New moves: UUURDDDLLUURURDLLU
+Erase happen
+Board: 
+  6   0   1   4 
+ 12   8   2  10 
+ 13  14   3   9 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=9
+Old h=33
+Old moves: UURULDRUL
+New f=40
+New g=7
+New h=33
+New moves: UUURDLU
+Erase happen
+Board: 
+  6   8   1   4 
+ 14   2   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=40
+Old f=42
+Old g=15
+Old h=27
+Old moves: LUURURDDLDRULDR
+New f=40
+New g=13
+New h=27
+New moves: LUURURDDDLURD
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8   3 
+ 13   5   9  10 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURDDLURRULULDLURDLU
+New f=40
+New g=18
+New h=22
+New moves: UURDDLURRULULLDRUL
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8   3 
+ 13  14   9  10 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: UURDRULULDLURDLU
+New f=40
+New g=14
+New h=26
+New moves: UURDRULULLDRUL
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8  10 
+  5  14  15   9 
+ 13  11   3   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: RULDLURURULDLURDLU
+New f=40
+New g=16
+New h=24
+New moves: RULDLURURULLDRUL
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8  10 
+ 13   5   3   9 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=18
+Old h=24
+Old moves: UURDDLURUULDLURDLU
+New f=40
+New g=16
+New h=24
+New moves: UURDDLURUULLDRUL
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8  10 
+ 13  14  15   9 
+ 11   5   3   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: RULURULDLURDLU
+New f=40
+New g=12
+New h=28
+New moves: RULURULLDRUL
+Erase happen
+Board: 
+  0  12   2   4 
+  1   6   8  10 
+ 15  14   3   9 
+ 13  11   5   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LURURULDLURDLU
+New f=40
+New g=12
+New h=28
+New moves: LURURULLDRUL
+Erase happen
+Board: 
+  0  12   2   8 
+  1   6   3   4 
+ 13   5   9  10 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURDDLURRUULLDLURDLU
+New f=40
+New g=18
+New h=22
+New moves: UURDDLURRUULLLDRUL
+Erase happen
+Board: 
+  0  12   2   8 
+  1   6   3   4 
+ 13  14   9  10 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=16
+Old h=26
+Old moves: UURDRUULLDLURDLU
+New f=40
+New g=14
+New h=26
+New moves: UURDRUULLLDRUL
+Erase happen
+Board: 
+  0  12   2   8 
+  1   6  10   4 
+ 13  14   3   9 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: UURRULLDLURDLU
+New f=40
+New g=12
+New h=28
+New moves: UURRULLLDRUL
+Erase happen
+Board: 
+  0  12   2   8 
+  1   6   3   4 
+ 13  10   5   9 
+ 11  14  15   7 
+Cur f=40
+Old f=42
+Old g=20
+Old h=22
+Old moves: UURRULLDRDDLUULURDLU
+New f=40
+New g=18
+New h=22
+New moves: UURRULLLDRRDDLUUUL
+Erase happen
+Board: 
+ 12   0   8   4 
+  2   6   1  10 
+ 13  14   3   9 
+ 11  15   5   7 
+Cur f=40
+Old f=42
+Old g=9
+Old h=33
+Old moves: UULURDLUR
+New f=40
+New g=7
+New h=33
+New moves: UUULDRU
+Erase happen
+Board: 
+  0  14   2   4 
+  1   6   8  10 
+ 12  15   3   9 
+ 13  11   5   7 
+Cur f=40
+Old f=42
+Old g=14
+Old h=28
+Old moves: LUURRULDLURDLU
+New f=40
+New g=12
+New h=28
+New moves: LUURRULLDRUL
+Erase happen
+Board: 
+  1   2   3   4 
+  6   5   9   0 
+ 13  12  10   8 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=28
+Old h=16
+Old moves: UURULDRDDLUULURRDDLURDRULDRU
+New f=42
+New g=26
+New h=16
+New moves: UURULDRDDLUULURRDDLURRDLUR
+Erase happen
+Board: 
+  1   2   3   4 
+  6   8  10   7 
+ 12   9   0   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=28
+Old h=16
+Old moves: UURULDRDDLLUUURRDDRDLLURURDL
+New f=42
+New g=26
+New h=16
+New moves: UURULDRDRDLLLUUURRDRDDLLUR
+Erase happen
+Board: 
+  1   2   3   4 
+  6   8   7   0 
+ 12   9  10   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=30
+Old h=14
+Old moves: UURULDRDDLLUUURRDDRDLLURRULDRU
+New f=42
+New g=28
+New h=14
+New moves: UURULDRDRDLLLUUURRDRDDLLURUR
+Erase happen
+Board: 
+  1   2   3   4 
+  6   8   9   0 
+ 12  14  10   5 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURULDRDDLLUUURRDDRULDRU
+New f=42
+New g=22
+New h=20
+New moves: UURULDRDDLLUUURRDRDLUR
+Erase happen
+Board: 
+  1   2   3   4 
+  6   8   0   9 
+ 13   5  10  12 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURULDRDDLUULURRDLDRRULDRUL
+New f=42
+New g=25
+New h=17
+New moves: UURULDRDDLUULURRDLDRURDLU
+Erase happen
+Board: 
+  1   2   3   4 
+  6  12   8  10 
+ 14  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: LUURRULDRDLDRULLUURRDLDR
+New f=42
+New g=22
+New h=20
+New moves: LUURRULDRDLLUURRDLDDRU
+Erase happen
+Board: 
+  1   2   3   8 
+  6   5  12   4 
+  9  11  10   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=33
+Old h=11
+Old moves: UURDDLURRUULLDLURRDLDRRDLLLURDRRU
+New f=42
+New g=31
+New h=11
+New moves: UURDDLURRUULLDLURRDLDRDLLURDRUR
+Erase happen
+Board: 
+  1   2   3   8 
+  6   5   7   4 
+ 14   0  12  10 
+ 13  11  15   9 
+Cur f=42
+Old f=44
+Old g=29
+Old h=15
+Old moves: UURDDRUUULLDLURRDDDLUURDLDLUR
+New f=42
+New g=27
+New h=15
+New moves: UURDDRUUULLDLURRDDDLLURURDL
+Erase happen
+Board: 
+  1   2   3   8 
+  6  12   9   4 
+ 13   0  10   7 
+ 11  14  15   5 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURRULLDRDRDLLUULURRDDL
+New f=42
+New g=21
+New h=21
+New moves: UURDRUULLDLURRDDRDLLU
+Erase happen
+Board: 
+  1   2   3   8 
+  6   9   5   4 
+ 14   0  12  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURDDLLURRRUULLDLURRDLDRULD
+New f=42
+New g=25
+New h=17
+New moves: UURDRUULLDLURRDDDLLURURDL
+Erase happen
+Board: 
+  1   2   3   8 
+  6  12   9   4 
+ 15   0   5  10 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LURURDDLURRUULLDLURRDDL
+New f=42
+New g=21
+New h=21
+New moves: LURURDRUULLDLURRDDDLU
+Erase happen
+Board: 
+  1   2   3   8 
+  6   9   5   4 
+ 15   0  12  10 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: LURURDDLURRUULLDLURRDLDRULD
+New f=42
+New g=25
+New h=17
+New moves: LURURDRUULLDLURRDDDLUURDL
+Erase happen
+Board: 
+  1   2   3   8 
+  6  14   9   4 
+ 12   0  11  10 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: LUURRDDLURRUULLDLURRDDDLU
+New f=42
+New g=23
+New h=19
+New moves: LUURRDLDRURUULLDLURRDDL
+Erase happen
+Board: 
+  1   2   3   8 
+  6  14   9   4 
+ 12  11  15  10 
+ 13   5   0   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LUURRDLDRURUULLDLURRDDD
+New f=42
+New g=21
+New h=21
+New moves: LUURRDRUULLDLURRDDLDR
+Erase happen
+Board: 
+  1   2   3   8 
+  6  14   9   4 
+ 12   0   5  10 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LUURRDDLURRUULLDLURRDDL
+New f=42
+New g=21
+New h=21
+New moves: LUURRDRUULLDLURRDDDLU
+Erase happen
+Board: 
+  1   2   4   3 
+  6   5  12   8 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURDDLURRULULDLURRRDLLDDLUR
+New f=42
+New g=25
+New h=17
+New moves: UURDDLLURRRULULDLURRRDLLD
+Erase happen
+Board: 
+  1   2   4   3 
+  6  12   9   8 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURDDLURRULULDLURRRDLDL
+New f=42
+New g=21
+New h=21
+New moves: UURDRULULDLURRRDLDDLU
+Erase happen
+Board: 
+  1   2   4   3 
+  6   9   5   8 
+ 13   0  12  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURDDLURRULULDLURRRDLLDRULD
+New f=42
+New g=25
+New h=17
+New moves: UURDRULULDLURRRDLDDLUURDL
+Erase happen
+Board: 
+  1   2   4   3 
+  6  14  12   8 
+  9   0   5  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURDRULULDDRDLLURULURRRDLLD
+New f=42
+New g=25
+New h=17
+New moves: UURDRULULDLURRRDLLDRDLLUR
+Erase happen
+Board: 
+  1   2   3   4 
+  6   5  10   8 
+ 13   9  12   0 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=31
+Old h=13
+Old moves: UURULDRDDLUULURRDLDRRULLDRRULDR
+New f=42
+New g=29
+New h=13
+New moves: UURULDLURRRDLDDLURRUULDLDRURD
+Erase happen
+Board: 
+  1   2   4  10 
+  6  14   3   8 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LUURRULDLURRRDLDLDRULDR
+New f=42
+New g=21
+New h=21
+New moves: LUURRULDLURRRDLDDLURD
+Erase happen
+Board: 
+  1   2   8   4 
+  6   3   5  10 
+ 14   0  12   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURULDLURRDDDLUURDLDLUR
+New f=42
+New g=21
+New h=21
+New moves: UURULDLURRDDDLLURURDL
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5   3  10 
+ 12  13   9   0 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURDDLURRUULLDDLUURRRDD
+New f=42
+New g=21
+New h=21
+New moves: UURDDLURUULDDLUURRDDR
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5   3  10 
+ 12  14   9   0 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDDLURRUULLDDDLUUURRRDD
+New f=42
+New g=23
+New h=19
+New moves: UURDDLURUULDDDLUUURRDDR
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5   3  10 
+ 12  15   9   0 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: LURURDDLURRUULLDDLUURRRDD
+New f=42
+New g=23
+New h=19
+New moves: LURURDDLURUULDDLUURRDDR
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5   3  10 
+ 14  12   9   0 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: LUURRDDLURRUULLDDLUURRRDD
+New f=42
+New g=23
+New h=19
+New moves: LUURRDDLURUULDDLUURRDDR
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5  12   3 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURULDLURRDDDLURRULLDDLUR
+New f=42
+New g=23
+New h=19
+New moves: UURULDLURRDDDLLURRRULLD
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5   3  12 
+ 13  10   9   0 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=29
+Old h=15
+Old moves: UURRDLDLURUULDLURRDLDRURDLURD
+New f=42
+New g=27
+New h=15
+New moves: UURRDLDLURUULDLURRDLDRRULDR
+Erase happen
+Board: 
+  1   2   8   4 
+  6   5  12  10 
+ 14   0   3   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURULDLURRDDDLURULDDLUR
+New f=42
+New g=21
+New h=21
+New moves: UURULDLURRDDDLLURRULD
+Erase happen
+Board: 
+  1   2   8   4 
+  6  12   3  10 
+  5  11   0   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: RULDLURRDLUURULDLURRDDDLUR
+New f=42
+New g=24
+New h=18
+New moves: UURULDLURRDDDLURDLLURDRU
+Erase happen
+Board: 
+  1   2   8   4 
+  6  12   3  10 
+  5  11   9   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURULDLURRDDDLURRDLLLURDRRU
+New f=42
+New g=25
+New h=17
+New moves: UURULDLURRDDDLURDLLURDRUR
+Erase happen
+Board: 
+  1   2   8   4 
+  6  12   3  10 
+ 13   0  15   9 
+ 11   5  14   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UURULDLURRDDDLURDLU
+New f=42
+New g=17
+New h=25
+New moves: UURULDLURRDDLDRUL
+Erase happen
+Board: 
+  1   2   8   4 
+  6  12   3  10 
+ 15   0  11   9 
+ 13   5  14   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LURURULDLURRDDDLURDLU
+New f=42
+New g=19
+New h=23
+New moves: LURURULDLURRDDLDRUL
+Erase happen
+Board: 
+  1   2   8   4 
+  6  12   9   3 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UURULDLURRDDDLURRULDL
+New f=42
+New g=19
+New h=23
+New moves: UURULDLURRDDRULDDLU
+Erase happen
+Board: 
+  1   2   8   4 
+  6   9   5   3 
+ 13   0  12  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURULDLURRDDDLURRULLDRULD
+New f=42
+New g=23
+New h=19
+New moves: UURULDLURRDDRULDDLUURDL
+Erase happen
+Board: 
+  1   2   8   4 
+  6  12  10   9 
+ 13   5   0   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURRDLDLURUULDLURRDD
+New f=42
+New g=18
+New h=24
+New moves: UURULDLURRDRDLDLUR
+Erase happen
+Board: 
+  1   2   8   4 
+  6   0   5   9 
+ 13  10  12   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURRDLDLURUULDLURRDLDRUL
+New f=42
+New g=22
+New h=20
+New moves: UURULDLURRDRDLDLUURDLU
+Erase happen
+Board: 
+  1   2   8   4 
+  6   0   5  10 
+ 12  14   3   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UURDDLURUULDDDLUUURRDL
+New f=42
+New g=20
+New h=22
+New moves: UURULDDRDLLUUURRDDLU
+Erase happen
+Board: 
+  1   2   8   4 
+  6  14  12   3 
+  9   0   5  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDRULULDDRDLLURULURRDLD
+New f=42
+New g=23
+New h=19
+New moves: UURULDLURRDDRULLDRDLLUR
+Erase happen
+Board: 
+  1   2   8   4 
+  6  14  12  10 
+  0   5  15   9 
+ 13  11   3   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: RULDLURURULDLURRDLDL
+New f=42
+New g=18
+New h=24
+New moves: RULURULDLURRDLDDLU
+Erase happen
+Board: 
+  1   2   8   4 
+ 13   6  12  10 
+  0  11   3   9 
+ 15  14   5   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURULDLDDRULUURRDLLD
+New f=42
+New g=18
+New h=24
+New moves: UURULDLURRDLLDDRUL
+Erase happen
+Board: 
+  1   2   8   4 
+ 13   6  12  10 
+  0  11  15   9 
+  5  14   3   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: RULURULDLDDRULUURRDLLD
+New f=42
+New g=20
+New h=22
+New moves: RULURULDLURRDLLDDRUL
+Erase happen
+Board: 
+  1   2  10   8 
+  6  14   3   4 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LUURRRULLDLURRDDLDRULDR
+New f=42
+New g=21
+New h=21
+New moves: LUURRRULLDLURRDDDLURD
+Erase happen
+Board: 
+  1   2   0   4 
+ 12   6   3   8 
+ 13   5   9  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURULDRDDLULUURRDLLDRRRULU
+New f=42
+New g=24
+New h=18
+New moves: UURDDLULURRULLDDRRRULLUR
+Erase happen
+Board: 
+  1   2   0   4 
+ 12   6   3   8 
+ 14   5   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURULDRDDLLUUURRDLLDRRRULU
+New f=42
+New g=24
+New h=18
+New moves: UURDDLLUURRULLDDRRRULLUR
+Erase happen
+Board: 
+  1   6   2   4 
+  0  12   8  10 
+  5  14   3   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: URDLLUURRDLLURRULLDRDLU
+New f=42
+New g=21
+New h=21
+New moves: UURDDLLUURDRUULLDDRUL
+Erase happen
+Board: 
+  1   6   8   4 
+  2   5   3  10 
+ 12  11   9   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDDLURRDLLLUURULDRDDRRU
+New f=42
+New g=23
+New h=19
+New moves: UURDDLURDLLUURULDRDDRUR
+Erase happen
+Board: 
+  1   6   8   4 
+  2  12   3  10 
+ 14  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: LUURRDLDRULLURULDRDR
+New f=42
+New g=18
+New h=24
+New moves: LUURRDLLURULDRDDRU
+Erase happen
+Board: 
+  1   6   8   4 
+ 12   2   3  10 
+  5  11   9   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDDLURRDLLLUURULDDRDRRU
+New f=42
+New g=23
+New h=19
+New moves: UURDDLURDLLUURULDDRDRUR
+Erase happen
+Board: 
+  1   6   8   4 
+ 12   2   3  10 
+ 11   0   5   9 
+ 14  13  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UURDDLULDRULURULDDR
+New f=42
+New g=17
+New h=25
+New moves: UURDDLULURULDDDRU
+Erase happen
+Board: 
+  1   6   8   4 
+ 14   2   3  10 
+ 12  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: LUURRDLDRULLURULDDRR
+New f=42
+New g=18
+New h=24
+New moves: LUURRDLLURULDDRDRU
+Erase happen
+Board: 
+  1  12   2   4 
+  6  14   8   3 
+  9   0   5  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURDRULULDDRDLLURULURDD
+New f=42
+New g=21
+New h=21
+New moves: UURDRULULDLURDDRDLLUR
+Erase happen
+Board: 
+  1  12   2   4 
+  6  14   8  10 
+  0   5  15   9 
+ 13  11   3   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: RULDLURURULDLURDDL
+New f=42
+New g=16
+New h=26
+New moves: RULURULDLURDDDLU
+Erase happen
+Board: 
+  1  12   2   4 
+ 13   6   8  10 
+  0  11   3   9 
+ 15  14   5   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: UURULDLDDRULUURDLD
+New f=42
+New g=16
+New h=26
+New moves: UURULDLURDLDDRUL
+Erase happen
+Board: 
+  1  12   2   4 
+ 13   6   8  10 
+  0  11  15   9 
+  5  14   3   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: RULURULDLDDRULUURDLD
+New f=42
+New g=18
+New h=24
+New moves: RULURULDLURDLDDRUL
+Erase happen
+Board: 
+  1  12   2   8 
+  6  10   3   4 
+ 13   0   9   7 
+ 11  14  15   5 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UURRULLDRDRDLLUULURDD
+New f=42
+New g=19
+New h=23
+New moves: UURRULLDLURDRDRDLLU
+Erase happen
+Board: 
+  1  12   2   8 
+  6  10   3   4 
+ 15   0   5   9 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LURURRULLDRDDLUULURDD
+New f=42
+New g=19
+New h=23
+New moves: LURURRULLDLURDRDDLU
+Erase happen
+Board: 
+  1  12   2   8 
+  6  14   3   4 
+  9   0   5  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURDRUULLDDRDLLURULURDD
+New f=42
+New g=21
+New h=21
+New moves: UURDRUULLDLURDDRDLLUR
+Erase happen
+Board: 
+  1  14   2   4 
+  6   3   0   8 
+ 12   5   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: URDLLUURRULDDRRULLLURDR
+New f=42
+New g=21
+New h=21
+New moves: UURULDDRDLLUUURDDRRUL
+Erase happen
+Board: 
+  1  14   2   4 
+  6   8   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUURRULDLURDRDLDRULDR
+New f=42
+New g=19
+New h=23
+New moves: LUURRULDLURDRDDLURD
+Erase happen
+Board: 
+  1  14   2   8 
+  6  10   3   4 
+ 12   0  15   9 
+ 13  11   5   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUURRRULLDRDLULURDD
+New f=42
+New g=17
+New h=25
+New moves: LUURRRULLDLURDRDL
+Erase happen
+Board: 
+  1  14   2   8 
+  6  10   3   4 
+ 12   0  11   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LUURRRULLDRDLDRULULURDD
+New f=42
+New g=21
+New h=21
+New moves: LUURRRULLDLURDRDLDRUL
+Erase happen
+Board: 
+  1  14   2   8 
+  6  10   3   4 
+ 12   0   5   9 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUURRRULLDRDDLUULURDD
+New f=42
+New g=19
+New h=23
+New moves: LUURRRULLDLURDRDDLU
+Erase happen
+Board: 
+  1  14   2   8 
+  6  10   3   4 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: LUURRRULLDLURDRDLDRULDR
+New f=42
+New g=21
+New h=21
+New moves: LUURRRULLDLURDRDDLURD
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8  10   7 
+ 12   9   0   5 
+ 13  14  15  11 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: LUUURRDDDLUUURDDRDLLURURDL
+New f=42
+New g=24
+New h=18
+New moves: LUUURRDDRDLLUUURDRDDLLUR
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   7   0 
+ 12   9  10   5 
+ 13  14  15  11 
+Cur f=42
+Old f=44
+Old g=28
+Old h=16
+Old moves: LUUURRDDDLUUURDDRDLLURRULDRU
+New f=42
+New g=26
+New h=16
+New moves: LUUURRDDRDLLUUURDRDDLLURUR
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   9   0 
+ 12  14  10   5 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: LUUURRDDDLUUURDDRULDRU
+New f=42
+New g=20
+New h=22
+New moves: LUUURRDDDLUUURDRDLUR
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8  10   9 
+ 12   5   0  15 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: LUUURRDDLUURDDDLURURDL
+New f=42
+New g=20
+New h=22
+New moves: LUUURRDDLUURDRDLDLUR
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   9   0 
+ 13  12  10   5 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UULURRDDDLUUURDDRULDRU
+New f=42
+New g=20
+New h=22
+New moves: UULURRDDDLUUURDRDLUR
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8  15  10 
+ 12   0  11   9 
+ 13   5  14   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUUURRDDLUURDDDLURDLU
+New f=42
+New g=19
+New h=23
+New moves: LUUURRDDLUURDDLDRUL
+Erase happen
+Board: 
+  2   1   3   4 
+  6   0  12  10 
+ 13   5   8   9 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UULURRDDDLUUURDDLURDLU
+New f=42
+New g=20
+New h=22
+New moves: UULURRDDDLUUURDLDRUL
+Erase happen
+Board: 
+  2   1   3   4 
+  6   5  12   8 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UULURRDDDLUUURDLDRRULLDDLUR
+New f=42
+New g=25
+New h=17
+New moves: URDLLUURDLUURDRULDDRRULLD
+Erase happen
+Board: 
+  2   1   3   4 
+  6  14   9   8 
+ 12   0  11  10 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: LUUURRDDDLUUURDLDRRULDDLU
+New f=42
+New g=23
+New h=19
+New moves: LUUURRDDLUURDLDDRURULDL
+Erase happen
+Board: 
+  2   1   3   4 
+ 12   6   8  10 
+  0  11   5   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: LUUURRDDDLUUURDDDLURULLD
+New f=42
+New g=22
+New h=20
+New moves: ULUURRDDDLUUURDLLDDRUL
+Erase happen
+Board: 
+  2   1   3   4 
+ 12   6   8  10 
+ 14  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: LUUURRDDLDRULUURDLLDRR
+New f=42
+New g=20
+New h=22
+New moves: LUUURRDDLUURDLLDRDRU
+Erase happen
+Board: 
+  2   1   3   8 
+  6   0   5   4 
+ 12   9  14  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURDDLLUUURDDRRUULDLDRUL
+New f=42
+New g=22
+New h=20
+New moves: UURDRUULDDDLLUUURDRDLU
+Erase happen
+Board: 
+  2   1   3   8 
+  6  14   7   4 
+ 12   5  11  10 
+ 13  15   0   9 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: RRUUULDDDLLUUURRDDLDRULDR
+New f=42
+New g=23
+New h=19
+New moves: RRUUULDDDLLUUURRDDDLURD
+Erase happen
+Board: 
+  2   1   3   8 
+  6  14  12   4 
+  0   5  15  10 
+ 13  11   7   9 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: RRUUULDDLDLURULURRDLDL
+New f=42
+New g=20
+New h=22
+New moves: RRUUULDDLULURRDLDDLU
+Erase happen
+Board: 
+  2   1   3   8 
+ 13   6  12   4 
+  0  11  15  10 
+  5  14   7   9 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: RRUUULDDLULDDRULUURRDLLD
+New f=42
+New g=22
+New h=20
+New moves: RRUUULDDLULURRDLLDDRUL
+Erase happen
+Board: 
+  2   1   3   8 
+  6   5  12   4 
+ 14   9   0  10 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: LUURRDRUULDDDLULUURDRDLURD
+New f=42
+New g=24
+New h=18
+New moves: LUURRDDLULUURDDRRUULDLDR
+Erase happen
+Board: 
+  2   1   3   8 
+  6   5  15   4 
+ 12   9   0  10 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURDRUULDDDLLUUURDRDDLUURD
+New f=42
+New g=24
+New h=18
+New moves: LURURDDLULUURDDRRUULDLDR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   3   5  10 
+ 11   0  12   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULDRURDDLLUUURDRDLDLUR
+New f=42
+New g=21
+New h=21
+New moves: ULURRDDLULUURDRDLLDRU
+Erase happen
+Board: 
+  2   1   8   4 
+  6   3  10   7 
+ 12   9   0   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURDDLLUUURDRDRDLLURURDL
+New f=42
+New g=22
+New h=20
+New moves: UURDRDLLLUUURDRRDDLLUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   3   7   0 
+ 12   9  10   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURDDLLUUURDRDRDLLURRULDRU
+New f=42
+New g=24
+New h=18
+New moves: UURDRDLLLUUURDRRDDLLURUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   3   9   0 
+ 12  14  10   5 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURDDLLUUURDRDRULDRU
+New f=42
+New g=18
+New h=24
+New moves: UURDDLLUUURDRRDLUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5   3  10 
+ 12  14  11   9 
+  0  13  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURDDLURDLLUUURDDDRULDL
+New f=42
+New g=21
+New h=21
+New moves: LUURRDLDRULDLUUURDDLD
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5  15  10 
+ 12  14   0   9 
+ 13  11   3   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: URDLUURDDLLUUURDRD
+New f=42
+New g=16
+New h=26
+New moves: RULURDLDLUUURDDR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5  15  10 
+ 12  14   3   9 
+ 13   0  11   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: RULDLURURDDLULUURDDD
+New f=42
+New g=18
+New h=24
+New moves: RULURDLDLUUURDDRDL
+Erase happen
+Board: 
+  2   1   8   4 
+  6   0   5   3 
+ 12   9  14  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UURDDLLUUURDDRRULLDRUL
+New f=42
+New g=20
+New h=22
+New moves: UURDRULDDLLUUURDRDLU
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5   0   9 
+ 12  10   3   7 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDDLLUUURDRRDDLLURULDRU
+New f=42
+New g=23
+New h=19
+New moves: UURRDLDLLUUURDRDRDLLUUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6  10   3   0 
+ 12  14   9   5 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UURRDLDLLUUURDRDRULDRU
+New f=42
+New g=20
+New h=22
+New moves: UURRDLDLLUUURDRRDLUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   9   0   3 
+ 12  10   5   7 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDRULDDLLUUURDRDRDLLURU
+New f=42
+New g=23
+New h=19
+New moves: UURRDLDLLUUURDRRDDLLUUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6  10   7   0 
+ 12  14   9   3 
+ 13  11  15   5 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UURRDDLLLUUURDRDRULDRU
+New f=42
+New g=20
+New h=22
+New moves: UURRDDLLLUUURDRRDLUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   9   3   7 
+ 12  10   0   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURRDLDLLUUURDRRDDLLUURRDL
+New f=42
+New g=24
+New h=18
+New moves: UURRDDLLLUUURDRRDDLLUURD
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5  12   3 
+ 14   9   0  10 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: LUURRDRULDDLULUURDRDLURD
+New f=42
+New g=22
+New h=20
+New moves: LUURRDDLULUURDDRRULLDR
+Erase happen
+Board: 
+  2   1   8   4 
+  6  12   3  10 
+ 11   0   5   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UULDRURDDLLUUURDDDLUR
+New f=42
+New g=19
+New h=23
+New moves: ULURRDDLULUURDDLDRU
+Erase happen
+Board: 
+  2   1   8   4 
+  6  14   3  10 
+ 12   0  11   9 
+ 13  15   5   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UURDDLLURDRULLUURDD
+New f=42
+New g=17
+New h=25
+New moves: UURDDLLUUURDDDRUL
+Erase happen
+Board: 
+  2   1   8   4 
+  6  14   9   0 
+ 12   5  10   3 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURDDLLUUURDDRRULDRU
+New f=42
+New g=18
+New h=24
+New moves: UURRDLDLLUUURDDRUR
+Erase happen
+Board: 
+  2   1   8   4 
+  6   5  15   3 
+ 12   9   0  10 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURDRULDDLLUUURDRDDLUURD
+New f=42
+New g=22
+New h=20
+New moves: LURURDDLULUURDDRRULLDR
+Erase happen
+Board: 
+  2   1   8   4 
+  6  15   3  10 
+ 12  11   0   9 
+ 13   5  14   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LURURDLDRULLUURDDR
+New f=42
+New g=16
+New h=26
+New moves: UURDLDLUUURDDDRU
+Erase happen
+Board: 
+  2   1   8   4 
+ 12   6   3  10 
+  5  11   9   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDDLURRDLLLUUURDLDRDRRU
+New f=42
+New g=23
+New h=19
+New moves: UURDDLURDLLUUURDLDRDRUR
+Erase happen
+Board: 
+  2   1   8   4 
+ 12   6   3  10 
+ 11   0   5   9 
+ 14  13  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UURDDLULDRULUURDLDR
+New f=42
+New g=17
+New h=25
+New moves: UURDDLULUURDLDDRU
+Erase happen
+Board: 
+  2   1   8   4 
+ 14   6   3  10 
+ 12  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: LUURRDLDRULLUURDLDRR
+New f=42
+New g=18
+New h=24
+New moves: LUURRDLLUURDLDRDRU
+Erase happen
+Board: 
+  2   1  12   4 
+  6  14   8  10 
+  0   5  15   9 
+ 13  11   3   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: RULDLURULURDRULDDL
+New f=42
+New g=16
+New h=26
+New moves: RULULURDRULDDDLU
+Erase happen
+Board: 
+  2   1  14   4 
+  6   8   3  10 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUUURDRULDRDLDRULDR
+New f=42
+New g=17
+New h=25
+New moves: LUUURDRULDRDDLURD
+Erase happen
+Board: 
+  2   1  14   8 
+  6  10   3   4 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUUURDRRULLDRDLDRULDR
+New f=42
+New g=19
+New h=23
+New moves: LUUURDRRULLDRDDLURD
+Erase happen
+Board: 
+  2   1   3   8 
+  6   0   5   4 
+ 14  12   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: URDLLUURDRRUULDLDLUURRDL
+New f=42
+New g=22
+New h=20
+New moves: URDLLUURDLUURDRDRUULLD
+Erase happen
+Board: 
+  1   2   3   4 
+  0   5   8  10 
+  6  14  12   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=27
+Old h=17
+Old moves: UURULDRDDLUULURRDLDRULDDLUU
+New f=42
+New g=25
+New h=17
+New moves: URDLLUURDLUURDRDLLURRULLD
+Erase happen
+Board: 
+  2   0   3   4 
+  6   1   8   5 
+ 14  12   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULURRDDDLLURUURDDRULLU
+New f=42
+New g=21
+New h=21
+New moves: URDLLUURDLUURDRDRULUL
+Erase happen
+Board: 
+  2   1   3   0 
+  6   5   8   4 
+ 12  14   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: URULDRDLLUUURDDRUULDDRRUU
+New f=42
+New g=23
+New h=19
+New moves: UURDDLLUUURRDDRUULLDRUR
+Erase happen
+Board: 
+  2   3   8   4 
+  6   1   0  10 
+ 12  14   5   9 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUUURRDDDLUUURDLURD
+New f=42
+New g=17
+New h=25
+New moves: LUUURRDDDLUURULDR
+Erase happen
+Board: 
+  2   3   8   4 
+  6   1   0  10 
+ 12  14  11   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUUURRDDLDRULUURDLURD
+New f=42
+New g=19
+New h=23
+New moves: LUUURRDDLDRULURULDR
+Erase happen
+Board: 
+  2   3   8   4 
+  6   1   0  10 
+ 12  14  15   9 
+ 13  11   5   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: LUUURRDDLUURDLURD
+New f=42
+New g=15
+New h=27
+New moves: LUUURRDDLURULDR
+Erase happen
+Board: 
+  2   3   8   4 
+  6   1   0  10 
+ 13  12   5   9 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UULURRDDDLUUURDLURD
+New f=42
+New g=17
+New h=25
+New moves: UULURRDDDLUURULDR
+Erase happen
+Board: 
+  2   0   1   4 
+  6   8   3   5 
+ 12  14   9  10 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUUURRDDDLUUURDDRULUL
+New f=42
+New g=19
+New h=23
+New moves: LUUURRDDDLUURDRULLU
+Erase happen
+Board: 
+  2   0   1   4 
+  6   8   3   5 
+ 13  12   9  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UULURRDDDLUUURDDRULUL
+New f=42
+New g=19
+New h=23
+New moves: UULURRDDDLUURDRULLU
+Erase happen
+Board: 
+  2   8   1   4 
+  6   3   5  10 
+ 14   0  12   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UULURRDDDLUURDLDLUR
+New f=42
+New g=17
+New h=25
+New moves: UULURRDDDLLURURDL
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   0  10 
+ 12   5  14   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: URULDRDLLUUURDDRUULDR
+New f=42
+New g=19
+New h=23
+New moves: URDLLUUURRDLDRULURD
+Erase happen
+Board: 
+  2   0   1   4 
+  6   8   3  10 
+ 12   5  15   9 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUUURRDDLUURDDDLURUUL
+New f=42
+New g=19
+New h=23
+New moves: LUUURRDDLURDDLURULU
+Erase happen
+Board: 
+  2   8   1   4 
+  6   5   3  10 
+ 12  14  15   9 
+ 13   0  11   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: LUUURRDDLURDDLURULDD
+New f=42
+New g=18
+New h=24
+New moves: URDLLUUURRDDLURDDL
+Erase happen
+Board: 
+  2   8   1   4 
+  6   5  12   3 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UULURRDDDLURRULLDDLUR
+New f=42
+New g=19
+New h=23
+New moves: UULURRDDDLLURRRULLD
+Erase happen
+Board: 
+  2   8   1   4 
+  6   5  12  10 
+ 14   0   3   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UULURRDDDLURULDDLUR
+New f=42
+New g=17
+New h=25
+New moves: UULURRDDDLLURRULD
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   5  10 
+ 11  12   0   9 
+ 14  13  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UULURRDDDLUUURDDLLDRUR
+New f=42
+New g=20
+New h=22
+New moves: UULURRDDDLULDRUUURDD
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   3  10 
+  5  11   0   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: RULDLURRDLUULURRDDDLUR
+New f=42
+New g=20
+New h=22
+New moves: UULURRDDDLURDLLURDRU
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   3  10 
+  5  11   9   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULURRDDDLURRDLLLURDRRU
+New f=42
+New g=21
+New h=21
+New moves: UULURRDDDLURDLLURDRUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   3  10 
+ 13   0  15   9 
+ 11   5  14   7 
+Cur f=42
+Old f=44
+Old g=15
+Old h=29
+Old moves: UULURRDDDLURDLU
+New f=42
+New g=13
+New h=29
+New moves: UULURRDDLDRUL
+Erase happen
+Board: 
+  2   1   3   4 
+  6   8   0  10 
+ 14  12   9   7 
+ 13  11  15   5 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: URRDLLLUURDLUURDRULDR
+New f=42
+New g=19
+New h=23
+New moves: UULURRDDRDLLLURUURD
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   3  10 
+ 15   0  11   9 
+ 13   5  14   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: LURULURRDDDLURDLU
+New f=42
+New g=15
+New h=27
+New moves: LURULURRDDLDRUL
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   9   3 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: UULURRDDDLURRULDL
+New f=42
+New g=15
+New h=27
+New moves: UULURRDDRULDDLU
+Erase happen
+Board: 
+  2   8   1   4 
+  6   9   5   3 
+ 13   0  12  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UULURRDDDLURRULLDRULD
+New f=42
+New g=19
+New h=23
+New moves: UULURRDDRULDDLUURDL
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   9   0 
+ 13  14  10   3 
+ 11  15   5   7 
+Cur f=42
+Old f=44
+Old g=14
+Old h=30
+Old moves: UULURRDDRULDRU
+New f=42
+New g=12
+New h=30
+New moves: UULURRDRDLUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12  10   9 
+ 13   5   0   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: UULURRDDDLURURDL
+New f=42
+New g=14
+New h=28
+New moves: UULURRDRDLDLUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  12   9   0 
+ 13   5  10   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: UULURRDDDLURRULDRU
+New f=42
+New g=16
+New h=26
+New moves: UULURRDRDLDLURUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6   5  12   9 
+ 13  10   0   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UULURRDRDLDLUURDLURD
+New f=42
+New g=18
+New h=24
+New moves: UULURRDRDLDLURULDR
+Erase happen
+Board: 
+  2   8   1   4 
+  6   5   3  12 
+ 13  10   9   0 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UULURRDRDLDLUURDLURRDLURD
+New f=42
+New g=23
+New h=19
+New moves: UULURRDRDLDLURULDRRULDR
+Erase happen
+Board: 
+  2   1   3   4 
+  5   6   8  10 
+ 12   0  11   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=29
+Old h=15
+Old moves: RULDLURRDLUULURRDDDLUUURDLLDR
+New f=42
+New g=27
+New h=15
+New moves: LUUURRDDLDRULDLURUURDLLDDRU
+Erase happen
+Board: 
+  2   8   1   4 
+  5   6   3  10 
+ 12   0  11   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: RULDLURRDLUULURRDDDLUULDR
+New f=42
+New g=23
+New h=19
+New moves: LUUURRDDLDRULDLURULDDRU
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   3  10 
+ 12  11   7  15 
+ 13   5   9   0 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURRDDLDRURDLURD
+New f=42
+New g=16
+New h=26
+New moves: LUUURRDDLDRRULDR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   3  10 
+ 12  11   0   7 
+ 13   9  15   5 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURRDDRDLLURDLUR
+New f=42
+New g=16
+New h=26
+New moves: LUUURRDDRDLULDRU
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   3  10 
+ 13  11   5   9 
+  0  12  15   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: ULUURRDDDLULDRULD
+New f=42
+New g=15
+New h=27
+New moves: ULUURRDDDLLURDL
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   9   3 
+ 12   0  11  10 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUUURRDDDLURRULDDLU
+New f=42
+New g=17
+New h=25
+New moves: LUUURRDDLDRURULDL
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   9   3 
+ 12  11  15  10 
+ 13   5   0   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: LUUURRDDLDRURULDD
+New f=42
+New g=15
+New h=27
+New moves: LUUURRDDRULDLDR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   9   3 
+ 12   0   5  10 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: LUUURRDDDLURRULDL
+New f=42
+New g=15
+New h=27
+New moves: LUUURRDDRULDDLU
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   9   0 
+ 12  15  10   3 
+ 13  11   5   7 
+Cur f=42
+Old f=44
+Old g=14
+Old h=30
+Old moves: LUUURRDDRULDRU
+New f=42
+New g=12
+New h=30
+New moves: LUUURRDRDLUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14  10   9 
+ 12  11   0   3 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: LUUURRDDLDRUURDL
+New f=42
+New g=14
+New h=28
+New moves: LUUURRDRDLLDRU
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   9   0 
+ 12  11  10   3 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURRDDLDRURULDRU
+New f=42
+New g=16
+New h=26
+New moves: LUUURRDRDLLDRUUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14  10   9 
+ 12   5   0   3 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: LUUURRDDDLURURDL
+New f=42
+New g=14
+New h=28
+New moves: LUUURRDRDLDLUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14  10   9 
+ 12   5  11   3 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: LUUURRDRDLLDRULDR
+New f=42
+New g=15
+New h=27
+New moves: LUUURRDRDLDLURD
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14   9   0 
+ 12   5  10   3 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURRDDDLURRULDRU
+New f=42
+New g=16
+New h=26
+New moves: LUUURRDRDLDLURUR
+Erase happen
+Board: 
+  2   8   1   4 
+  6  14  12  10 
+  0   5  15   9 
+ 13  11   3   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: RULDLURULURRDLDL
+New f=42
+New g=14
+New h=28
+New moves: RULULURRDLDDLU
+Erase happen
+Board: 
+  2   1   3   4 
+  0  12   8  10 
+  6  14   5   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UULURRDDDLUUURDLDDLUU
+New f=42
+New g=19
+New h=23
+New moves: UULURRDDDLLUURURDLL
+Erase happen
+Board: 
+  2   8   1   4 
+ 12   6   3  10 
+ 14  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURRDDLDRULULDRR
+New f=42
+New g=16
+New h=26
+New moves: LUUURRDDLULDRDRU
+Erase happen
+Board: 
+  2   8   1   4 
+ 13   6  12  10 
+  0  11   3   9 
+ 15  14   5   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: UULDDRULUURRDLLD
+New f=42
+New g=14
+New h=28
+New moves: UULURRDLLDDRUL
+Erase happen
+Board: 
+  2   8   1   4 
+ 13   6  12  10 
+  0  11  15   9 
+  5  14   3   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: RULULDDRULUURRDLLD
+New f=42
+New g=16
+New h=26
+New moves: RULULURRDLLDDRUL
+Erase happen
+Board: 
+  2   1   3   4 
+ 14   0   8  10 
+  6  12   5   9 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: LUUURRDDDLUUURDLDLUR
+New f=42
+New g=18
+New h=24
+New moves: LUUURRDDDLULURURDL
+Erase happen
+Board: 
+  2   1   3   4 
+ 14   0   8  10 
+  6  12  11   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: LUUURRDDLDRULUURDLDLUR
+New f=42
+New g=20
+New h=22
+New moves: LUUURRDDLDRULLURURDL
+Erase happen
+Board: 
+  2   1   3   4 
+ 14   0   8  10 
+  6  12  15   9 
+ 13  11   5   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURRDDLUURDLDLUR
+New f=42
+New g=16
+New h=26
+New moves: LUUURRDDLLURURDL
+Erase happen
+Board: 
+  0   2   3   4 
+  1   8   5  10 
+  6  12   9   7 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURULDRDDLLUUURRDDRDLLULUU
+New f=42
+New g=24
+New h=18
+New moves: UURDDLLUUURRDDRDLLULURUL
+Erase happen
+Board: 
+  0   2   3   4 
+  1   8   5  10 
+  6  12  14   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: UURULDRDDLLUUURRDDLLUU
+New f=42
+New g=20
+New h=22
+New moves: UURDDLLUUURRDDLLURUL
+Erase happen
+Board: 
+  0   2   3   4 
+  1   8   5  10 
+  6  12  15   9 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURULDRDDLLUUURRDDDLULUU
+New f=42
+New g=22
+New h=20
+New moves: UURDDLLUUURRDDDLULURUL
+Erase happen
+Board: 
+  0   2   3   4 
+  1   8   5  10 
+  6  14  12   9 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: LUURRULDRDDLULUURRDDLLUU
+New f=42
+New g=22
+New h=20
+New moves: LUURRDDLULUURRDDLLURUL
+Erase happen
+Board: 
+  1   2   3   4 
+  0   8  12  10 
+  6  14   5   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURULDRDDLUULURRDLDDLUU
+New f=42
+New g=21
+New h=21
+New moves: UULURDRDDLLUURURDLULD
+Erase happen
+Board: 
+  2   8   3   4 
+  1  14   5  10 
+  6   0  12   9 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUURRDDLULUURRDDLLURD
+New f=42
+New g=19
+New h=23
+New moves: LUUURDRDDLULURURDDL
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1   5  10 
+ 11   0  12   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULDRURDDLLUUURRDDLDLUR
+New f=42
+New g=21
+New h=21
+New moves: ULURRDDLULUURRDDLLDRU
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1  10   7 
+ 12   9   0   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UURDDLLUUURRDDRDLLURURDL
+New f=42
+New g=22
+New h=20
+New moves: UURDRDLLLUUURRDRDDLLUR
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1   7   0 
+ 12   9  10   5 
+ 13  14  11  15 
+Cur f=42
+Old f=44
+Old g=26
+Old h=18
+Old moves: UURDDLLUUURRDDRDLLURRULDRU
+New f=42
+New g=24
+New h=18
+New moves: UURDRDLLLUUURRDRDDLLURUR
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1   9   0 
+ 12  14  10   5 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURDDLLUUURRDDRULDRU
+New f=42
+New g=18
+New h=24
+New moves: UURDDLLUUURRDRDLUR
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1   0   9 
+ 13   5  10  12 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UURDDLUULURRDLDRRULDRUL
+New f=42
+New g=21
+New h=21
+New moves: UURDDLUULURRDLDRURDLU
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1   7  12 
+ 13   9  10   0 
+ 11  14  15   5 
+Cur f=42
+Old f=44
+Old g=25
+Old h=19
+Old moves: UURDRDLLUULURRDLDRURDLURD
+New f=42
+New g=23
+New h=19
+New moves: UURDRDLLUULURRDLDRRULDR
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1  12  10 
+ 13  14   0   9 
+ 11  15   5   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: UULDRURDLLUURRDD
+New f=42
+New g=14
+New h=28
+New moves: UURDLULURRDLDR
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1  12  10 
+ 13  14   5   9 
+ 11  15   0   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: UURDDLUULURRDLDDR
+New f=42
+New g=15
+New h=27
+New moves: UURDLULURRDLDRD
+Erase happen
+Board: 
+  2   8   3   4 
+  6   1  12  10 
+ 14   0   5   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UURDDLUULURRDLDDLUR
+New f=42
+New g=17
+New h=25
+New moves: UURDDLLURULURRDLD
+Erase happen
+Board: 
+  2   8   3   4 
+  6   5   1  10 
+ 13  12   0   9 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURDDLUULURRDLDRULDR
+New f=42
+New g=18
+New h=24
+New moves: UURDDLUULURRDDLURD
+Erase happen
+Board: 
+  2  10   1   8 
+  6   0  12   4 
+ 13  14   3   9 
+ 11  15   5   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: UULURDRRULLDRULD
+New f=42
+New g=14
+New h=28
+New moves: UURRULDLLURRDL
+Erase happen
+Board: 
+  2  12   3   8 
+  6   1   9   4 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UULURDRDDLURRUULDDL
+New f=42
+New g=17
+New h=25
+New moves: UULURDRDRUULDDDLU
+Erase happen
+Board: 
+  2   1  12   8 
+  6   5   3   4 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULURDRDDLURRUULLDDDLUR
+New f=42
+New g=21
+New h=21
+New moves: UULURDRDDLLURRRUULLDD
+Erase happen
+Board: 
+  2   1  12   8 
+  6   0  10   4 
+ 13   5   3   9 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UULURDRRULLDRDDLURUL
+New f=42
+New g=18
+New h=24
+New moves: UULURDRDDLURURULLD
+Erase happen
+Board: 
+  0   2   8   4 
+  1  12   3  10 
+  6  13   5   9 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: UURULDLURRDDDLULUU
+New f=42
+New g=16
+New h=26
+New moves: UULURDRDDLULURUL
+Erase happen
+Board: 
+  0   2   8   4 
+  1  12   3  10 
+  6  14   9   7 
+ 13  11  15   5 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURULDLURRDDRDLLLUUU
+New f=42
+New g=18
+New h=24
+New moves: UULURDRDRDLLLUURUL
+Erase happen
+Board: 
+  0   2   8   4 
+  1  12   3  10 
+  6  15   5   9 
+ 13  14  11   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: LURURULDLURRDDDLULUU
+New f=42
+New g=18
+New h=24
+New moves: LURULURDRDDLULURUL
+Erase happen
+Board: 
+  2   1  12   4 
+  6   5   8   3 
+ 14   0   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULURDRDDLURRULULDDDLUR
+New f=42
+New g=21
+New h=21
+New moves: UULURDRDDLLURRRULULDD
+Erase happen
+Board: 
+  2   1  12   4 
+  6   0   8  10 
+ 13  11   3   9 
+ 15  14   5   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: UULURDRULDLDDRULUR
+New f=42
+New g=16
+New h=26
+New moves: UULDDRULUURDRULD
+Erase happen
+Board: 
+  2   1  12   4 
+  6   0   8  10 
+ 13  11  15   9 
+  5  14   3   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: RULULURDRULDLDDRULUR
+New f=42
+New g=18
+New h=24
+New moves: RULULDDRULUURDRULD
+Erase happen
+Board: 
+  2   1  12   4 
+  6   5   8  10 
+ 14   0   3   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UULURDRDDLURUULDDDLUR
+New f=42
+New g=19
+New h=23
+New moves: UULURDRDDLLURRUULDD
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   3  10 
+  5  11   0   9 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=22
+Old h=22
+Old moves: RULDLURRDLUULURDRDDLUR
+New f=42
+New g=20
+New h=22
+New moves: UULURDRDDLURDLLURDRU
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   3  10 
+  5  11   9   0 
+ 13  14  15   7 
+Cur f=42
+Old f=44
+Old g=23
+Old h=21
+Old moves: UULURDRDDLURRDLLLURDRRU
+New f=42
+New g=21
+New h=21
+New moves: UULURDRDDLURDLLURDRUR
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   3  10 
+ 13   0  15   9 
+ 11   5  14   7 
+Cur f=42
+Old f=44
+Old g=15
+Old h=29
+Old moves: UULURDRDDLURDLU
+New f=42
+New g=13
+New h=29
+New moves: UULURDRDLDRUL
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   3  10 
+ 15   0  11   9 
+ 13   5  14   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: LURULURDRDDLURDLU
+New f=42
+New g=15
+New h=27
+New moves: LURULURDRDLDRUL
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   9   3 
+ 13   0   5  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=17
+Old h=27
+Old moves: UULURDRDDLURRULDL
+New f=42
+New g=15
+New h=27
+New moves: UULURDRDRULDDLU
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   9   0 
+ 13  14  10   3 
+ 11  15   5   7 
+Cur f=42
+Old f=44
+Old g=14
+Old h=30
+Old moves: UULURDRDRULDRU
+New f=42
+New g=12
+New h=30
+New moves: UULURDRRDLUR
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1  10   9 
+ 13   5   0   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: UULURDRDDLURURDL
+New f=42
+New g=14
+New h=28
+New moves: UULURDRRDLDLUR
+Erase happen
+Board: 
+  2  12   8   4 
+  6   1   9   0 
+ 13   5  10   3 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: UULURDRDDLURRULDRU
+New f=42
+New g=16
+New h=26
+New moves: UULURDRRDLDLURUR
+Erase happen
+Board: 
+  2   3   0   4 
+  6   1  12   8 
+ 13   5   9  10 
+ 11  14  15   7 
+Cur f=42
+Old f=44
+Old g=24
+Old h=20
+Old moves: UULURRDDDLUUURDLDRRULLUR
+New f=42
+New g=22
+New h=20
+New moves: UURDDLUULURDRULDDRRULU
+Erase happen
+Board: 
+  2  12   8   4 
+  6  14   1  10 
+  0   5  15   9 
+ 13  11   3   7 
+Cur f=42
+Old f=44
+Old g=14
+Old h=30
+Old moves: RULDLURULURDDL
+New f=42
+New g=12
+New h=30
+New moves: RULULURDDDLU
+Erase happen
+Board: 
+  2  12   8   4 
+ 13   6   1  10 
+  0  11   3   9 
+ 15  14   5   7 
+Cur f=42
+Old f=44
+Old g=14
+Old h=30
+Old moves: UULDDRULUURDLD
+New f=42
+New g=12
+New h=30
+New moves: UULURDLDDRUL
+Erase happen
+Board: 
+  2  12   8   4 
+ 13   6   1  10 
+  0  11  15   9 
+  5  14   3   7 
+Cur f=42
+Old f=44
+Old g=16
+Old h=28
+Old moves: RULULDDRULUURDLD
+New f=42
+New g=14
+New h=28
+New moves: RULULURDLDDRUL
+Erase happen
+Board: 
+  2  14   3   8 
+  6   1   9   4 
+ 12   0  11  10 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUUURDRDDLURRUULDDDLU
+New f=42
+New g=19
+New h=23
+New moves: LUUURDRDLDRURUULDDL
+Erase happen
+Board: 
+  2  14   3   8 
+  6   1   9   4 
+ 12  11  15  10 
+ 13   5   0   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUUURDRDLDRURUULDDD
+New f=42
+New g=17
+New h=25
+New moves: LUUURDRDRUULDDLDR
+Erase happen
+Board: 
+  2  14   3   8 
+  6   1   9   4 
+ 12   0   5  10 
+ 13  15  11   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUUURDRDDLURRUULDDL
+New f=42
+New g=17
+New h=25
+New moves: LUUURDRDRUULDDDLU
+Erase happen
+Board: 
+  2  14   4  10 
+  6   1   3   8 
+ 12   5  11   9 
+ 13  15   0   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: LUUURDRURDLDLDRULDR
+New f=42
+New g=17
+New h=25
+New moves: LUUURDRURDLDDLURD
+Erase happen
+Board: 
+  2  14   1   8 
+  6   0   3   4 
+ 12   5   9  10 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=20
+Old h=24
+Old moves: UURDDLLUUURDDRRUULLD
+New f=42
+New g=18
+New h=24
+New moves: URDLLUUURDDRRUULDL
+Erase happen
+Board: 
+  1   2   8   4 
+  0  14   3  10 
+  6  12   5   9 
+ 11  13  15   7 
+Cur f=42
+Old f=44
+Old g=19
+Old h=25
+Old moves: UURULDDLUURRDDDLULU
+New f=42
+New g=17
+New h=25
+New moves: ULUURDRDDLULURULD
+Erase happen
+Board: 
+  1   2   8   4 
+  0  14   3  10 
+  6  12   9   7 
+ 13  15  11   5 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: LUURRULDLURRDDRDLLULU
+New f=42
+New g=19
+New h=23
+New moves: LUUURDRDRDLLULURULD
+Erase happen
+Board: 
+  1   2   8   4 
+  0  14   5  10 
+  6  12   3   9 
+ 13  11  15   7 
+Cur f=42
+Old f=44
+Old g=21
+Old h=23
+Old moves: UURULDDRDLLUUURRDDLLU
+New f=42
+New g=19
+New h=23
+New moves: URDLLUUURDRDLLURULD
+Erase happen
+Board: 
+  2  14   8   4 
+  1  12   3  10 
+  6  11   0   9 
+ 13   5  15   7 
+Cur f=42
+Old f=44
+Old g=18
+Old h=26
+Old moves: LUUURDRDLDRULLURDR
+New f=42
+New g=16
+New h=26
+New moves: LUUURDRDLLURDDRU
