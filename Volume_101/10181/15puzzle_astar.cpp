@@ -1,15 +1,40 @@
 // Need optimization
-// 1. review A* update policy
-// 2. better heuristic?
-// 3. use IDA*
+// TODO: optimize
+// 1) try using prioirty queue?
+// 2) optimize for all simple calculation
+// 3) review A*
 #include <array>
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <unordered_map>
+#include <unordered_set>
 #include <set>
 #include <utility>
 #include <tuple>
 #include <vector>
+
+namespace std
+{
+  template<typename T, size_t N>
+    struct hash<array<T, N> >
+    {
+      typedef array<T, N> argument_type;
+      typedef size_t result_type;
+
+      result_type operator()(const argument_type& a) const
+      {
+        hash<T> hasher;
+        result_type h = 0;
+        for (result_type i = 0; i < N; ++i)
+        {
+          h = h * 31 + hasher(a[i]);
+        }
+        return h;
+      }
+    };
+}
+
 using namespace std;
 
 int abs(int x) {
@@ -42,11 +67,14 @@ int heuristic(const Board& board) {
   for (int i=0; i<16; ++i) {
     if (board[i] == 0) 
       continue;
+    //int dist = board[i] == 0 ? distance(i, 15): distance(i, board[i]-1);
     int dist = distance(i, board[i]-1);
     manhatan += dist;
   }
   // TODO: this will improve the computation speed, but the answer will not be optimal
-  return 4*manhatan / 3;
+  return 3*manhatan / 2;
+  //return 4*manhatan/3;
+  //return manhatan;
 }
 
 int get_index(const Board& board, int num) {
@@ -64,24 +92,30 @@ pair<int, int> get_rc(int index) {
 }
 
 char ops[4] = {'R', 'L', 'U', 'D'};
+int invert_dir(int dir) {
+  if (dir == 0) return 1;
+  if (dir == 1) return 0;
+  if (dir == 2) return 3;
+  if (dir == 3) return 2;
+}
+
 int dr[4] = {0, 0, -1, 1};  // row
 int dc[4] = {1, -1, 0, 0};  // col
 // return (0, _) for sccuess and (-1, _) for failed
-pair<int, Board> get_new_board(const Board& board, int delta) {
+pair<int, Board> get_new_board(const Board& board, int dir) {
   // print_board(board);
   int mr, mc;
   int mindex = get_index(board, 0);
   tie(mr, mc) = get_rc(mindex);
 
-  int nr = mr + dr[delta];
-  int nc = mc + dc[delta];
+  int nr = mr + dr[dir];
+  int nc = mc + dc[dir];
   if (nr < 0 || nr > 3 || nc < 0 || nc > 3) {
     return {-1, board};
   }
 
   int nindex = nr*4 + nc;
-  // swap
-  // TODO: make sure copy works
+  // swap missing with the neighbor
   Board nb = board;
   nb[nindex] = 0;  // board[mindex];
   nb[mindex] = board[nindex];
@@ -94,22 +128,29 @@ typedef pair<int, Board> IB;
 // A*
 void solve(const Board& board) {
   set<IB> heap;
-  map<Board, int> g;  // steps used so far
-  map<Board, int> h;  // steps heuristic
-  map<Board, int> f;  // f = g + h
-  map<Board, pair<char, Board>> prev;
+  unordered_map<Board, int> g;  // steps used so far
+  unordered_map<Board, int> h;  // steps heuristic
+  unordered_map<Board, int> f;  // f = g + h
+  unordered_map<Board, int> prev;
+  unordered_set<Board> closed;
 
   g[board] = 0;
   h[board] = heuristic(board);
   f[board] = g[board] + h[board];
   
-  heap.insert(IB(f[board], board));
+  heap.insert(IB(g[board] + h[board], board));
 
-  int last_f = f[board];
   while (!heap.empty()) {
     IB top = *(heap.begin());
     heap.erase(top);
     Board cur_board = top.second;
+
+    if (closed.count(cur_board)) {
+      cout << "board appears multiple times in closed set" << endl;
+      return;
+    }
+    closed.insert(cur_board);
+    
     
     /*
     // cout << "F: " << top.first << endl;
@@ -119,19 +160,23 @@ void solve(const Board& board) {
     last_f = top.first;
     */
 
+    /*
     if (h[cur_board] == 0) {
-      // found it, reconstruct moves
+      // cout << "found" << endl;
+      // found it, reconstruct moves 
       vector<char> moves;
       while (prev.count(cur_board) != 0) {
-        moves.push_back(prev[cur_board].first);
-        cur_board = prev[cur_board].second;
+        moves.push_back(prev[cur_board]);
+        int dummy;
+        tie(dummy, cur_board) = get_new_board(cur_board, invert_dir(prev[cur_board]));
       }
       for (int i = moves.size()-1; i >= 0; --i) {
-        cout << moves[i];
+        cout << ops[moves[i]];
       }
       cout << endl;
       return;
     }
+    */
 
     if (g[cur_board] > MAX_STEPS)
       continue;
@@ -148,9 +193,30 @@ void solve(const Board& board) {
       if (code < 0) {
         continue;
       }
+      // TODO: not sure
+      // it turns out does not matter
+      if (closed.count(new_board) != 0) {
+        continue;
+      }
 
       int ng = g[cur_board] + 1;
       int nh = heuristic(new_board);
+      if (nh == 0) {
+        // found it, reconstruct moves 
+        vector<char> moves;
+        while (prev.count(cur_board) != 0) {
+          moves.push_back(prev[cur_board]);
+          int dummy;
+          tie(dummy, cur_board) = get_new_board(cur_board, invert_dir(prev[cur_board]));
+        }
+        for (int i = moves.size()-1; i >= 0; --i) {
+          cout << ops[moves[i]];
+        }
+        cout << ops[delta];
+        cout << endl;
+        return;
+      }
+
       int nf = ng + nh;
 
       /*
@@ -216,7 +282,7 @@ void solve(const Board& board) {
       f[new_board] = nf;
       g[new_board] = ng;
       h[new_board] = nh;
-      prev[new_board] = {ops[delta], cur_board};
+      prev[new_board] = delta;
 
       heap.insert(IB(nf, new_board));
 

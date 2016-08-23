@@ -1,7 +1,29 @@
 #include <array>
 #include <map>
 #include <iostream>
+#include <unordered_map>
 #include <utility>
+namespace std
+{
+  template<typename T, size_t N>
+    struct hash<array<T, N> >
+    {
+      typedef array<T, N> argument_type;
+      typedef size_t result_type;
+
+      result_type operator()(const argument_type& a) const
+      {
+        hash<T> hasher;
+        result_type h = 0;
+        for (result_type i = 0; i < N; ++i)
+        {
+          h = h * 31 + hasher(a[i]);
+        }
+        return h;
+      }
+    };
+}
+
 using namespace std;
 
 int main() {
@@ -14,4 +36,9 @@ int main() {
   typedef array<int, 3> ARR;
   map<int, ARR> mmm;
   mmm[3] = arr;
+
+  unordered_map<ARR, int> um;
+  um[arr] = 23;
+  
+  cout << um[arr] << endl;
 }
