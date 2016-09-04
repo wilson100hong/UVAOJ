@@ -1,3 +1,4 @@
+// Simulation for 15-puzzle
 #include <iostream>
 #include <map>
 #include <set>
@@ -106,24 +107,7 @@ int main() {
       cin >> cell;
       board.push_back(cell);
     }
-    // string moves = "UULURDRDDLLUURURDLDRRULLULDDRRULLDRRRDLLURRULDDR";
     string moves = "UURDDLURRDLLLUURRULLDDRRRULLLDRUURDDRDLULDRRULLDRR";
     sim(board, moves);
-    /*
-    string m = "LUURRD";
-    sim(board, m);
-    cout << "======================" << endl;
-
-    Board b1(board);
-    Board b2(board);
-    // string m1 = "LUURRDLDRULDR";
-    // string m2 = "LUURRDDLURD";
-    string m1 = "LDRULDR";
-    sim(b1, m1);
-    cout << "----------------------" << endl;
-    string m2 = "DLURD";
-    sim(b2, m2);
-    cout << "----------------------" << endl;
-    */
   }
 }
