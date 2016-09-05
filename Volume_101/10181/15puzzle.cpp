@@ -1,12 +1,12 @@
 // Optimizations I did: 
 // 1. in A*, compare "g" function instead of "f"
-// 2. use "unordered_map" instead of "map" for g/h/f lookup. Its O(1) v.s. O(logN)
-// 3. use "unsigned long int" to represent the puzzle state instead of of
-//    using vector or array to avoid expensive hashing.
-// 4. the heurisitc function I used is h(x) = 3*manhantan/2, but using integer
+// 2. the heurisitc function I used is h(x) = 3*manhantan/2, but using integer
 //    division will lose percision because of flooring. Ideally we should use double,
 //    but I am lazy so I just let f(x) = 3*g(x) + 2*h(x)
-// 5. early exit when g(x) + h(x) > MAX_STEPS
+// 3. early exit when g(x) + h(x) > MAX_STEPS
+// 4. use "unordered_map" instead of "map" for g/h/f lookup. Its O(1) v.s. O(logN)
+// 5. use "unsigned long int" to represent the puzzle state instead of of
+//    using vector or array to avoid expensive hashing.
 #include <iomanip>
 #include <iostream>
 #include <unordered_map>
