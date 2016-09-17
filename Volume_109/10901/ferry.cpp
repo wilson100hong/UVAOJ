@@ -49,26 +49,23 @@ int main() {
     int side = LEFT;
     int round = 0;
     while (!banks[LEFT].empty() || !banks[RIGHT].empty() || !boat.empty()) {
-      //cout << "time: " << time << endl;
-      //cout << "side: " << side << endl;
       // 1. unload
       while (!boat.empty()) {
         Car car = boat.front();
         boat.pop();
         unloads[car.index] = time;
-        //cout << "unload car: " << car.index << " at time " << time << endl;
       }
-      // TODO: decide loading time
+      // 2. decide loading time
       int other_side = (side+1)%2;
       if (banks[side].empty() ||
           banks[side].front().arrival > time && 
           (!banks[other_side].empty() && banks[other_side].front().arrival < banks[side].front().arrival)) {
-        // go to other side
+        // 2.1 go to other side
         if (banks[other_side].front().arrival > time) {
           time = banks[other_side].front().arrival;
         } 
       } else {
-        // wait at this side, if needed
+        // 2.2 wait at this side, if needed
         if (banks[side].front().arrival > time) {
           time = banks[side].front().arrival;
         }
@@ -78,41 +75,8 @@ int main() {
           Car car = banks[side].front();
           banks[side].pop();
           boat.push(car);
-          //cout << "load car: " << car.index << " at time " << time << endl;
         }
       }
-                                              
-
-      /*
-      // 2. load
-      while (!banks[side].empty() &&
-             banks[side].front().arrival <= time &&
-             boat.size() < N) {
-        Car car = banks[side].front();
-        banks[side].pop();
-        boat.push(car);
-        cout << "load car: " << car.index << " at time " << time << endl;
-      }
-      // 3. if empty, wait
-      if (boat.empty()) {
-        if (!banks[side].empty() &&
-            (banks[other_side].empty() || 
-             banks[side].front().arrival <= banks[other_side].front().arrival)) {
-          // this side must not empty
-          // bug: you may load multi cars
-          Car car = banks[side].front();
-          banks[side].pop();
-          boat.push(car);
-          time = car.arrival;
-          cout << "load car: " << car.index << " at time " << time << endl;
-        } else {
-          if (banks[other_side].front().arrival > time) {
-            time = banks[other_side].front().arrival;
-          } 
-          // else don't need to wait
-        }
-      }
-      */
       side = other_side;
       time += T;
     }
