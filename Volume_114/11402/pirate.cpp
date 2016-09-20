@@ -40,8 +40,6 @@ void push_up(int root) {
 
 void build(int root, int l, int r) {
   char old = lazy[64];
-
-  // TODO: this will mutate lazy. why?
   if (l == r) {
     tree[root] = pirates[l];
     return;
