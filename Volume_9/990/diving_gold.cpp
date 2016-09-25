@@ -1,5 +1,5 @@
 // 2016/09/25
-// STARS  : 
+// STARS  : *
 // SKILLS : dp
 //
 // trap: there are multiple test cases
