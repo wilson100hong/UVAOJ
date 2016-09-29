@@ -1,0 +1,42 @@
+5
+A B E x
+B D C -
+C D A -
+D D B -
+E E E -
+5
+5
+A B E -
+B D C x
+C D A -
+D D B -
+E E E -
+5
+5
+A B E -
+B D C -
+C D A x
+D D B -
+E E E -
+5
+5
+A B E -
+B D C -
+C D A -
+D D B x
+E E E -
+5
+5
+A B E -
+B D C -
+C D A -
+D D B -
+E E E x
+5
+5
+A B E x
+B D C x
+C D A x
+D D B x
+E E E x
+5
