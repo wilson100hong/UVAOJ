@@ -1,0 +1,17 @@
+mail_mania.cpp:67:17: error: ‘set’ does not name a type
+ int solve(const set<Point>& mall1, const set<Point>& mall2) {
+                 ^
+mail_mania.cpp:67:20: error: expected ‘,’ or ‘...’ before ‘<’ token
+ int solve(const set<Point>& mall1, const set<Point>& mall2) {
+                    ^
+mail_mania.cpp: In function ‘int solve(int)’:
+mail_mania.cpp:70:25: error: ‘mall2’ was not declared in this scope
+   for (const Point& p : mall2) {
+                         ^
+mail_mania.cpp:75:25: error: ‘mall1’ was not declared in this scope
+   for (const Point& p : mall1) {
+                         ^
+mail_mania.cpp: In function ‘int main()’:
+mail_mania.cpp:129:31: error: cannot convert ‘std::vector<Point>’ to ‘int’ for argument ‘1’ to ‘int solve(int)’
+     cout << solve(mall1, mall2) << endl;
+                               ^
