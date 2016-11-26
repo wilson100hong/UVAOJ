@@ -126,7 +126,7 @@ pair<string, string> bigdiv(const string& s1, const string& s2) {
   }
   string q = "0", r = s1;
 
-  // TODO: make sure binary search is correct
+  // binary search
   string lb = "1", rb = s1;
   while (bigcomp(lb, rb) <= 0) {  // lb <= rb
     string med = bighalf(bigadd(lb, rb));  // (lb+rb)/2
