@@ -35,16 +35,16 @@ double solve(int n, double p) {
     // The probability of "in i games, winning-strek = j" is then A[i][j] - A[i][j-1]
     
     vector<vector<double>> A(n+1, vector<double>(n+1, 0.0));
-    for (int len=0;len<=n;++len) {
-        for (int w=0;w<=n;++w) {
-            if (len <= w) {
-                A[len][w] = 1.0;
-            } else if (w==0) {
-                A[len][w] = ipow[len];
-            } else if (w==len-1) {
-                A[len][w] = 1 - pow[len];
+    for (int i=0;i<=n;++i) {
+        for (int j=0;j<=n;++j) {
+            if (i <= j) {
+                A[i][j] = 1.0;
+            } else if (j==0) {
+                A[i][j] = ipow[i];
+            } else if (j==i-1) {
+                A[i][j] = 1 - pow[i];
             } else {
-                A[len][w] = A[len-1][w] - A[len-w-2][w]*(1.0-p)*pow[w+1];
+                A[i][j] = A[i-1][j] - A[i-j-2][j]*(1.0-p)*pow[j+1];
             }
         }
     }
