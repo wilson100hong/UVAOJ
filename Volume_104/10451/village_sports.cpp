@@ -29,7 +29,7 @@ int main() {
         double spectator = PI*R2 - A;
 
         cout << "Case " << t++ << ": ";
-        cout << setprecision(5);
+        cout << setprecision(10);
         cout << fixed << spectator << " " << official << endl;
     }
 }
