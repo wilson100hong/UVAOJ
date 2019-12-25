@@ -1,9 +1,9 @@
-// TODO: merge with pos_bignumber.cpp to support division
-// Bignumber arithematics.
-// Currently it support addition, subtraction and multiplication
-// All string digits starting from largest digit.
-// string "12345" means 12345
+// Big integer arithematics.
+// Currently this supports addition, subtraction and multiplication.j
+// string [0] is the largest digit, for example, string "12345" means 12345.
 //
+// TODO: convert to OO.
+// TODO: merge with pos_bignumber.cpp to support division
 //
 #include <iostream>
 #include <vector>
