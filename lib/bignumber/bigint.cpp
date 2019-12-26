@@ -30,7 +30,6 @@ string AddStrings(const string& a, const string& b) {
     res[d] = (carry % 10) + '0';
     carry = carry / 10;
   }
-  cout << "res: " << res << endl;
   return RemovePaddingZeros(res);
 }
 
@@ -43,6 +42,7 @@ string AddStrings(const string& a, const string& b) {
 // TODO: division
 class BigInt {
  public:
+  BigInt(const char* c) : str_(string(c)) {}
   BigInt(const string& s) : str_(s) {}
   BigInt(const BigInt& o) : str_(o.str()) {}
 
@@ -63,6 +63,11 @@ class BigInt {
     }
     return *this;
   }
+
+  //BigInt& operator=(const string& other) noexcept { // move assignment
+    //set_str(other);
+    //return *this;
+  //}
 
   BigInt& operator += (const BigInt& rhs) {
     str_ = AddStrings(str_, rhs.str());
