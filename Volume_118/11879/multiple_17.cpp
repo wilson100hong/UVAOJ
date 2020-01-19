@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -254,27 +255,26 @@ inline bool operator==(const BigInt& lhs, const BigInt& rhs){
 }
 inline bool operator!=(const BigInt& lhs, const BigInt& rhs){ return !(lhs == rhs); }
 
-//
-// Test
-//
+bool Solve(const string& line) {
+  BigUnsignedInt num(line);
+
+  while (num.str().size() >= 4) {
+    string s = num.str();
+    BigUnsignedInt x = s.substr(0, s.size()-1);
+    BigUnsignedInt y = to_string((s[s.size()-1] - '0')*5);
+    num = x - y;
+  }
+
+  // stoi(s) < 1000
+  string s = num.str();
+  int i = stoi(s);
+  return i % 17 == 0;
+}
+
 int main() {
-  BigInt a("22696209911206174");
-  BigInt b("3658271912812123125");
-  cout << a - b << endl;
-  
-  //BigInt a("345");
-  //BigInt b("98");
-  //cout << a + b << endl;
-
-  //BigInt a("0");
-  //BigInt b("123");
-  //cout << a - b << endl;
-  //cout << "a == b ? " << (a == b) << endl;
-  //cout << "a < b ? " << (a < b) << endl;
-  //cout << "a > b ? " << (a > b) << endl;
-
-  //b = a;
-  //cout << "a == b ? " << (a == b) << endl;
-  //cout << "a < b ? " << (a < b) << endl;
-  //cout << "a > b ? " << (a > b) << endl;
+  string line;
+  while (getline(cin, line)) {
+    if (line == "0") break;
+    cout << (Solve(line) ? 1 : 0) << endl;
+  }
 }
