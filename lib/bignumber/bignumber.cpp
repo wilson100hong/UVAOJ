@@ -1,168 +1,346 @@
-// Big integer arithematics.
-// Currently this supports addition, subtraction and multiplication.j
-// string [0] is the largest digit, for example, string "12345" means 12345.
-//
-// TODO: convert to OO.
-// TODO: merge with pos_bignumber.cpp to support division
-//
+// TODO: Need polish
+#include <algorithm>  // std::max
 #include <iostream>
 #include <vector>
+#include <string>
+
 using namespace std;
 
-bool is_negative(string s) {
-  return s[0] == '-';
-}
-
-string bigabs(string s) {
-  return is_negative(s) ? s.substr(1) : s;
-}
-
-string flip_sign(string s) {
-  if (is_negative(s)) {
-    return s.substr(1);
-  } else {
-    return "-" + s;
+namespace {
+string StripLZeros(const string& s) {
+  int i = 0;
+  // Keep last digit.
+  while (i < s.size() -1 && s[i] == '0') {
+    i++;
   }
+  return s.substr(i);
 }
 
-string strip_leading_zeros(string s) {
-  int start = 0;
-  while (s[start] == '0' && start < s.size() - 1) {
-    start++;
+// |a| and |b| are non-negative integers.
+string AddStrings(const string& a, const string& b) {
+  string res(max(a.size(), b.size()) + 1, '0');
+  int carry = 0;
+  for (int d = res.size()-1; d >= 0; d--) {
+    const int i = a.size() - res.size() + d;  // cursor of |a|
+    const int j = b.size() - res.size() + d;  // cursor of |b|
+    if (0 <= i && i < a.size()) {
+      carry += (a[i] - '0');
+    }
+    if (0 <= j && j < b.size()) {
+      carry += (b[j] - '0');
+    }
+    res[d] = (carry % 10) + '0';
+    carry = carry / 10;
   }
-  return s.substr(start);
+  return StripLZeros(res);
 }
 
-// addition for positive number s1 and s2
-string bigadd_pos(string s1, string s2) {
-  int size = max(s1.size(), s2.size()) + 1;
-  string result(size, '0');
-  int carry = 0; 
-  for (int k = size - 1, i = s1.size() - 1, j = s2.size() - 1; k >= 0; --k, --i, --j) {
-    int di = i >= 0 ? s1[i] - '0' : 0;
-    int dj = j >= 0 ? s2[j] - '0' : 0;
-    int dk = carry + di + dj;
-    carry = dk / 10;
-    result[k] = (dk % 10) + '0';
+// |a| >= |b|. Otherwise the result is undefined.
+string SubStrings(const string& a, const string& b) {
+  string res(a);
+  int carry = 0;
+  for (int i = res.size()-1; i >=0; i--) {
+    carry += (res[i] - '0');
+    const int j = b.size() - res.size() + i;  // cursor of |b|
+    if (0 <= j && j < b.size()) {
+      carry -= (b[j] - '0');
+    }
+    res[i] = (carry + 10) % 10 + '0';
+    carry = carry < 0 ? -1 : 0; 
   }
-  return strip_leading_zeros(result);
+
+  // carry should be zero here.
+  if (carry < 0) cout << "[SubStrings] ERROR: Most significant carry < 0" << endl;
+  return StripLZeros(res);
 }
 
-// compare two positive number s1 and s2. Return true if s1 > s2
-bool larger_pos(string s1, string s2) {
-  int len1 = s1.size(), len2 = s2.size();
-  if (len1 != len2) return len1 > len2;
-  // both numbers have the same length
-  for (int i = 0; i < s1.size(); ++i) {
-    if (s1[i] == s2[i]) continue;
-    return s1[i] > s2[i];
-  }
-  return false;  // s1 == s2
-}
+}  // namespace 
 
-// subtraction for positive numbers s1 and s2. It is possible that s1 < s2
-string bigsub_pos(string s1, string s2) {
-  if (larger_pos(s2, s1)) {
-    return flip_sign(bigsub_pos(s2, s1));
+//
+// Big unsigned integer.
+//
+// TODO: multiplication
+// TODO: division
+class BigUnsignedInt {
+ public:
+  BigUnsignedInt() {}
+  BigUnsignedInt(const string& s) : str_(StripLZero(s)) {
+    if (s.empty()) cout << "[BigUnsignedInt] ERROR: empty string" << endl;
   }
+  BigUnsignedInt(const char* c) : BigUnsignedInt(string(c)) {}
+  BigUnsignedInt(const BigUnsignedInt& o) : BigUnsignedInt(o.str()) {}
+
+  const string str() const { return str_; }
+  string& mutable_str() { return str_; }
+  void set_str(const string& s) { str_ = s; }
+
+  BigUnsignedInt& operator=(const BigUnsignedInt& other) {
+    if (this != &other) {
+      this->set_str(other.str());
+    }
+    return *this;
+  }
+
+  BigUnsignedInt& operator=(BigUnsignedInt&& other) noexcept { // move assignment
+    if(this != &other) {
+      swap(other.mutable_str(), str_);
+    }
+    return *this;
+  }
+
+  BigUnsignedInt& operator += (const BigUnsignedInt& rhs) {
+    str_ = AddStrings(str_, rhs.str());
+    return *this;
+  }
+  
+  // Ensure this >= rhs, otherwise the result is undefined.
+  BigUnsignedInt& operator -= (const BigUnsignedInt& rhs) {
+    str_ = SubStrings(str_, rhs.str());
+    return *this;
+  }
+
+  friend BigUnsignedInt operator + (BigUnsignedInt lhs, const BigUnsignedInt& rhs) {
+    lhs += rhs;
+    return lhs;
+  }
+
+  friend BigUnsignedInt operator - (BigUnsignedInt lhs, const BigUnsignedInt& rhs) {
+    lhs -= rhs;
+    return lhs;
+  }
+
+  friend ostream& operator << (ostream &out, const BigUnsignedInt& b) {
+    out << b.str();
+    return out; 
+  }
+
+ private:
+  string str_;
+};
  
-  int size = max(s1.size(), s2.size());
-  string result(size, '0');
-  int carry = 0; 
-  for (int k = size - 1, i = s1.size() - 1, j = s2.size() - 1; k >= 0; --k, --i, --j) {
-    int di = i >= 0 ? s1[i] - '0' : 0;
-    int dj = j >= 0 ? s2[j] - '0' : 0;
-    di += carry;
-    carry = 0;
-    if (di < dj) {
-      di += 10;
-      carry = -1;  // borrow the bit
-    }
-    int dk = di - dj;
-    carry += (dk / 10);  // this should be no-op
-    result[k] = (dk % 10) + '0';
+inline bool operator< (const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){
+  if (lhs.str().size() != rhs.str().size()) {
+    return lhs.str().size() < rhs.str().size();
   }
-  return strip_leading_zeros(result);
+  for (int i = 0; i < lhs.str().size(); ++i) {
+    const char lc = lhs.str()[i], rc = rhs.str()[i];
+    if (lc == rc) continue;
+    return lc < rc;
+  }
+  return false;
 }
 
-// multiplication for positive numbers s1 and s2
-string bigmul_pos(string s1, string s2) {
-  int size = s1.size() + s2.size();
-  vector<int> buffer(size, 0);
-  for (int i = s1.size() - 1; i >= 0; --i) {
-    int di = s1[i] - '0', carry = 0;
-    for (int j = s2.size() - 1; j >= 0; --j) {
-      int dj = s2[j] - '0';
-      int offset = s1.size() - 1 - i + s2.size() - 1 - j;
-      int sum = di * dj + carry + (buffer[offset]);
-      buffer[offset] = sum % 10;
-      carry = sum / 10;
-    }
-    // handle carry
-    int start = s2.size() + s1.size() - 1 - i, index = 0;
-    while (carry > 0) {
-      int sum = buffer[start + index] + carry;
-      buffer[start + index] = sum % 10;
-      carry = sum / 10;
-      index++;
-    }
-  }
-  // generate result
-  string result(size, '0');
-  for (int i = 0; i < size; ++i) {
-    result[size - i - 1] = buffer[i] + '0';
-  }
-  return strip_leading_zeros(result);
-}
+inline bool operator> (const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return rhs < lhs; }
+inline bool operator<=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return !(lhs > rhs); }
+inline bool operator>=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return !(lhs < rhs); }
+inline bool operator==(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return lhs.str() == rhs.str(); }
+inline bool operator!=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return !(lhs == rhs); }
 
-string bigadd(string s1, string s2) {
-  bool n1 = is_negative(s1), n2 = is_negative(s2);
-  if (n1 ^ n2) {
-    // one is positive, negative
-    if (n1) {
-      return bigsub_pos(s2, bigabs(s1));
-    } else {  // s2 < 0 
-      return bigsub_pos(s1, bigabs(s2));
+
+//
+// Signed big integer.
+//
+// TODO: multiplication
+// TODO: division
+class BigInt {
+ public:
+  BigInt(const BigInt& o) : neg_(o.neg()), big_uint_(o.big_uint()) {}
+  BigInt(const string& s) {
+    if (s.empty()) cout << "[BigInt] ERROR: empty string" << endl;
+
+    neg_ = s[0] == '-';
+    if (neg_) {
+      big_uint_ = s.substr(1);
+    } else {
+      big_uint_ = s;
     }
-  } if (n1 && n2) {
-    // both are negative
-    return flip_sign(bigadd_pos(bigabs(s1), bigabs(s2)));  // make it negative
+    CheckNegZero();
+  }
+  BigInt(const char* c) : BigInt(string(c)) {}
+
+  BigInt(bool neg, const BigUnsignedInt& b) : neg_(neg), big_uint_(b) {}
+
+  const BigUnsignedInt& big_uint() const { return big_uint_; }
+  BigUnsignedInt& mutable_big_uint() { return big_uint_; }
+
+  const string GetStr() const {
+    string res = neg_ ? "-" : "";
+    return res + big_uint_.str();
+  }
+
+  bool neg() const { return neg_; }
+  void set_neg(bool neg) { neg_ = neg; }
+
+  BigInt& operator=(const BigInt& other) {
+    this->set_neg(other.neg());
+    this->mutable_big_uint() = other.big_uint();
+    return *this;
+  }
+
+  BigInt& operator=(BigInt&& other) noexcept { // move assignment
+    if(this != &other) {
+      swap(other.mutable_big_uint(), big_uint_);
+      set_neg(other.neg());
+    }
+    return *this;
+  }
+  
+  // Uniary '-'
+  BigInt operator-() const {
+    return BigInt(!neg_, big_uint_);
+  }
+
+  BigInt& operator += (const BigInt& rhs) {
+    if (neg_ == rhs.neg()) {
+      big_uint_ = big_uint_ + rhs.big_uint();
+      return *this;
+    }
+
+    if (big_uint_ > rhs.big_uint()) {
+      big_uint_ = big_uint_ - rhs.big_uint();
+    } else {
+      big_uint_ = rhs.big_uint() - big_uint_;
+      neg_ = !neg_;
+    }
+    return *this;
+  }
+  
+  BigInt& operator -= (const BigInt& rhs) {
+    BigInt nrhs = -rhs;
+    *this += nrhs;
+    return *this;
+  }
+
+  friend BigInt operator + (BigInt lhs, const BigInt& rhs) {
+    lhs += rhs;
+    return lhs;
+  }
+
+  friend BigInt operator - (BigInt lhs, const BigInt& rhs) {
+    lhs -= rhs;
+    return lhs;
+  }
+
+  friend ostream& operator << (ostream &out, const BigInt& b) {
+    out << b.GetStr();
+    return out; 
+  }
+
+ private:
+  // Not allow negative zero.
+  void CheckNegZero() {
+    if (big_uint_ == "0") neg_ = false;
+  }
+
+  bool neg_;
+  BigUnsignedInt big_uint_;
+};
+
+inline bool operator< (const BigInt& lhs, const BigInt& rhs){
+  if (lhs.neg() == rhs.neg()) {
+    if (lhs.neg()) {  // Both negative
+      return lhs.big_uint() > rhs.big_uint();
+    } else {
+      return lhs.big_uint() < rhs.big_uint();
+    }
   } else {
-    // both are positive
-    return bigadd_pos(s1, s2);
+    return lhs.neg();
   }
 }
 
-string bigsub(string s1, string s2) {
-  return bigadd(s1, flip_sign(s2));
+inline bool operator> (const BigInt& lhs, const BigInt& rhs){ return rhs < lhs; }
+inline bool operator<=(const BigInt& lhs, const BigInt& rhs){ return !(lhs > rhs); }
+inline bool operator>=(const BigInt& lhs, const BigInt& rhs){ return !(lhs < rhs); }
+inline bool operator==(const BigInt& lhs, const BigInt& rhs){
+  return lhs.neg() == rhs.neg() &&
+         lhs.big_uint() == rhs.big_uint();
+}
+inline bool operator!=(const BigInt& lhs, const BigInt& rhs){ return !(lhs == rhs); }
+
+
+//
+// TODO: make class BigFloat
+//
+
+struct BigFloat {
+  BigInt big_int;  // Allow trailing zeros.
+  int offset;  // decimal offset
+};
+
+BigFloat StrToBigFloat(const string& str) {
+  size_t cur = 0;
+  while (cur < str.size()) {
+    if (str[cur] == '.') break;
+    cur++;
+  }
+  if (cur >= str.size()) {
+    return {BigInt(str), 0};
+  }
+  return {BigInt(str.substr(0, cur) + str.substr(cur+1)), static_cast<int>(str.size()-1-cur)};
 }
 
-string bigmul(string s1, string s2) {
-  bool n1 = is_negative(s1), n2 = is_negative(s2);
-  string tmp = bigmul_pos(bigabs(s1), bigabs(s2));
-  return (n1 ^ n2) ? flip_sign(tmp) : tmp;
+string BigFloatToStr(const BigFloat& big_float) {
+  string ubs = big_float.big_int.big_uint().str();
+  string res;
+  if (big_float.big_int.big_uint() == "0") {
+    return "0";
+  } else if (big_float.offset >= ubs.size()) {
+    // TODO
+    res = "0." + string(big_float.offset - ubs.size(), '0') + ubs;
+  } else {  // offset < ubs.size()
+    const size_t m_size = ubs.size() - big_float.offset;
+    res = ubs.substr(0, m_size);
+    if (m_size < ubs.size()) {
+      res = res + "." + ubs.substr(m_size);
+    }
+  }
+
+  if (big_float.big_int.neg()) {
+    res = "-" + res;
+  }
+  return res;
 }
 
+void LeftOffset(BigFloat* big_float, int offset) {
+  string ns = big_float->big_int.GetStr() + string(offset, '0');
+  big_float->big_int = ns;
+  big_float->offset += offset;
+}
 
+// Adjusts offset to remove decimal part trailing zeros.
+void RemoveTrailingZeros(BigFloat* big_float) {
+  string bs = big_float->big_int.GetStr();
+  while (big_float->offset > 0 &&
+         bs.size() > 1 &&
+         bs.back() == '0') {
+    big_float->offset--;
+    bs.pop_back();
+  }
+
+  big_float->big_int = BigInt(bs);
+}
+
+//
+// Test
+//
 int main() {
-  cout << bigadd("0", "0") << endl;
-  cout << bigadd("123456789123456789", "7654321987654321") << endl;
-  cout << bigadd("-123456789123456789", "7654321987654321") << endl;
-  cout << bigadd("123456789123456789", "-7654321987654321") << endl;
-  cout << bigadd("-123456789123456789", "-7654321987654321") << endl;
+  BigInt a("22696209911206174");
+  BigInt b("3658271912812123125");
+  cout << a - b << endl;
+  
+  //BigInt a("345");
+  //BigInt b("98");
+  //cout << a + b << endl;
 
-  cout << bigsub("123456789012345", "123456789012345") << endl;
-  cout << bigsub("123456789123456789", "7654321987654321") << endl;
-  cout << bigsub("-123456789123456789", "7654321987654321") << endl;
-  cout << bigsub("123456789123456789", "-7654321987654321") << endl;
-  cout << bigsub("-123456789123456789", "-7654321987654321") << endl;
-  cout << bigsub("123456789012345", "0") << endl;
-  cout << bigsub("0", "123456789012345") << endl;
+  //BigInt a("0");
+  //BigInt b("123");
+  //cout << a - b << endl;
+  //cout << "a == b ? " << (a == b) << endl;
+  //cout << "a < b ? " << (a < b) << endl;
+  //cout << "a > b ? " << (a > b) << endl;
 
-  cout << bigmul ("0", "123456789012345") << endl;
-  cout << bigmul ("0", "0") << endl;
-  cout << bigmul("123456789123456789", "7654321987654321") << endl;
-  cout << bigmul("-123456789123456789", "7654321987654321") << endl;
-  cout << bigmul("123456789123456789", "-7654321987654321") << endl;
-  cout << bigmul("-123456789123456789", "-7654321987654321") << endl;
+  //b = a;
+  //cout << "a == b ? " << (a == b) << endl;
+  //cout << "a < b ? " << (a < b) << endl;
+  //cout << "a > b ? " << (a > b) << endl;
 }

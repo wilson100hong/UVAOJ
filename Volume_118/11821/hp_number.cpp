@@ -2,11 +2,13 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <utility>
+#include <sstream>
 
 using namespace std;
 
 namespace {
-string RemovePaddingZeros(const string& s) {
+string RemoveLeadingZeros(const string& s) {
   int i = 0;
   // Keep last digit.
   while (i < s.size() -1 && s[i] == '0') {
@@ -31,7 +33,7 @@ string AddStrings(const string& a, const string& b) {
     res[d] = (carry % 10) + '0';
     carry = carry / 10;
   }
-  return RemovePaddingZeros(res);
+  return RemoveLeadingZeros(res);
 }
 
 // |a| >= |b|. Otherwise the result is undefined.
@@ -49,8 +51,8 @@ string SubStrings(const string& a, const string& b) {
   }
 
   // carry should be zero here.
-  if (carry < 0) cout << "[SubStrings] ERROR: Most significant carry < 0" << endl;
-  return RemovePaddingZeros(res);
+  if (carry < 0) cout << "[SubStrings] ERROR: Most significant carry < 0" <<
+    endl; return RemoveLeadingZeros(res);
 }
 
 }  // namespace 
@@ -63,7 +65,7 @@ string SubStrings(const string& a, const string& b) {
 class BigUnsignedInt {
  public:
   BigUnsignedInt() {}
-  BigUnsignedInt(const string& s) : str_(s) {
+  BigUnsignedInt(const string& s) : str_(RemoveLeadingZeros(s)) {
     if (s.empty()) cout << "[BigUnsignedInt] ERROR: empty string" << endl;
   }
   BigUnsignedInt(const char* c) : BigUnsignedInt(string(c)) {}
@@ -122,9 +124,9 @@ inline bool operator< (const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){
     return lhs.str().size() < rhs.str().size();
   }
   for (int i = 0; i < lhs.str().size(); ++i) {
-    if (lhs.str()[i] -'0' < rhs.str()[i] - '0') {
-      return true;
-    }
+    const char lc = lhs.str()[i], rc = rhs.str()[i];
+    if (lc == rc) continue;
+    return lc < rc;
   }
   return false;
 }
@@ -162,6 +164,10 @@ class BigInt {
   const BigUnsignedInt& big_uint() const { return big_uint_; }
   BigUnsignedInt& mutable_big_uint() { return big_uint_; }
 
+  const string GetStr() const {
+    string res = neg_ ? "-" : ""; return res + big_uint_.str();
+  }
+
   bool neg() const { return neg_; }
   void set_neg(bool neg) { neg_ = neg; }
 
@@ -196,6 +202,7 @@ class BigInt {
       big_uint_ = rhs.big_uint() - big_uint_;
       neg_ = !neg_;
     }
+    CheckNegZero();
     return *this;
   }
   
@@ -216,15 +223,12 @@ class BigInt {
   }
 
   friend ostream& operator << (ostream &out, const BigInt& b) {
-    if (b.neg()) {
-      out << "-";
-    }
-    out << b.big_uint();
+    out << b.GetStr();
     return out; 
   }
 
  private:
-  // Not allow negative zero.
+  // Do not allow "-0".
   void CheckNegZero() {
     if (big_uint_ == "0") neg_ = false;
   }
@@ -254,27 +258,92 @@ inline bool operator==(const BigInt& lhs, const BigInt& rhs){
 }
 inline bool operator!=(const BigInt& lhs, const BigInt& rhs){ return !(lhs == rhs); }
 
-//
-// Test
-//
-int main() {
-  BigInt a("22696209911206174");
-  BigInt b("3658271912812123125");
-  cout << a - b << endl;
-  
-  //BigInt a("345");
-  //BigInt b("98");
-  //cout << a + b << endl;
+////////////////////////
 
-  //BigInt a("0");
-  //BigInt b("123");
-  //cout << a - b << endl;
-  //cout << "a == b ? " << (a == b) << endl;
-  //cout << "a < b ? " << (a < b) << endl;
-  //cout << "a > b ? " << (a > b) << endl;
+// Return BigInt, decimal offset.
+struct BigFloat {
+  BigInt big_int;  // Allow trailing zeros.
+  int offset;  // decimal offset
+};
 
-  //b = a;
-  //cout << "a == b ? " << (a == b) << endl;
-  //cout << "a < b ? " << (a < b) << endl;
-  //cout << "a > b ? " << (a > b) << endl;
+BigFloat StrToBigFloat(const string& str) {
+  size_t cur = 0;
+  while (cur < str.size()) {
+    if (str[cur] == '.') break;
+    cur++;
+  }
+  if (cur >= str.size()) {
+    return {BigInt(str), 0};
+  }
+  return {BigInt(str.substr(0, cur) + str.substr(cur+1)), static_cast<int>(str.size()-1-cur)};
 }
+
+string BigFloatToStr(const BigFloat& big_float) {
+  string ubs = big_float.big_int.big_uint().str();
+  string res;
+  if (big_float.big_int.big_uint() == "0") {
+    return "0";
+  } else if (big_float.offset >= ubs.size()) {
+    res = "0." + string(big_float.offset - ubs.size(), '0') + ubs;
+  } else {  // offset < ubs.size()
+    const size_t m_size = ubs.size() - big_float.offset;
+    res = ubs.substr(0, m_size);
+    if (m_size < ubs.size()) {
+      res = res + "." + ubs.substr(m_size);
+    }
+  }
+
+  if (big_float.big_int.neg()) {
+    res = "-" + res;
+  }
+  return res;
+}
+
+void LeftOffset(BigFloat* big_float, int offset) {
+  string ns = big_float->big_int.GetStr() + string(offset, '0');
+  big_float->big_int = ns;
+  big_float->offset += offset;
+}
+
+// Adjusts offset to remove decimal part trailing zeros.
+void RemoveTrailingZeros(BigFloat* big_float) {
+  string bs = big_float->big_int.GetStr();
+  while (big_float->offset > 0 &&
+         bs.size() > 1 &&
+         bs.back() == '0') {
+    big_float->offset--;
+    bs.pop_back();
+  }
+
+  big_float->big_int = BigInt(bs);
+}
+
+int main() {
+  string line;
+  getline(cin, line);
+  stringstream ss(line);
+  int N;
+  ss >> N;
+  while (N--) {
+    BigFloat res{BigInt("0"), 0};
+    while (1) {
+      getline(cin, line);
+      if (line == "0") break;
+      //cout << line << endl;
+
+      BigFloat given = StrToBigFloat(line);
+
+      if (res.offset > given.offset) {
+        LeftOffset(&given, res.offset - given.offset);
+      } else if (res.offset < given.offset) {
+        LeftOffset(&res, given.offset - res.offset);
+      }
+
+      res = {res.big_int + given.big_int, res.offset};
+      RemoveTrailingZeros(&res);
+    }
+    RemoveTrailingZeros(&res);
+    cout << BigFloatToStr(res) << endl;
+  }
+}
+  
