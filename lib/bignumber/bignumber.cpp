@@ -1,4 +1,3 @@
-// TODO: Need polish
 #include <algorithm>  // std::max
 #include <iostream>
 #include <vector>
@@ -9,14 +8,13 @@ using namespace std;
 namespace {
 string StripLZeros(const string& s) {
   int i = 0;
-  // Keep last digit.
-  while (i < s.size() -1 && s[i] == '0') {
+  while (i < s.size()-1 && s[i] == '0') {
     i++;
   }
   return s.substr(i);
 }
 
-// |a| and |b| are non-negative integers.
+// |a| and |b| are strings for unsigned integers.
 string AddStrings(const string& a, const string& b) {
   string res(max(a.size(), b.size()) + 1, '0');
   int carry = 0;
@@ -50,66 +48,83 @@ string SubStrings(const string& a, const string& b) {
   }
 
   // carry should be zero here.
-  if (carry < 0) cout << "[SubStrings] ERROR: Most significant carry < 0" << endl;
+  if (carry < 0) {
+    cout << "[SubStrings] ERROR: Most significant carry < 0" << endl;
+  }
   return StripLZeros(res);
 }
 
 }  // namespace 
 
 //
-// Big unsigned integer.
+// Unsigned big integer.
 //
 // TODO: multiplication
 // TODO: division
-class BigUnsignedInt {
+class UnsignedBigInt {
  public:
-  BigUnsignedInt() {}
-  BigUnsignedInt(const string& s) : str_(StripLZero(s)) {
-    if (s.empty()) cout << "[BigUnsignedInt] ERROR: empty string" << endl;
+  UnsignedBigInt() {}
+  UnsignedBigInt(const string& s) : str_(StripLZeros(s)) {
+    if (s.empty()) {
+      cout << "[UnsignedBigInt] ERROR: empty string" << endl;
+    }
   }
-  BigUnsignedInt(const char* c) : BigUnsignedInt(string(c)) {}
-  BigUnsignedInt(const BigUnsignedInt& o) : BigUnsignedInt(o.str()) {}
+  UnsignedBigInt(const char* c) : UnsignedBigInt(string(c)) {}
+  UnsignedBigInt(const UnsignedBigInt& o) : UnsignedBigInt(o.str()) {}
 
   const string str() const { return str_; }
-  string& mutable_str() { return str_; }
+  //string& mutable_str() { return str_; }
   void set_str(const string& s) { str_ = s; }
 
-  BigUnsignedInt& operator=(const BigUnsignedInt& other) {
+  UnsignedBigInt& operator=(const UnsignedBigInt& other) {
     if (this != &other) {
       this->set_str(other.str());
     }
     return *this;
   }
 
-  BigUnsignedInt& operator=(BigUnsignedInt&& other) noexcept { // move assignment
+  UnsignedBigInt& operator=(UnsignedBigInt&& other) noexcept {
     if(this != &other) {
-      swap(other.mutable_str(), str_);
+      str_ = other.str();
+      //swap(other.mutable_str(), str_);
     }
     return *this;
   }
 
-  BigUnsignedInt& operator += (const BigUnsignedInt& rhs) {
+  UnsignedBigInt& operator += (const UnsignedBigInt& rhs) {
     str_ = AddStrings(str_, rhs.str());
     return *this;
   }
   
   // Ensure this >= rhs, otherwise the result is undefined.
-  BigUnsignedInt& operator -= (const BigUnsignedInt& rhs) {
+  UnsignedBigInt& operator -= (const UnsignedBigInt& rhs) {
     str_ = SubStrings(str_, rhs.str());
     return *this;
   }
 
-  friend BigUnsignedInt operator + (BigUnsignedInt lhs, const BigUnsignedInt& rhs) {
+  // TODO
+  //UnsignedBigInt& operator *= (const UnsignedBigInt& rhs) {
+    //str_ = AddStrings(str_, rhs.str());
+    //return *this;
+  //}
+
+  //UnsignedBigInt& operator /= (const UnsignedBigInt& rhs) {
+    //str_ = AddStrings(str_, rhs.str());
+    //return *this;
+  //}
+
+  friend UnsignedBigInt operator + (UnsignedBigInt lhs, const UnsignedBigInt& rhs) {
     lhs += rhs;
     return lhs;
   }
 
-  friend BigUnsignedInt operator - (BigUnsignedInt lhs, const BigUnsignedInt& rhs) {
+  friend UnsignedBigInt operator - (UnsignedBigInt lhs, const UnsignedBigInt& rhs) {
     lhs -= rhs;
     return lhs;
   }
 
-  friend ostream& operator << (ostream &out, const BigUnsignedInt& b) {
+
+  friend ostream& operator << (ostream &out, const UnsignedBigInt& b) {
     out << b.str();
     return out; 
   }
@@ -118,7 +133,7 @@ class BigUnsignedInt {
   string str_;
 };
  
-inline bool operator< (const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){
+inline bool operator< (const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){
   if (lhs.str().size() != rhs.str().size()) {
     return lhs.str().size() < rhs.str().size();
   }
@@ -130,11 +145,11 @@ inline bool operator< (const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){
   return false;
 }
 
-inline bool operator> (const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return rhs < lhs; }
-inline bool operator<=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return !(lhs > rhs); }
-inline bool operator>=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return !(lhs < rhs); }
-inline bool operator==(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return lhs.str() == rhs.str(); }
-inline bool operator!=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ return !(lhs == rhs); }
+inline bool operator> (const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){ return rhs < lhs; }
+inline bool operator<=(const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){ return !(lhs > rhs); }
+inline bool operator>=(const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){ return !(lhs < rhs); }
+inline bool operator==(const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){ return lhs.str() == rhs.str(); }
+inline bool operator!=(const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){ return !(lhs == rhs); }
 
 
 //
@@ -144,28 +159,32 @@ inline bool operator!=(const BigUnsignedInt& lhs, const BigUnsignedInt& rhs){ re
 // TODO: division
 class BigInt {
  public:
-  BigInt(const BigInt& o) : neg_(o.neg()), big_uint_(o.big_uint()) {}
-  BigInt(const string& s) {
-    if (s.empty()) cout << "[BigInt] ERROR: empty string" << endl;
+  BigInt() {}
+  BigInt(const BigInt& o) : neg_(o.neg()), ubigint_(o.ubigint()) {}
 
-    neg_ = s[0] == '-';
-    if (neg_) {
-      big_uint_ = s.substr(1);
-    } else {
-      big_uint_ = s;
+  BigInt(const string& s) {
+    if (s.empty()) {
+      cout << "[BigInt] ERROR: empty string" << endl;
     }
+    neg_ = s[0] == '-';
+    ubigint_ = neg_ ? s.substr(1) : s;
+
     CheckNegZero();
   }
+
   BigInt(const char* c) : BigInt(string(c)) {}
 
-  BigInt(bool neg, const BigUnsignedInt& b) : neg_(neg), big_uint_(b) {}
+  BigInt(bool neg, const UnsignedBigInt& b) : neg_(neg), ubigint_(b) {}
 
-  const BigUnsignedInt& big_uint() const { return big_uint_; }
-  BigUnsignedInt& mutable_big_uint() { return big_uint_; }
+  const UnsignedBigInt& ubigint() const { return ubigint_; }
+  UnsignedBigInt& mutable_ubigint() { return ubigint_; }
 
-  const string GetStr() const {
-    string res = neg_ ? "-" : "";
-    return res + big_uint_.str();
+  string ToStr() const {
+    string res = ubigint_.str();
+    if (neg_) {
+      res = "-" + res;
+    }
+    return res;
   }
 
   bool neg() const { return neg_; }
@@ -173,13 +192,13 @@ class BigInt {
 
   BigInt& operator=(const BigInt& other) {
     this->set_neg(other.neg());
-    this->mutable_big_uint() = other.big_uint();
+    this->mutable_ubigint() = other.ubigint();
     return *this;
   }
 
   BigInt& operator=(BigInt&& other) noexcept { // move assignment
     if(this != &other) {
-      swap(other.mutable_big_uint(), big_uint_);
+      swap(other.mutable_ubigint(), ubigint_);
       set_neg(other.neg());
     }
     return *this;
@@ -187,27 +206,27 @@ class BigInt {
   
   // Uniary '-'
   BigInt operator-() const {
-    return BigInt(!neg_, big_uint_);
+    return BigInt(!neg_, ubigint_);
   }
 
   BigInt& operator += (const BigInt& rhs) {
     if (neg_ == rhs.neg()) {
-      big_uint_ = big_uint_ + rhs.big_uint();
+      ubigint_ = ubigint_ + rhs.ubigint();
       return *this;
     }
 
-    if (big_uint_ > rhs.big_uint()) {
-      big_uint_ = big_uint_ - rhs.big_uint();
+    if (ubigint_ > rhs.ubigint()) {
+      ubigint_ = ubigint_ - rhs.ubigint();
     } else {
-      big_uint_ = rhs.big_uint() - big_uint_;
+      ubigint_ = rhs.ubigint() - ubigint_;
       neg_ = !neg_;
     }
+    CheckNegZero();
     return *this;
   }
   
   BigInt& operator -= (const BigInt& rhs) {
-    BigInt nrhs = -rhs;
-    *this += nrhs;
+    *this += (-rhs);
     return *this;
   }
 
@@ -222,26 +241,28 @@ class BigInt {
   }
 
   friend ostream& operator << (ostream &out, const BigInt& b) {
-    out << b.GetStr();
+    out << b.ToStr();
     return out; 
   }
 
  private:
-  // Not allow negative zero.
+  // Do not allow -0.
   void CheckNegZero() {
-    if (big_uint_ == "0") neg_ = false;
+    if (ubigint_ == "0") {
+      neg_ = false;
+    }
   }
 
   bool neg_;
-  BigUnsignedInt big_uint_;
+  UnsignedBigInt ubigint_;
 };
 
 inline bool operator< (const BigInt& lhs, const BigInt& rhs){
   if (lhs.neg() == rhs.neg()) {
     if (lhs.neg()) {  // Both negative
-      return lhs.big_uint() > rhs.big_uint();
+      return lhs.ubigint() > rhs.ubigint();
     } else {
-      return lhs.big_uint() < rhs.big_uint();
+      return lhs.ubigint() < rhs.ubigint();
     }
   } else {
     return lhs.neg();
@@ -253,72 +274,104 @@ inline bool operator<=(const BigInt& lhs, const BigInt& rhs){ return !(lhs > rhs
 inline bool operator>=(const BigInt& lhs, const BigInt& rhs){ return !(lhs < rhs); }
 inline bool operator==(const BigInt& lhs, const BigInt& rhs){
   return lhs.neg() == rhs.neg() &&
-         lhs.big_uint() == rhs.big_uint();
+         lhs.ubigint() == rhs.ubigint();
 }
 inline bool operator!=(const BigInt& lhs, const BigInt& rhs){ return !(lhs == rhs); }
 
 
 //
-// TODO: make class BigFloat
+// Big floating number
 //
-
-struct BigFloat {
-  BigInt big_int;  // Allow trailing zeros.
-  int offset;  // decimal offset
-};
-
-BigFloat StrToBigFloat(const string& str) {
-  size_t cur = 0;
-  while (cur < str.size()) {
-    if (str[cur] == '.') break;
-    cur++;
-  }
-  if (cur >= str.size()) {
-    return {BigInt(str), 0};
-  }
-  return {BigInt(str.substr(0, cur) + str.substr(cur+1)), static_cast<int>(str.size()-1-cur)};
-}
-
-string BigFloatToStr(const BigFloat& big_float) {
-  string ubs = big_float.big_int.big_uint().str();
-  string res;
-  if (big_float.big_int.big_uint() == "0") {
-    return "0";
-  } else if (big_float.offset >= ubs.size()) {
-    // TODO
-    res = "0." + string(big_float.offset - ubs.size(), '0') + ubs;
-  } else {  // offset < ubs.size()
-    const size_t m_size = ubs.size() - big_float.offset;
-    res = ubs.substr(0, m_size);
-    if (m_size < ubs.size()) {
-      res = res + "." + ubs.substr(m_size);
+class BigFloat {
+ public:
+  BigFloat() {}
+  
+  BigFloat(const string& s) {
+    size_t cur = 0;
+    while (cur < s.size()) {
+      if (s[cur] == '.') break;
+      cur++;
+    }
+    if (cur >= s.size()) {
+      bigint_ = s;
+      offset_ = 0;
+    } else {
+      bigint_ = s.substr(0, cur) + s.substr(cur+1);
+      offset_ = s.size() - 1 - cur;
     }
   }
 
-  if (big_float.big_int.neg()) {
-    res = "-" + res;
-  }
-  return res;
-}
+  string ToStr() const {
+    string ubs = bigint_.ubigint().str();
+    if (ubs == "0") {
+      return "0";
+    }
+    
+    string res;
+    if (ubs.size() <= offset_) {
+      res = "0." + string(offset_ - ubs.size(), '0') + ubs;
+    } else {  // offset < ubs.size()
+      const size_t m_size = ubs.size() - offset_;
+      res = ubs.substr(0, m_size);
+      if (m_size < ubs.size()) {
+        res = res + "." + ubs.substr(m_size);
+      }
+    }
 
-void LeftOffset(BigFloat* big_float, int offset) {
-  string ns = big_float->big_int.GetStr() + string(offset, '0');
-  big_float->big_int = ns;
-  big_float->offset += offset;
-}
-
-// Adjusts offset to remove decimal part trailing zeros.
-void RemoveTrailingZeros(BigFloat* big_float) {
-  string bs = big_float->big_int.GetStr();
-  while (big_float->offset > 0 &&
-         bs.size() > 1 &&
-         bs.back() == '0') {
-    big_float->offset--;
-    bs.pop_back();
+    return (bigint_.neg() ? "-" : "") + res;
   }
 
-  big_float->big_int = BigInt(bs);
-}
+  // TODO
+  //UnsignedBigInt& operator=(const UnsignedBigInt& other) {
+    //if (this != &other) {
+      //this->set_str(other.str());
+    //}
+    //return *this;
+  //}
+
+  //UnsignedBigInt& operator=(UnsignedBigInt&& other) noexcept {
+    //if(this != &other) {
+      //str_ = other.str();
+      ////swap(other.mutable_str(), str_);
+    //}
+    //return *this;
+  //}
+
+  //UnsignedBigInt& operator += (const UnsignedBigInt& rhs) {
+    //str_ = AddStrings(str_, rhs.str());
+    //return *this;
+  //}
+  
+  //// Ensure this >= rhs, otherwise the result is undefined.
+  //UnsignedBigInt& operator -= (const UnsignedBigInt& rhs) {
+    //str_ = SubStrings(str_, rhs.str());
+    //return *this;
+  //}
+ private:
+  void LeftOffset(int offset) {
+    bigint_ = bigint_.ToStr() + string(offset, '0');
+    offset_ += offset;
+  }
+
+
+  //  remove decimal part trailing zeros.
+  void UpdateOffset() {
+    string bs = bigint_.ToStr();
+    while (offset_ > 0 &&
+        bs.size() > 1 &&
+        bs.back() == '0') {
+      offset_--;
+      bs.pop_back();
+    }
+
+    bigint_ = bs;
+    //big_float->big_int = BigInt(bs);
+  }
+
+  BigInt bigint_;
+  int offset_;  // decimal offset
+};
+
 
 //
 // Test
