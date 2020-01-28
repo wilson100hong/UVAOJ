@@ -69,7 +69,7 @@ class UnsignedBigInt {
       cout << "[UnsignedBigInt] ERROR: empty string" << endl;
     }
   }
-  UnsignedBigInt(unsigned long long ll) : str_(to_string(ll) {}
+  UnsignedBigInt(unsigned long long ll) : str_(to_string(ll)) {}
   UnsignedBigInt(const char* c) : UnsignedBigInt(string(c)) {}
   UnsignedBigInt(const UnsignedBigInt& o) : UnsignedBigInt(o.str()) {}
 
@@ -102,17 +102,6 @@ class UnsignedBigInt {
     str_ = SubStrings(str_, rhs.str());
     return *this;
   }
-
-  // TODO
-  //UnsignedBigInt& operator *= (const UnsignedBigInt& rhs) {
-    //str_ = AddStrings(str_, rhs.str());
-    //return *this;
-  //}
-
-  //UnsignedBigInt& operator /= (const UnsignedBigInt& rhs) {
-    //str_ = AddStrings(str_, rhs.str());
-    //return *this;
-  //}
 
   friend UnsignedBigInt operator + (UnsignedBigInt lhs, const UnsignedBigInt& rhs) {
     lhs += rhs;
