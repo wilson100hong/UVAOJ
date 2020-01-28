@@ -69,6 +69,7 @@ class UnsignedBigInt {
       cout << "[UnsignedBigInt] ERROR: empty string" << endl;
     }
   }
+  UnsignedBigInt(unsigned long long ll) : str_(to_string(ll) {}
   UnsignedBigInt(const char* c) : UnsignedBigInt(string(c)) {}
   UnsignedBigInt(const UnsignedBigInt& o) : UnsignedBigInt(o.str()) {}
 
