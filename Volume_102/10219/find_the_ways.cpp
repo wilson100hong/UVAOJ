@@ -1,67 +1,26 @@
+// 1. Use log for digits
+// 2. Stirling's formula: https://en.wikipedia.org/wiki/Stirling%27s_approximation
 #include <iostream>
 #include <iomanip>
 #include <vector>
 #include <map>
 #include <set>
+#include <string>
+#include <cmath>
 using namespace std;
 
-typedef unsigned long long ULL;
 
-#define RANGE 501
-
-ULL DP[RANGE][RANGE] = {};  // C(n, k)
-
-void Init() {
-  for (int n=0;n<RANGE;++n) {
-    for (int k=0;k<RANGE;++k) {
-      DP[n][k] = 0;
-    }
-  }
-
-  for (int n=1;n<RANGE;++n) {
-    DP[n][0] = DP[n][n] = 1;
-  }
-
-  for (int n=2;n<RANGE;++n) {
-    for (int k=1;k<n;++k) {
-      DP[n][k] = DP[n-1][k] + DP[n-1][k-1];
-    }
-  }
+// return log(n!)
+double log10fac(int n) {
+  return (0.5*log(2.0*n*M_PI) + n*log(n) - n) / log(10.0);
 }
 
-ULL Cnk(ULL n, ULL k) {
-  //cout << "C " << n << " " << k << endl;
-  //if (n < k) return 0;
-  //if (n == k) return 1;
-  // n > k
-  //if (k == 1) return n;
-  
-  
-  if (n < RANGE && k < RANGE) {
-    return DP[n][k];
-  }
-
-  
-  return Cnk(n-1, k) + Cnk(n-1, k-1);
-}
-
-int Solve(ULL n, ULL k) {
-  Init();
-
-  ULL x = Cnk(n, k);
-  if (x == 0) return 1;
-
-  // x > 0
-  int d = 0;
-  while (x) {
-    d++;
-    x /= 10;
-  }
-  return d;
+int Solve(int n, int k) {
+  return static_cast<long long>(log10fac(n) - log10fac(k) - log10fac(n-k)) + 1;
 }
 
 int main() {
-  ULL n, k;
+  int n, k;
   while (cin >> n >> k) {
     cout << Solve(n, k) << endl;
   }
