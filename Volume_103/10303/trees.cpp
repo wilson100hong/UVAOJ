@@ -1,8 +1,11 @@
-#include <algorithm>  // std::max
+// 1. Catalan number
+// 2. Bignumber
+
 #include <iostream>
+#include <iomanip>
+#include <map>
 #include <vector>
 #include <string>
-
 using namespace std;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,6 +68,7 @@ string SubStrings(const string& a, const string& b) {
 
   // carry should be zero here.
   if (carry < 0) {
+    cout << "a: " << a << ", b: " << b << endl;
     cout << "[SubStrings] ERROR: Most significant carry < 0" << endl;
   }
   return StripLZeros(res);
@@ -216,228 +220,20 @@ inline bool operator!=(const UnsignedBigInt& lhs, const UnsignedBigInt& rhs){ re
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Signed big integer.
-//
-// TODO: multiplication
-// TODO: division
-class BigInt {
- public:
-  BigInt() {}
-  BigInt(const BigInt& o) : neg_(o.neg()), ubigint_(o.ubigint()) {}
 
-  BigInt(const string& s) {
-    if (s.empty()) {
-      cout << "[BigInt] ERROR: empty string" << endl;
-    }
-    neg_ = s[0] == '-';
-    ubigint_ = neg_ ? s.substr(1) : s;
+UnsignedBigInt CATALANS[1001];
 
-    CheckNegZero();
-  }
-
-  //BigInt(const char* c) : BigInt(string(c)) {}
-
-  BigInt(bool neg, const UnsignedBigInt& b) : neg_(neg), ubigint_(b) {}
-
-  const UnsignedBigInt& ubigint() const { return ubigint_; }
-  UnsignedBigInt& mutable_ubigint() { return ubigint_; }
-
-  string ToStr() const {
-    string res = ubigint_.str();
-    if (neg_) {
-      res = "-" + res;
-    }
-    return res;
-  }
-
-  bool neg() const { return neg_; }
-  void set_neg(bool neg) { neg_ = neg; }
-
-  BigInt& operator=(const BigInt& other) {
-    this->set_neg(other.neg());
-    this->mutable_ubigint() = other.ubigint();
-    return *this;
-  }
-
-  BigInt& operator=(BigInt&& other) noexcept { // move assignment
-    if(this != &other) {
-      swap(other.mutable_ubigint(), ubigint_);
-      set_neg(other.neg());
-    }
-    return *this;
-  }
-  
-  // Uniary '-'
-  BigInt operator-() const {
-    return BigInt(!neg_, ubigint_);
-  }
-
-  BigInt& operator += (const BigInt& rhs) {
-    if (neg_ == rhs.neg()) {
-      ubigint_ = ubigint_ + rhs.ubigint();
-      return *this;
-    }
-
-    if (ubigint_ > rhs.ubigint()) {
-      ubigint_ = ubigint_ - rhs.ubigint();
-    } else {
-      ubigint_ = rhs.ubigint() - ubigint_;
-      neg_ = !neg_;
-    }
-    CheckNegZero();
-    return *this;
-  }
-  
-  BigInt& operator -= (const BigInt& rhs) {
-    *this += (-rhs);
-    return *this;
-  }
-
-  friend BigInt operator + (BigInt lhs, const BigInt& rhs) {
-    lhs += rhs;
-    return lhs;
-  }
-
-  friend BigInt operator - (BigInt lhs, const BigInt& rhs) {
-    lhs -= rhs;
-    return lhs;
-  }
-
-  friend ostream& operator << (ostream &out, const BigInt& b) {
-    out << b.ToStr();
-    return out; 
-  }
-
- private:
-  // Do not allow -0.
-  void CheckNegZero() {
-    if (ubigint_.str() == "0") {
-      neg_ = false;
-    }
-  }
-
-  bool neg_;
-  UnsignedBigInt ubigint_;
-};
-
-inline bool operator< (const BigInt& lhs, const BigInt& rhs){
-  if (lhs.neg() == rhs.neg()) {
-    if (lhs.neg()) {  // Both negative
-      return lhs.ubigint() > rhs.ubigint();
-    } else {
-      return lhs.ubigint() < rhs.ubigint();
-    }
-  } else {
-    return lhs.neg();
+void Init() {
+  CATALANS[1] = UnsignedBigInt("1");
+  for (int i=2;i<=1000;++i) {
+    CATALANS[i] = (CATALANS[i-1] * (4*i-2)) / (i+1);
   }
 }
 
-inline bool operator> (const BigInt& lhs, const BigInt& rhs){ return rhs < lhs; }
-inline bool operator<=(const BigInt& lhs, const BigInt& rhs){ return !(lhs > rhs); }
-inline bool operator>=(const BigInt& lhs, const BigInt& rhs){ return !(lhs < rhs); }
-inline bool operator==(const BigInt& lhs, const BigInt& rhs){
-  return lhs.neg() == rhs.neg() &&
-         lhs.ubigint() == rhs.ubigint();
-}
-inline bool operator!=(const BigInt& lhs, const BigInt& rhs){ return !(lhs == rhs); }
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Big floating number
-//
-class BigFloat {
- public:
-  BigFloat() {}
-  
-  BigFloat(const string& s) {
-    size_t cur = 0;
-    while (cur < s.size()) {
-      if (s[cur] == '.') break;
-      cur++;
-    }
-    if (cur >= s.size()) {
-      bigint_ = s;
-      offset_ = 0;
-    } else {
-      bigint_ = s.substr(0, cur) + s.substr(cur+1);
-      offset_ = s.size() - 1 - cur;
-    }
-  }
-
-  string ToStr() const {
-    string ubs = bigint_.ubigint().str();
-    if (ubs == "0") {
-      return "0";
-    }
-    
-    string res;
-    if (ubs.size() <= offset_) {
-      res = "0." + string(offset_ - ubs.size(), '0') + ubs;
-    } else {  // offset < ubs.size()
-      const size_t m_size = ubs.size() - offset_;
-      res = ubs.substr(0, m_size);
-      if (m_size < ubs.size()) {
-        res = res + "." + ubs.substr(m_size);
-      }
-    }
-
-    return (bigint_.neg() ? "-" : "") + res;
-  }
-
- private:
-  void LeftOffset(int offset) {
-    bigint_ = bigint_.ToStr() + string(offset, '0');
-    offset_ += offset;
-  }
-
-
-  //  remove decimal part trailing zeros.
-  void UpdateOffset() {
-    string bs = bigint_.ToStr();
-    while (offset_ > 0 &&
-        bs.size() > 1 &&
-        bs.back() == '0') {
-      offset_--;
-      bs.pop_back();
-    }
-
-    bigint_ = bs;
-    //big_float->big_int = BigInt(bs);
-  }
-
-  BigInt bigint_;
-  int offset_;  // decimal offset
-};
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-//
-// Test
-//
 int main() {
-  UnsignedBigInt a = string("987654321");
-  UnsignedBigInt b = string("12345");
-  cout << a / b << endl;
-  //cout << a * b * 4 << endl;
-  //BigInt a("22696209911206174");
-  //BigInt b("3658271912812123125");
-  //cout << a - b << endl;
-  
-  //BigInt a("345");
-  //BigInt b("98");
-  //cout << a + b << endl;
-
-  //BigInt a("0");
-  //BigInt b("123");
-  //cout << a - b << endl;
-  //cout << "a == b ? " << (a == b) << endl;
-  //cout << "a < b ? " << (a < b) << endl;
-  //cout << "a > b ? " << (a > b) << endl;
-
-  //b = a;
-  //cout << "a == b ? " << (a == b) << endl;
-  //cout << "a < b ? " << (a < b) << endl;
-  //cout << "a > b ? " << (a > b) << endl;
+  Init();
+  int n;
+  while (cin >> n) {
+    cout << CATALANS[n] << endl;
+  }
 }
