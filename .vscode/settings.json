@@ -1,5 +1,18 @@
 {
   "files.associations": {
-    "tuple": "cpp"
+    "tuple": "cpp",
+    "unordered_set": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "hashtable": "cpp",
+    "unordered_map": "cpp",
+    "functional": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "ostream": "cpp",
+    "iostream": "cpp"
   }
 }
