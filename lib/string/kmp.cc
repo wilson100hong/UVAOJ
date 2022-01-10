@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-vector<int> build(const string& p) {
+vector<int> build_next(const string& p) {
     int n = p.size();
     vector<int> next(n, 0);
     next[0] = -1;
@@ -46,8 +46,8 @@ int kmp(const string& s, const string& p) {
 int main() {
     string s;
     cin >> s;
-    vector<int> next = build(s);
-    for (int i: next)
-        cout << i << endl;
-
+    string p;
+    cin >> p;
+    int find = kmp(s, p);
+    cout << "find: " << find << endl;
 }
