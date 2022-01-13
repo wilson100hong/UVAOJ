@@ -2,31 +2,32 @@
 #include <iostream>
 using namespace std;
 
-vector<int> build_next(const string& p) {
+vector<int> build_lps(const string& p) {
     int n = p.size();
-    vector<int> next(n, 0);
-    next[0] = -1;
+    vector<int> lps(n, 0);
+    lps[0] = -1;
     int j = 0, k = -1;
     while (j < n - 1) {
         if (k == -1 || p[j] == p[k]) {
             ++j;
             ++k;
-            // next[j] = k;
+            // lps[j] = k;
             /*optimization */
             if (p[j] != p[k]) {
-                next[j] = k;
+                lps[j] = k;
             } else {
-                next[j] = next[k];
+                lps[j] = lps[k];
             }
         } else {
-            k = next[k];
+            k = lps[k];
         }
     }
-    return next;
+    return lps;
 }
 
+// TODO: extend to return multiple occurence
 int kmp(const string& s, const string& p) {
-    vector<int> next = build(p);
+    vector<int> lps = build_lps(p);
     int m = s.size(), n = p.size();
     int i = 0, j = 0;
     while (i < m && j < n) {
@@ -34,7 +35,7 @@ int kmp(const string& s, const string& p) {
             i++;
             j++;
         } else {
-            j = next[j];
+            j = lps[j];
         }
     }    
     if (j == n) {
